@@ -15,7 +15,6 @@
     "@next/mdx": "^9.1.1",
     "babel-plugin-import-glob-array": "^0.2.0",
     "emotion-theming": "^10.0.27",
-    "gray-matter": "^4.0.2",
     "next": "latest",
     "next-mdx-enhanced": "^3.0.0",
     "prism-react-renderer": "^1.1.1",
@@ -24,8 +23,11 @@
   },
   "devDependencies": {},
   "license": "ISC",
-  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) as top level pages for your next.js app.",
+  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) content inside your NextJS app w/ Frontmatter & layouts thanks to next-mdx-enhanced.",
   "main": "next.config.js",
-  "keywords": [],
-  "author": ""
+  "keywords": [
+    "nextjs",
+    "mdx"
+  ],
+  "author": "domitriusclark"
 }
