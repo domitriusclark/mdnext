@@ -1,30 +1,26 @@
-import React from "react";
-import App from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider, CSSReset, Flex } from "@chakra-ui/core";
+
+import {
+  ChakraProvider,
+  CSSReset,
+} from "@chakra-ui/core"
+import theme from "@chakra-ui/theme"
+import Navbar from '../components/navbar'
 import Code from '../components/code';
 
 const components = {
   code: Code
 };
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <ThemeProvider>
-        <MDXProvider components={components}>
-          <CSSReset />
-          <Flex margin="16px" direction="column" justifyContent="space-between">
-            <Component {...pageProps} />
-          </Flex >
-        </MDXProvider>
-      </ThemeProvider>
-    );
-  }
+export default ({ Component, pageProps }) => {
+  return (
+    <ChakraProvider theme={theme}>
+      <MDXProvider components={components}>
+        <CSSReset />
+        <Navbar />
+        <Component {...pageProps} />
+      </MDXProvider>
+    </ChakraProvider>
+  );
 }
 
-
-
-
-export default MyApp;
