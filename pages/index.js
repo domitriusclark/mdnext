@@ -5,8 +5,14 @@ import Fuse from 'fuse.js';
 import {
   Flex,
   Input,
+  Stack,
+  Tag,
+  TagIcon,
+  TagLabel,
+  Text
 } from "@chakra-ui/core"
 import ContentBox from '../components/content-box';
+
 
 export default () => {
   const [query, updateQuery] = React.useState('');

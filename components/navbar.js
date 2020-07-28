@@ -29,11 +29,11 @@ export default function Navbar() {
     >
       <Flex flexDirection="row" justifyContent="center" alignItems="center">
         <Image
-          src="https://res.cloudinary.com/cloudinary/image/upload/c_scale,w_200/v1/logo/for_white_bg/cloudinary_icon_for_white_bg.png"
+          src="https://res.cloudinary.com/testing-hooks-upload/image/upload/v1595904057/dom-logo_fddwxc.png"
           boxSize={30}
         />
         <Text pl={3}>
-          Company
+          Domitrius Clark
     </Text>
       </Flex>
       <Box>
