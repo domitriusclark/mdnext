@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved, import/extensions
-import { frontMatter as blogPosts } from './blog/*.mdx';
+import { frontMatter } from './blog/*.mdx';
 import Fuse from 'fuse.js';
 
 import {
@@ -9,11 +9,12 @@ import {
 import ContentBox from '@components/ContentBox';
 
 
-export default () => {
+export default function Index({ blogPosts }) {
   const [query, updateQuery] = React.useState('');
 
   const fuse = new Fuse(blogPosts, {
-    keys: ['tags', 'title']
+    keys: ['tags', 'title'],
+    threshold: 0.0
   })
   const results = fuse.search(query)
   const blogResults = query ? results.map(blog => blog.item) : blogPosts;
@@ -30,4 +31,12 @@ export default () => {
       </Flex>
     </Flex>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      blogPosts: frontMatter
+    }
+  }
 }
