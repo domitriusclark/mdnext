@@ -6,8 +6,8 @@ import {
   InitializeColorMode
 } from "@chakra-ui/core"
 import theme from "@chakra-ui/theme"
-import Navbar from '../components/navbar'
-import Code from '../components/code';
+import Navbar from '@components/Navbar'
+import Code from '@components/Code';
 
 const components = {
   code: Code

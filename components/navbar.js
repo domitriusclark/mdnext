@@ -5,7 +5,7 @@ import {
   Link,
   Image,
 } from "@chakra-ui/core";
-import ThemeTogglebutton from '../components/theme-toggle-button';
+import ThemeTogglebutton from './ThemeToggleButton';
 import { Link as NextLink } from 'next/link'
 
 function NavLink({ children, ...props }) {

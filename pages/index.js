@@ -5,13 +5,8 @@ import Fuse from 'fuse.js';
 import {
   Flex,
   Input,
-  Stack,
-  Tag,
-  TagIcon,
-  TagLabel,
-  Text
 } from "@chakra-ui/core"
-import ContentBox from '../components/content-box';
+import ContentBox from '@components/ContentBox';
 
 
 export default () => {

@@ -1,6 +1,6 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/vsDark";
-import Button from '../components/button.js';
+import CopyButton from '../components/CopyButton.js';
 
 export default function Code({ children, className }) {
   const language = className.replace(/language-/, "");
@@ -29,7 +29,7 @@ export default function Code({ children, className }) {
               ))}
             </div>
           ))}
-          <Button value={children.trim()} />
+          <CopyButton value={children.trim()} />
         </pre>
 
       )}
