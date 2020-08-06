@@ -1,28 +1,60 @@
 import { MDXProvider } from "@mdx-js/react";
 
+import NextApp from 'next/app';
+
 import {
-  ChakraProvider,
+  ThemeProvider,
+  ColorModeProvider,
   CSSReset,
-  InitializeColorMode
+  GlobalStyle,
 } from "@chakra-ui/core"
-import theme from "@chakra-ui/theme"
-import Navbar from '@components/Navbar'
-import Code from '@components/Code';
+
+import {
+  withPersistedTheme,
+  detectInitialColorMode,
+} from '@hooks/useThemePersistance';
+
+import Navbar from '@components/navbar'
+import Code from '@components/code';
 
 const components = {
   code: Code
 };
 
-export default ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={theme}>
-      <MDXProvider components={components}>
-        <CSSReset />
-        <InitializeColorMode />
-        <Navbar />
-        <Component {...pageProps} />
-      </MDXProvider>
-    </ChakraProvider>
+    <ThemeProvider theme={withPersistedTheme(pageProps.initialColorMode)}>
+      <ColorModeProvider defaultValue={pageProps.initialColorMode}>
+        <MDXProvider components={components}>
+          <CSSReset />
+          <Navbar />
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </MDXProvider>
+      </ColorModeProvider>
+    </ThemeProvider>
   );
 }
 
+export async function getInitialProps(props) {
+  const {
+    ctx,
+    Component: { getInitialProps }
+  } = props;
+
+  const appProps = await NextApp.getInitialProps(props);
+
+  const initialColorMode = detectInitialColorMode(ctx);
+
+  const componentPageProps = getInitialProps ? await getInitialProps(ctx) : {};
+
+  return {
+    ...appProps,
+    pageProps: {
+      initialColorMode,
+      ...componentPageProps
+    }
+  }
+};
+
+App.getInitialProps = getInitialProps;

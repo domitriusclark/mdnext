@@ -1,42 +1,21 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import { frontMatter } from './blog/*.mdx';
-import Fuse from 'fuse.js';
-
 import {
-  Flex,
-  Input,
-} from "@chakra-ui/core"
-import ContentBox from '@components/ContentBox';
+  Flex
+} from "@chakra-ui/core";
 
-
-export default function Index({ blogPosts }) {
-  const [query, updateQuery] = React.useState('');
-
-  const fuse = new Fuse(blogPosts, {
-    keys: ['tags', 'title'],
-    threshold: 0.0
-  })
-  const results = fuse.search(query)
-  const blogResults = query ? results.map(blog => blog.item) : blogPosts;
-
-  function onSearch(e) {
-    return updateQuery(e.target.value)
-  }
-
+export default () => {
   return (
-    <Flex direction="column" m={16} alignItems="center" justify="center">
-      <Input w="40%" onChange={e => onSearch(e)} />
-      <Flex direction="column" justify="space-evenly" h="80vh">
-        {blogResults.map(blog => <ContentBox blog={blog} key={blog.__resourcePath} />)}
+    <Flex direction="column">
+
+      {/* Hero */}
+      <Flex direction="column" w="15%">
+
       </Flex>
+
+      {/* Framework / Specialization Select ?? */}
+      <Flex direction="column" justify="center" alignItems="center" w="100%">
+
+      </Flex>
+
     </Flex>
   )
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      blogPosts: frontMatter
-    }
-  }
 }

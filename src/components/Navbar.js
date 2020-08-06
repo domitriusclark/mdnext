@@ -39,6 +39,7 @@ export default function Navbar() {
       <Box>
         <ThemeTogglebutton />
         <NavLink ml={4} href="/">Home</NavLink>
+        <NavLink ml={4} href="/blogs/search">Search</NavLink>
       </Box>
     </Flex>
   )

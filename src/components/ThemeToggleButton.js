@@ -7,9 +7,11 @@ import {
 
 import { FiSun, FiMoon } from 'react-icons/fi';
 
+import { useThemePersistence } from "@hooks/useThemePersistance";
 
 export default function ThemeTogglebutton() {
   const { colorMode, toggleColorMode } = useColorMode();
+  useThemePersistence(colorMode)
 
   if (colorMode === "light") {
     return (
