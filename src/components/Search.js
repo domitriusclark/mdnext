@@ -22,7 +22,7 @@ const fuseOptions = {
   shouldSort: true,
   includeScore: true,
   useExtendedSearch: true,
-  keys: ['title', 'tags',]
+  keys: ['frontMatter.title', 'frontmatter.tags',]
 };
 
 export default function Search({ blogs, handleFilter }) {

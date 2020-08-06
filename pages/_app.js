@@ -1,5 +1,3 @@
-import { MDXProvider } from "@mdx-js/react";
-
 import NextApp from 'next/app';
 
 import {
@@ -15,22 +13,15 @@ import {
 } from '@hooks/useThemePersistance';
 
 import Navbar from '@components/navbar'
-import Code from '@components/code';
-
-const components = {
-  code: Code
-};
 
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={withPersistedTheme(pageProps.initialColorMode)}>
       <ColorModeProvider defaultValue={pageProps.initialColorMode}>
-        <MDXProvider components={components}>
-          <CSSReset />
-          <Navbar />
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </MDXProvider>
+        <CSSReset />
+        <Navbar />
+        <GlobalStyle />
+        <Component {...pageProps} />
       </ColorModeProvider>
     </ThemeProvider>
   );
