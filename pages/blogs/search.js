@@ -22,7 +22,7 @@ export function getStaticProps() {
 
     return {
       slug,
-      frontMatter: data
+      ...data
     }
   });
 
@@ -36,6 +36,7 @@ export function getStaticProps() {
 
 export default ({ allMdx }) => {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx)
+
 
   const handleFilter = (data) => {
     setFilteredBlogs(data)
