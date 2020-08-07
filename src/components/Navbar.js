@@ -11,9 +11,7 @@ import { Link as NextLink } from 'next/link'
 function NavLink({ children, ...props }) {
   return (
     <Link as={NextLink} px={2} {...props}>
-      <a>
-        {children}
-      </a>
+      {children}
     </Link>
   );
 }
