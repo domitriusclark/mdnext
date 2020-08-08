@@ -9,6 +9,27 @@ import matter from 'gray-matter';
 import ContentBox from "@components/ContentBox";
 import Search from "@components/Search";
 
+export default ({ allMdx }) => {
+  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx)
+
+
+  const handleFilter = (data) => {
+    setFilteredBlogs(data)
+  }
+
+  return (
+    <Flex>
+      {/* Content Area + Input + Tag filter */}
+      <Flex direction="column" justify="center" alignItems="center" w="100%">
+        <Search blogs={allMdx} handleFilter={handleFilter} />
+        <Flex direction="column" justify="space-evenly" h="80vh">
+          {filteredBlogs && filteredBlogs.map(blog => <ContentBox key={blog.slug} blog={blog} />)}
+        </Flex>
+      </Flex>
+    </Flex>
+  )
+}
+
 export function getStaticProps() {
   const files = glob.sync('src/blogs/*.mdx');
 
@@ -31,26 +52,4 @@ export function getStaticProps() {
       allMdx
     }
   }
-}
-
-
-export default ({ allMdx }) => {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx)
-
-
-  const handleFilter = (data) => {
-    setFilteredBlogs(data)
-  }
-
-  return (
-    <Flex>
-      {/* Content Area + Input + Tag filter */}
-      <Flex direction="column" justify="center" alignItems="center" w="100%">
-        <Search blogs={allMdx} handleFilter={handleFilter} />
-        <Flex direction="column" justify="space-evenly" h="80vh">
-          {filteredBlogs && filteredBlogs.map(blog => <ContentBox key={blog.slug} blog={blog} />)}
-        </Flex>
-      </Flex>
-    </Flex>
-  )
 }
