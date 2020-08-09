@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/core";
 import ThemeTogglebutton from './ThemeToggleButton';
 import { Link as NextLink } from 'next/link'
+import { useImage } from 'use-cloudinary';
 
 function NavLink({ children, ...props }) {
   return (
@@ -17,6 +18,21 @@ function NavLink({ children, ...props }) {
 }
 
 export default function Navbar() {
+  const { generateUrl, url, isLoading, isError } = useImage({ cloudName: 'testing-hooks-upload' })
+
+  React.useEffect(() => {
+    generateUrl({
+      publicId: 'transparent_dom_logo',
+      transforms: {
+        height: 30,
+        width: 30
+      }
+    })
+  }, [])
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <Flex
       w="100%"
@@ -27,7 +43,7 @@ export default function Navbar() {
     >
       <Flex flexDirection="row" justifyContent="center" alignItems="center">
         <Image
-          src="https://res.cloudinary.com/testing-hooks-upload/image/upload/v1595904057/dom-logo_fddwxc.png"
+          src={url}
           boxSize={30}
         />
         <Text pl={3}>
