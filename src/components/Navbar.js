@@ -45,6 +45,7 @@ export default function Navbar() {
         <Image
           src={url}
           boxSize={30}
+          alt="Navbar logo"
         />
         <Text pl={3}>
           Domitrius Clark
