@@ -58,8 +58,12 @@
     "trailingComma": "all"
   },
   "keywords": [
-    "nextjs",
-    "mdx"
+    "chakra-ui",
+    "mdnext",
+    "mdx",
+    "mdxjs",
+    "next.js",
+    "template"
   ],
   "license": "ISC"
 }
