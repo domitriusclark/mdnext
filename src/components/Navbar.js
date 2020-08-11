@@ -1,14 +1,16 @@
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/core';
 
-import { Link as NextLink } from 'next/link';
+import NextLink from 'next/link';
 import ThemeTogglebutton from '@components/ThemeToggleButton';
 import { useImage } from 'use-cloudinary';
 
-function NavLink({ children, ...props }) {
+function NavLink({ children, href, ...props }) {
   return (
-    <Link as={NextLink} px={2} {...props}>
-      {children}
-    </Link>
+    <NextLink href={href} passHref>
+      <Link px={2} {...props}>
+        {children}
+      </Link>
+    </NextLink>
   );
 }
 
