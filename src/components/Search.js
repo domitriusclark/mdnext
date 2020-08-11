@@ -6,12 +6,12 @@ import {
   Button,
   Stack,
   Input
-} from "@chakra-ui/core";
+} from '@chakra-ui/core';
 
 const TAG_LIST = [
-  "react",
-  "nextjs",
-  "chakra ui"
+  'react',
+  'nextjs',
+  'chakra ui'
 ];
 
 const fuseOptions = {
@@ -66,8 +66,8 @@ export default function Search({ blogs, handleFilter }) {
   }
 
   return (
-    <Flex direction="column" w={["100%", '75%', "50%"]}>
-      <Flex justify="space-around">
+    <Flex direction='column' w={['100%', '75%', '50%']}>
+      <Flex justify='space-around'>
         <Stack spacing={4}>
           {TAG_LIST.map(tag => (
             <Button onClick={() => onTagClick(tag)}>

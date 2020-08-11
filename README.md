@@ -44,11 +44,11 @@ These functions allow us to parse MDX as a source in our lifecycle methods like 
 
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import fs from 'fs'
-import matter from 'gray-matter'
-import glob from 'fast-glob'
+import fs from 'fs';
+import matter from 'gray-matter';
+import glob from 'fast-glob';
 
-import Iframe from '@components/Iframe'
+import Iframe from '@components/Iframe';
 import Code from "@components/Code";
 
 // Components that pass to the MDX
@@ -63,7 +63,6 @@ export default ({ mdxSource, frontMatter }) => {
       <h1>{frontMatter.title}</h1>
       {content}
     </div>
-
   )
 }
 
@@ -202,8 +201,8 @@ export default function Search({ blogs, handleFilter }) {
   }
 
   return (
-    <Flex direction="column" w={["100%", '75%', "50%"]}>
-      <Flex justify="space-around">
+    <Flex direction='column' w={['100%', '75%', '50%']}>
+      <Flex justify='space-around'>
         <Stack spacing={4}>
           {TAG_LIST.map(tag => (
             <Button onClick={() => onTagClick(tag)}>
@@ -216,7 +215,6 @@ export default function Search({ blogs, handleFilter }) {
     </Flex>
   )
 }
-
 ```
 
 # Chakra -- Light + Dark Mode & themeing
