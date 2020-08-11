@@ -56,7 +56,12 @@ export default function Search({ blogs, handleFilter }) {
   };
 
   return (
-    <Flex direction="column" w={['100%', '75%', '50%']}>
+    <Stack
+      direction="column"
+      w={['100%', '75%', '50%']}
+      align="center"
+      spacing={[6, 8, 10]}
+    >
       <Flex justify="space-around">
         <Stack spacing={4}>
           {TAG_LIST.map((tag, index) => (
@@ -66,7 +71,7 @@ export default function Search({ blogs, handleFilter }) {
           ))}
         </Stack>
       </Flex>
-      <Input mt={6} value={searchValue} onChange={onChange} />
-    </Flex>
+      <Input value={searchValue} onChange={onChange} />
+    </Stack>
   );
 }

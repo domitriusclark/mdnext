@@ -1,20 +1,31 @@
 import { Link as NextLink } from 'next/link';
-import { Box, Link, Text, Flex } from '@chakra-ui/core';
+import { Box, Link, Text, Stack } from '@chakra-ui/core';
 
 export default function ContentBox({ blog }) {
   return (
-    <Link as={NextLink} href={`/blog/${blog.slug}`}>
-      <Box w="500px" border="1px solid black" borderRadius="8px" p={8}>
-        <Text>{blog.title}</Text>
+    <Link
+      as={NextLink}
+      href={`/blog/${blog.slug}`}
+      _hover={{ textDecor: 'none' }}
+    >
+      <Box
+        role="group"
+        maxW="500px"
+        border="1px"
+        borderColor="black"
+        borderRadius="8px"
+        p={8}
+      >
+        <Text _groupHover={{ textDecor: 'underline' }}>{blog.title}</Text>
         <Text> By: {blog.author}</Text>
         <Text>{blog.description}</Text>
-        <Flex>
+        <Stack direction="row">
           {blog.tags.map((tag) => (
-            <Text mt="8px" mr={8} key="tag">
+            <Text mr={8} key={tag}>
               #{tag}
             </Text>
           ))}
-        </Flex>
+        </Stack>
       </Box>
     </Link>
   );
