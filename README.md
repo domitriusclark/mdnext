@@ -236,3 +236,4 @@ Wanted to highlight some projects + people that helped inspire + round out this 
 - [ ] Build out a more useful base of components to pass to our MDX 
 - [ ] Some tests 
 - [ ] Improved Lighthouse scores (currently 80+ in all, but would love to push this further)
+- [ ] Examples of different CMS choices in an 'examples' directory
