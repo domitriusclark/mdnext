@@ -6,7 +6,7 @@ export default function SEO({
   twitter,
   favicon,
   ogImage,
-  url
+  url,
 }) {
   return (
     <NextSeo
@@ -27,5 +27,5 @@ export default function SEO({
       }}
       favicon={favicon || ''}
     />
-  )
+  );
 }
