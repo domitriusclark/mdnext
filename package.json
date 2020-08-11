@@ -6,9 +6,13 @@
   "author": "domitriusclark",
   "main": "next.config.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-next.4",
@@ -27,7 +31,32 @@
     "react-icons": "^3.10.0",
     "use-cloudinary": "^3.1.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "keywords": [
     "nextjs",
     "mdx"
