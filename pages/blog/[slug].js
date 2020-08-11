@@ -6,8 +6,9 @@ import glob from 'fast-glob'
 
 import Code from "@components/Code";
 
+const components = { code: Code }
+
 export default ({ mdxSource, frontMatter }) => {
-  const components = { code: Code }
   const content = hydrate(mdxSource, components);
 
   return (
@@ -59,8 +60,6 @@ export async function getStaticProps({ params: { slug } }) {
   if (!fullPath) {
     console.warn('No MDX file found for slug')
   }
-
-  const components = { code: Code };
 
   const mdx = await renderToString(
     content,

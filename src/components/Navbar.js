@@ -5,7 +5,7 @@ import {
   Link,
   Image,
 } from '@chakra-ui/core';
-import ThemeTogglebutton from './ThemeToggleButton';
+import ThemeTogglebutton from '@components/ThemeToggleButton';
 import { Link as NextLink } from 'next/link'
 import { useImage } from 'use-cloudinary';
 
@@ -18,7 +18,7 @@ function NavLink({ children, ...props }) {
 }
 
 export default function Navbar() {
-  const { generateUrl, url, isLoading, isError } = useImage({ cloudName: 'testing-hooks-upload' })
+  const { generateUrl, url, isLoading } = useImage({ cloudName: 'testing-hooks-upload' })
 
   React.useEffect(() => {
     generateUrl({
@@ -33,6 +33,7 @@ export default function Navbar() {
   if (isLoading) {
     return <p>Loading...</p>;
   }
+
   return (
     <Flex
       w='100%'

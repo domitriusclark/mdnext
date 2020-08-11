@@ -26,7 +26,6 @@ const fuseOptions = {
 };
 
 export default function Search({ blogs, handleFilter }) {
-  // TODO: Put query into the url
   const [searchValue, setSearchValue] = useState('');
   const [searchTags, setSearchTags] = useState([]);
   const fuse = new Fuse(blogs, fuseOptions);
