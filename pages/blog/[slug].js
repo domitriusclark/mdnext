@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import glob from "fast-glob";
 
 import Code from "@components/Code";
+import { Chakra } from "@components/Chakra";
 
 const components = { code: Code };
 
@@ -12,10 +13,10 @@ export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, components);
 
   return (
-    <div>
+    <Chakra evaluateThemeLazily>
       <h1>{frontMatter.title}</h1>
       {content}
-    </div>
+    </Chakra>
   );
 }
 

@@ -6,6 +6,7 @@ import matter from "gray-matter";
 
 import ContentBox from "@components/ContentBox";
 import Search from "@components/Search";
+import { Chakra } from "@components/Chakra";
 
 export default function SearchPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
@@ -15,18 +16,20 @@ export default function SearchPage({ allMdx }) {
   };
 
   return (
-    <Flex>
-      {/* Content Area + Input + Tag filter */}
-      <Flex direction="column" justify="center" alignItems="center" w="100%">
-        <Search blogs={allMdx} handleFilter={handleFilter} />
-        <Flex direction="column" justify="space-evenly" h="80vh">
-          {filteredBlogs &&
-            filteredBlogs.map((blog) => (
-              <ContentBox key={blog.slug} blog={blog} />
-            ))}
+    <Chakra evaluateThemeLazily>
+      <Flex>
+        {/* Content Area + Input + Tag filter */}
+        <Flex direction="column" justify="center" alignItems="center" w="100%">
+          <Search blogs={allMdx} handleFilter={handleFilter} />
+          <Flex direction="column" justify="space-evenly" h="80vh">
+            {filteredBlogs &&
+              filteredBlogs.map((blog) => (
+                <ContentBox key={blog.slug} blog={blog} />
+              ))}
+          </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </Chakra>
   );
 }
 
