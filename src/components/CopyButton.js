@@ -5,11 +5,11 @@ export default function CopyButton({ value }) {
   const { onCopy, hasCopied } = useClipboard(value);
   return (
     <Button
-      aria-label="Copy text"
-      role="button"
+      aria-label='Copy text'
+      role='button'
       onClick={onCopy}
     >
-      {hasCopied ? "Copied" : "Copy"}
+      {hasCopied ? 'Copied' : 'Copy'}
     </Button>
   )
 }

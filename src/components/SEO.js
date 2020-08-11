@@ -2,19 +2,19 @@ import { NextSeo } from 'next-seo';
 
 // defaultProps 
 /*
-  title="Nextjs + MDX Starter pack"
-  description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
-  url="www.whatever.com"
+  title='Nextjs + MDX Starter pack'
+  description='This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI'
+  url='www.whatever.com'
   openGraph={{
-    url: "www.whatever.com",
-    title: "OG Image title",
-    description: "Describe the OG image",
+    url: 'www.whatever.com',
+    title: 'OG Image title',
+    description: 'Describe the OG image',
     image: `${url}/${image}`
-    siteName: "Your site name"
+    siteName: 'Your site name'
   }}
   twitter:{{
-    handle: "@domitriusclark",
-    site: "https://twitter.com/domitriusclark",
+    handle: '@domitriusclark',
+    site: 'https://twitter.com/domitriusclark',
   }}
 */
 

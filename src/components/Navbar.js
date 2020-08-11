@@ -4,7 +4,7 @@ import {
   Box,
   Link,
   Image,
-} from "@chakra-ui/core";
+} from '@chakra-ui/core';
 import ThemeTogglebutton from './ThemeToggleButton';
 import { Link as NextLink } from 'next/link'
 import { useImage } from 'use-cloudinary';
@@ -35,17 +35,17 @@ export default function Navbar() {
   }
   return (
     <Flex
-      w="100%"
+      w='100%'
       px={5}
       py={4}
-      justifyContent="space-between"
-      alignItems="center"
+      justifyContent='space-between'
+      alignItems='center'
     >
-      <Flex flexDirection="row" justifyContent="center" alignItems="center">
+      <Flex flexDirection='row' justifyContent='center' alignItems='center'>
         <Image
           src={url}
           boxSize={30}
-          alt="Navbar logo"
+          alt='Navbar logo'
         />
         <Text pl={3}>
           Domitrius Clark
@@ -53,8 +53,8 @@ export default function Navbar() {
       </Flex>
       <Box>
         <ThemeTogglebutton />
-        <NavLink ml={4} href="/">Home</NavLink>
-        <NavLink ml={4} href="/blogs/search">Search</NavLink>
+        <NavLink ml={4} href='/'>Home</NavLink>
+        <NavLink ml={4} href='/blogs/search'>Search</NavLink>
       </Box>
     </Flex>
   )
