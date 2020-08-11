@@ -7,7 +7,8 @@ import renderToString from 'next-mdx-remote/render-to-string';
 
 const components = { code: Code };
 
-export default ({ mdxSource, frontMatter }) => {
+/** @type {import('next').NextPage} */
+export default function BlogPostPage({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, components);
 
   return (
@@ -16,11 +17,12 @@ export default ({ mdxSource, frontMatter }) => {
       {content}
     </div>
   );
-};
+}
 
 // This glob is what will be used to generate static routes
 const contentGlob = 'src/blogs/*.mdx';
 
+/** @type {import('next').GetStaticPaths} */
 export async function getStaticPaths() {
   const files = glob.sync(contentGlob);
 
@@ -42,6 +44,7 @@ export async function getStaticPaths() {
   };
 }
 
+/** @type {import('next').GetStaticProps} */
 export async function getStaticProps({ params: { slug } }) {
   const files = glob.sync(contentGlob);
 

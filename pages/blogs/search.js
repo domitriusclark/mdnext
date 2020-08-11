@@ -5,7 +5,8 @@ import fs from 'fs';
 import glob from 'fast-glob';
 import matter from 'gray-matter';
 
-export default ({ allMdx }) => {
+/** @type {import('next').NextPage} */
+export default function SearchPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
 
   const handleFilter = (data) => {
@@ -26,8 +27,9 @@ export default ({ allMdx }) => {
       </Flex>
     </Flex>
   );
-};
+}
 
+/** @type {import('next').GetStaticProps} */
 export function getStaticProps() {
   const files = glob.sync('src/blogs/*.mdx');
 

@@ -13,6 +13,7 @@ import Navbar from '@components/Navbar';
 import NextApp from 'next/app';
 import SEO from '@components/SEO';
 
+/** @param {import('next/app').AppProps} ctx */
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={withPersistedTheme(pageProps.initialColorMode)}>

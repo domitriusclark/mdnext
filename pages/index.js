@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/core';
 
-export default () => {
+/** @type {import('next').NextPage} */
+export default function HomePage() {
   return <Flex direction="column"></Flex>;
-};
+}
