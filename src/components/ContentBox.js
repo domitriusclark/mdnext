@@ -1,5 +1,6 @@
+import { Box, Flex, Link, Text } from '@chakra-ui/core';
+
 import { Link as NextLink } from 'next/link';
-import { Box, Link, Text, Flex } from '@chakra-ui/core';
 
 export default function ContentBox({ blog }) {
   return (

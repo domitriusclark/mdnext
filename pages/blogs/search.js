@@ -1,11 +1,9 @@
-import { Flex } from '@chakra-ui/core';
-
-import glob from 'fast-glob';
-import fs from 'fs';
-import matter from 'gray-matter';
-
 import ContentBox from '@components/ContentBox';
+import { Flex } from '@chakra-ui/core';
 import Search from '@components/Search';
+import fs from 'fs';
+import glob from 'fast-glob';
+import matter from 'gray-matter';
 
 export default ({ allMdx }) => {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);

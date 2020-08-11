@@ -1,18 +1,16 @@
-import NextApp from 'next/app';
-
 import {
-  ThemeProvider,
-  ColorModeProvider,
   CSSReset,
+  ColorModeProvider,
   GlobalStyle,
+  ThemeProvider,
 } from '@chakra-ui/core';
-
 import {
-  withPersistedTheme,
   detectInitialColorMode,
+  withPersistedTheme,
 } from '@hooks/useThemePersistance';
 
 import Navbar from '@components/Navbar';
+import NextApp from 'next/app';
 import SEO from '@components/SEO';
 
 export default function App({ Component, pageProps }) {

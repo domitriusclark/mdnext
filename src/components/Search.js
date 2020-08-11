@@ -1,7 +1,7 @@
+import { Button, Flex, Input, Stack } from '@chakra-ui/core';
 import React, { useState } from 'react';
-import Fuse from 'fuse.js';
 
-import { Flex, Button, Stack, Input } from '@chakra-ui/core';
+import Fuse from 'fuse.js';
 
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 

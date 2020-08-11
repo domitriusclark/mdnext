@@ -1,6 +1,5 @@
-import { LightMode, DarkMode, useColorMode, Button } from '@chakra-ui/core';
-
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { Button, DarkMode, LightMode, useColorMode } from '@chakra-ui/core';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { useThemePersistence } from '@hooks/useThemePersistance';
 

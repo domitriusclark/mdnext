@@ -1,10 +1,9 @@
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
-import fs from 'fs';
-import matter from 'gray-matter';
-import glob from 'fast-glob';
-
 import Code from '@components/Code';
+import fs from 'fs';
+import glob from 'fast-glob';
+import hydrate from 'next-mdx-remote/hydrate';
+import matter from 'gray-matter';
+import renderToString from 'next-mdx-remote/render-to-string';
 
 const components = { code: Code };
 

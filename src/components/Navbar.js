@@ -1,6 +1,7 @@
-import { Flex, Text, Box, Link, Image } from '@chakra-ui/core';
-import ThemeTogglebutton from '@components/ThemeToggleButton';
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/core';
+
 import { Link as NextLink } from 'next/link';
+import ThemeTogglebutton from '@components/ThemeToggleButton';
 import { useImage } from 'use-cloudinary';
 
 function NavLink({ children, ...props }) {

@@ -1,5 +1,5 @@
-import { useClipboard } from '@chakra-ui/core';
 import { Button } from '@chakra-ui/core';
+import { useClipboard } from '@chakra-ui/core';
 
 export default function CopyButton({ value }) {
   const { onCopy, hasCopied } = useClipboard(value);
