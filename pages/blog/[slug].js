@@ -1,11 +1,11 @@
-import renderToString from "next-mdx-remote/render-to-string";
-import hydrate from "next-mdx-remote/hydrate";
-import fs from "fs";
-import matter from "gray-matter";
-import glob from "fast-glob";
+import renderToString from 'next-mdx-remote/render-to-string';
+import hydrate from 'next-mdx-remote/hydrate';
+import fs from 'fs';
+import matter from 'gray-matter';
+import glob from 'fast-glob';
 
-import Code from "@components/Code";
-import { Chakra } from "@components/Chakra";
+import Code from '@components/Code';
+import { Chakra } from '@components/Chakra';
 
 const components = { code: Code };
 
@@ -21,15 +21,15 @@ export default function BlogPost({ mdxSource, frontMatter }) {
 }
 
 // This glob is what will be used to generate static routes
-const contentGlob = "src/blogs/*.mdx";
+const contentGlob = 'src/blogs/*.mdx';
 
 export async function getStaticPaths() {
   const files = glob.sync(contentGlob);
 
   const paths = files.map((file) => {
-    const split = file.split("/");
+    const split = file.split('/');
     const filename = split[split.length - 1];
-    const slug = filename.replace(".mdx", "");
+    const slug = filename.replace('.mdx', '');
 
     return {
       params: {
@@ -48,16 +48,16 @@ export async function getStaticProps({ params: { slug } }) {
   const files = glob.sync(contentGlob);
 
   const fullPath = files.filter((item) => {
-    const split = item.split("/");
+    const split = item.split('/');
     const filename = split[split.length - 1];
-    return filename.replace(".mdx", "") === slug;
+    return filename.replace('.mdx', '') === slug;
   })[0];
 
   const mdxSource = fs.readFileSync(fullPath);
   const { content, data } = matter(mdxSource);
 
   if (!fullPath) {
-    console.warn("No MDX file found for slug");
+    console.warn('No MDX file found for slug');
   }
 
   const mdx = await renderToString(content, components, null, data);

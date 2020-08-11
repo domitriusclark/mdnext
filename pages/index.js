@@ -1,5 +1,5 @@
-import { Flex } from "@chakra-ui/core";
-import { Chakra } from "@components/Chakra";
+import { Flex } from '@chakra-ui/core';
+import { Chakra } from '@components/Chakra';
 
 export default function Index({ cookies }) {
   return (
@@ -9,4 +9,4 @@ export default function Index({ cookies }) {
   );
 }
 
-export { getServerSideProps } from "@components/Chakra";
+export { getServerSideProps } from '@components/Chakra';

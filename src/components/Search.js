@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 
-import {
-  Flex,
-  Button,
-  Stack,
-  Input
-} from '@chakra-ui/core';
+import { Flex, Button, Stack, Input } from '@chakra-ui/core';
 
-const TAG_LIST = [
-  'react',
-  'nextjs',
-  'chakra ui'
-];
+const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 
 const fuseOptions = {
   threshold: 0.35,
@@ -22,7 +13,7 @@ const fuseOptions = {
   shouldSort: true,
   includeScore: true,
   useExtendedSearch: true,
-  keys: ['title', 'tags',]
+  keys: ['title', 'tags'],
 };
 
 export default function Search({ blogs, handleFilter }) {
@@ -35,38 +26,38 @@ export default function Search({ blogs, handleFilter }) {
       handleFilter(blogs);
     } else {
       // Allow for a search for tag
-      const formattedTags = [...searchTags.map(item => ({ tags: item }))]
-      const formattedTitle = searchValue.length ? [{ title: searchValue }] : []
+      const formattedTags = [...searchTags.map((item) => ({ tags: item }))];
+      const formattedTitle = searchValue.length ? [{ title: searchValue }] : [];
       const queries = {
         $or: [
           { tags: searchValue },
           { title: searchValue },
           {
-            $and: [...formattedTags, ...formattedTitle]
-          }
-        ]
-      }
-      const results = fuse.search(queries).map(result => result.item);
-      handleFilter(results)
+            $and: [...formattedTags, ...formattedTitle],
+          },
+        ],
+      };
+      const results = fuse.search(queries).map((result) => result.item);
+      handleFilter(results);
     }
-  }, [searchValue, searchTags])
+  }, [searchValue, searchTags]);
 
   const onChange = (e) => {
     const { value } = e.target;
     setSearchValue(value);
-  }
+  };
 
   const onTagClick = (tag) => {
     if (searchTags.includes(tag)) {
-      setSearchTags(searchTags.filter(included => included != tag))
+      setSearchTags(searchTags.filter((included) => included != tag));
     } else {
-      setSearchTags([...searchTags, tag])
+      setSearchTags([...searchTags, tag]);
     }
-  }
+  };
 
   return (
-    <Flex direction='column' w={['100%', '75%', '50%']}>
-      <Flex justify='space-around'>
+    <Flex direction="column" w={['100%', '75%', '50%']}>
+      <Flex justify="space-around">
         <Stack spacing={4}>
           {TAG_LIST.map((tag, index) => (
             <Button onClick={() => onTagClick(tag)} key={index}>
@@ -77,5 +68,5 @@ export default function Search({ blogs, handleFilter }) {
       </Flex>
       <Input mt={6} value={searchValue} onChange={onChange} />
     </Flex>
-  )
+  );
 }
