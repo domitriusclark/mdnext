@@ -30,13 +30,13 @@ The opinionated starter for your MDX + Next.js needs
 We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
+npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 or
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
+yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 ## Usage
