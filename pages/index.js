@@ -1,10 +1,5 @@
-import {
-  Flex
-} from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/core";
 
-export default () => {
-  return (
-    <Flex direction="column">
-    </Flex>
-  )
+export default function Index() {
+  return <Flex direction="column"></Flex>;
 }

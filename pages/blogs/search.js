@@ -1,21 +1,18 @@
-import {
-  Flex,
-} from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/core";
 
-import glob from 'fast-glob';
-import fs from 'fs';
-import matter from 'gray-matter';
+import glob from "fast-glob";
+import fs from "fs";
+import matter from "gray-matter";
 
 import ContentBox from "@components/ContentBox";
 import Search from "@components/Search";
 
-export default ({ allMdx }) => {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx)
-
+export default function SearchPage({ allMdx }) {
+  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
 
   const handleFilter = (data) => {
-    setFilteredBlogs(data)
-  }
+    setFilteredBlogs(data);
+  };
 
   return (
     <Flex>
@@ -23,33 +20,36 @@ export default ({ allMdx }) => {
       <Flex direction="column" justify="center" alignItems="center" w="100%">
         <Search blogs={allMdx} handleFilter={handleFilter} />
         <Flex direction="column" justify="space-evenly" h="80vh">
-          {filteredBlogs && filteredBlogs.map(blog => <ContentBox key={blog.slug} blog={blog} />)}
+          {filteredBlogs &&
+            filteredBlogs.map((blog) => (
+              <ContentBox key={blog.slug} blog={blog} />
+            ))}
         </Flex>
       </Flex>
     </Flex>
-  )
+  );
 }
 
 export function getStaticProps() {
-  const files = glob.sync('src/blogs/*.mdx');
+  const files = glob.sync("src/blogs/*.mdx");
 
-  const allMdx = files.map(file => {
-    const split = file.split('/');
-    const filename = split[split.length - 1]
-    const slug = filename.replace('.mdx', '');
+  const allMdx = files.map((file) => {
+    const split = file.split("/");
+    const filename = split[split.length - 1];
+    const slug = filename.replace(".mdx", "");
 
     const mdxSource = fs.readFileSync(file);
     const { data } = matter(mdxSource);
 
     return {
       slug,
-      ...data
-    }
+      ...data,
+    };
   });
 
   return {
     props: {
-      allMdx
-    }
-  }
+      allMdx,
+    },
+  };
 }

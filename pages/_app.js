@@ -1,23 +1,18 @@
-import NextApp from 'next/app';
+import NextApp from "next/app";
 
-import {
-  ThemeProvider,
-  ColorModeProvider,
-  CSSReset,
-  GlobalStyle,
-} from "@chakra-ui/core";
+import { cookieStorageManager, ChakraProvider } from "@chakra-ui/core";
+import theme from "@chakra-ui/theme";
 
-import {
-  withPersistedTheme,
-  detectInitialColorMode,
-} from '@hooks/useThemePersistance';
-
-import Navbar from '@components/Navbar';
-import SEO from '@components/SEO';
+import Navbar from "@components/Navbar";
+import SEO from "@components/SEO";
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={withPersistedTheme(pageProps.initialColorMode)}>
+    <ChakraProvider
+      resetCSS
+      theme={theme}
+      storageManager={cookieStorageManager(pageProps.cookies)}
+    >
       <SEO
         title="Nextjs + MDX Starter pack"
         description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
@@ -27,42 +22,36 @@ export default function App({ Component, pageProps }) {
           title: "OG Image title",
           description: "Describe the OG image",
           image: ``,
-          siteName: "Your site name"
+          siteName: "Your site name",
         }}
         twitter={{
           handle: "@domitriusclark",
           site: "https://twitter.com/domitriusclark",
         }}
       />
-      <ColorModeProvider defaultValue={pageProps.initialColorMode}>
-        <CSSReset />
-        <Navbar />
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ColorModeProvider>
-    </ThemeProvider>
+      <Navbar />
+      <Component {...pageProps} />
+    </ChakraProvider>
   );
-};
+}
 
 export async function getInitialProps(props) {
   const {
     ctx,
-    Component: { getInitialProps }
+    Component: { getInitialProps },
   } = props;
 
   const appProps = await NextApp.getInitialProps(props);
-
-  const initialColorMode = detectInitialColorMode(ctx);
 
   const componentPageProps = getInitialProps ? await getInitialProps(ctx) : {};
 
   return {
     ...appProps,
     pageProps: {
-      initialColorMode,
-      ...componentPageProps
-    }
+      cookies: ctx.req.headers.cookie ?? "",
+      ...componentPageProps,
+    },
   };
-};
+}
 
 App.getInitialProps = getInitialProps;

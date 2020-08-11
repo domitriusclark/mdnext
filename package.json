@@ -7,8 +7,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-next.4",
-    "@chakra-ui/theme": "^1.0.0-next.4",
+    "@chakra-ui/core": "^1.0.0-rc.2",
+    "@chakra-ui/theme": "^1.0.0-rc.2",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",
@@ -21,7 +21,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "use-cloudinary": "^3.1.5"
+    "use-cloudinary": "^3.1.6"
   },
   "devDependencies": {},
   "license": "ISC",
