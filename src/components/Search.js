@@ -69,8 +69,8 @@ export default function Search({ blogs, handleFilter }) {
     <Flex direction='column' w={['100%', '75%', '50%']}>
       <Flex justify='space-around'>
         <Stack spacing={4}>
-          {TAG_LIST.map(tag => (
-            <Button onClick={() => onTagClick(tag)}>
+          {TAG_LIST.map((tag, index) => (
+            <Button onClick={() => onTagClick(tag)} key={index}>
               #{tag}
             </Button>
           ))}
