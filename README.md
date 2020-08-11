@@ -19,7 +19,7 @@ The opinionated starter for your MDX + Next.js needs
 - [Usage](#usage)
 - [MDX w/ `next-mdx-remote`](#mdx-w-next-mdx-remote)
 - [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
-- [Chakra UI -- Light + Dark Mode & Themeing](#chakra-ui----light--dark-mode--themeing)
+- [Chakra UI -- Light + Dark Mode & Theming](#chakra-ui----light--dark-mode--theming)
 - [Shoutouts](#shoutouts)
 - [TODO](#todo)
 
@@ -27,16 +27,24 @@ The opinionated starter for your MDX + Next.js needs
 
 ## Installation
 
-We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
+**Using [`create-next-app`](https://create-next-app.js.org)**
+
+We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org):
 
 ```bash
+# create-next-app via npx
 npx create-next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
+
+# create-next-app via yarn
+yarn create next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
 ```
 
-or
+**Using [`degit`](https://github.com/Rich-Harris/degit)**
+
+You can also apply this template without the `.git` metadata using [`degit`](https://github.com/Rich-Harris/degit):
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
+npx degit domitriusclark/mdnext your-project-name
 ```
 
 ## Usage
@@ -226,7 +234,7 @@ export default function Search({ blogs, handleFilter }) {
 }
 ```
 
-## Chakra UI -- Light + Dark Mode & Themeing
+## Chakra UI -- Light + Dark Mode & Theming
 
 Using the (currently experimental) v1 of [Chakra UI](https://chakra-ui.com), there was some new conversation about how to handle persisting a theme choice, especially when utilizing static + server rendering from specifically a Next.js perspective. The solution internally was to set a cookie to persist the theme, then read from that cookie to remove any flicker.
 
@@ -238,7 +246,7 @@ If you need to make changes to the theme or config of Dark & Light mode, look at
 
 Wanted to highlight some projects + people that helped inspire + round out this template.
 
-- [Ryan Warner](https://github.com/RyanWarner/next-mdx-digital-garden-starter)'s Next.js + MDX Digital Garden
+- [Ryan Warner](https://github.com/RyanWarner/next-mdx-digital-garden-starter)'s Next.js + MDX digital garden
 - [Prince](https://github.com/maxcell/prince.dev)'s blog
 - [Lee Robinson](https://github.com/leerob/leerob.io)'s blog
 
