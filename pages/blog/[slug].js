@@ -5,8 +5,10 @@ import matter from 'gray-matter'
 import glob from 'fast-glob'
 
 import Code from "@components/Code";
+
 export default ({ mdxSource, frontMatter }) => {
-  const content = hydrate(mdxSource);
+  const components = { code: Code }
+  const content = hydrate(mdxSource, components);
 
   return (
     <div>
@@ -60,7 +62,12 @@ export async function getStaticProps({ params: { slug } }) {
 
   const components = { code: Code };
 
-  const mdx = await renderToString(content, components, null, data);
+  const mdx = await renderToString(
+    content,
+    components,
+    null,
+    data
+  );
 
   return {
     props: {

@@ -16,13 +16,25 @@ export default function ThemeTogglebutton() {
   if (colorMode === "light") {
     return (
       <LightMode>
-        <Button onClick={toggleColorMode}><FiSun /></Button>
+        <Button
+          role="button"
+          aria-label="Toggle Theme"
+          onClick={toggleColorMode}
+        >
+          <FiSun />
+        </Button>
       </LightMode>
     )
   } else if (colorMode === "dark") {
     return (
       <DarkMode>
-        <Button onClick={toggleColorMode}><FiMoon /></Button>
+        <Button
+          role="button"
+          aria-label="Toggle Theme"
+          onClick={toggleColorMode}
+        >
+          <FiMoon />
+        </Button>
       </DarkMode>
     )
   }
