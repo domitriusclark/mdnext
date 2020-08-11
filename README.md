@@ -1,13 +1,33 @@
-# ✨ MDNEXT ✨
+<!-- markdownlint-disable MD033 MD041 -->
 
-The opinionated starter for your MDX + Next needs.
+![mdnext](./mdnext.png)
+
+<div align="center">
+
+The opinionated starter for your MDX + Next.js needs
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fnextjs-mdx)
 [![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/nextjs-mdx)
 
+<br/>
+
+</div>
+
+---
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [MDX w/ `next-mdx-remote`](#mdx-w-next-mdx-remote)
+- [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
+- [Chakra UI -- Light + Dark Mode & Themeing](#chakra-ui----light--dark-mode--themeing)
+- [Shoutouts](#shoutouts)
+- [TODO](#todo)
+
+---
+
 ## Installation
 
-We're going to apply this repo as a template to `create-next-app`
+We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
 npx create-next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
@@ -25,7 +45,7 @@ Out of the box this template comes with:
 
 - Local MDX examples + how to handle parsing + rendering them
 - Built in input & tag search
-- A growing list of components to pass to MDX and get up and running fast (thanks to Chakra)
+- A growing list of components to pass to MDX and get up and running fast (thanks to [Chakra UI](https://chakra-ui.com/))
 - Code highlighting + built in copy functionality
 - Light + Dark mode (with a persisted cookie based config)
 - SEO setup
@@ -35,7 +55,7 @@ Let's dig a bit into the tools used and where to get started in the project.
 
 ## MDX w/ `next-mdx-remote`
 
-To handle MDX flexibly -- mainly to allow MDX to come from any source,not just locally -- we utilize two functions from [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
+To handle MDX flexibly -- mainly to allow MDX to come from any source,not just locally -- we utilize two functions from [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote)
 
 - `renderToString(source: string, components: object, options?: object, scope?: object)`
   This function consumes a string of mdx along with any components it utilizes in the format { ComponentName: ActualComponent }. It also can optionally be passed options which are passed directly to mdx, and a scope object that can be included in the mdx scope. The function returns an object that is intended to be passed into hydrate directly.
@@ -124,9 +144,9 @@ export async function getStaticProps({ params: { slug } }) {
 }
 ```
 
-## Built in search w/ fuse.js
+## Built-in Search w/ Fuse.js
 
-A preconfigured `Search` component and accompanying page exist to demonstrate how you can build search easily into your site for your content. [Fuse.js](https://fusejs.io/) allows us to very easily build a fuzzy search (with a list of configurations) that we can use with Input or tag based searching.
+A preconfigured `Search` component and accompanying page exist to demonstrate how you can build search easily into your site for your content. [Fuse.js](https://fusejs.io) allows us to very easily build a fuzzy search (with a list of configurations) that we can use with Input or tag based searching.
 
 ```jsx
 // -- /src/components/Search.js
@@ -206,11 +226,11 @@ export default function Search({ blogs, handleFilter }) {
 }
 ```
 
-## Chakra -- Light + Dark Mode & themeing
+## Chakra UI -- Light + Dark Mode & Themeing
 
-Using the (currently experimental) v1 of Chakra, there was some new conversation about how to handle persisting a theme choice, especially when utilizing static + server rendering from specifically a NextJS perspective. The solution internally was to set a cookie to persist the theme, then read from that cookie to remove any flicker.
+Using the (currently experimental) v1 of [Chakra UI](https://chakra-ui.com), there was some new conversation about how to handle persisting a theme choice, especially when utilizing static + server rendering from specifically a Next.js perspective. The solution internally was to set a cookie to persist the theme, then read from that cookie to remove any flicker.
 
-Besides that, the component library itself comes with many goodies for things like configuring a theme, creating custom components through their `Box` model, and utilizing the many components / configurations given by default in Chakra 🥳
+Besides that, the component library itself comes with many goodies for things like configuring a theme, creating custom components through their `Box` model, and utilizing the many components / configurations given by default in Chakra UI. 🥳
 
 If you need to make changes to the theme or config of Dark & Light mode, look at `/pages/_app.js` / `/src/components/ThemeToggleButton` / `/src/hooks/useThemePersistance`
 
@@ -218,8 +238,8 @@ If you need to make changes to the theme or config of Dark & Light mode, look at
 
 Wanted to highlight some projects + people that helped inspire + round out this template.
 
-- [Ryan Warner](https://github.com/RyanWarner/next-mdx-digital-garden-starter)'s NextJS + MDX Digital Garden
-- [Prince](https://github.com/maxcell/prince.dev)'s Blog
+- [Ryan Warner](https://github.com/RyanWarner/next-mdx-digital-garden-starter)'s Next.js + MDX Digital Garden
+- [Prince](https://github.com/maxcell/prince.dev)'s blog
 - [Lee Robinson](https://github.com/leerob/leerob.io)'s blog
 
 ## TODO
