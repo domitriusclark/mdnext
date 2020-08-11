@@ -12,7 +12,7 @@ import {
   detectInitialColorMode,
 } from '@hooks/useThemePersistance';
 
-import Navbar from '@components/navbar';
+import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
 
 export default function App({ Component, pageProps }) {
