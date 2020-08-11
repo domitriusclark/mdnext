@@ -16,15 +16,17 @@ export default function ContentBox({ blog }) {
         borderRadius="8px"
         p={8}
       >
-        <Text _groupHover={{ textDecor: 'underline' }}>{blog.title}</Text>
-        <Text> By: {blog.author}</Text>
-        <Text>{blog.description}</Text>
-        <Stack direction="row">
-          {blog.tags.map((tag) => (
-            <Text mr={8} key={tag}>
-              #{tag}
-            </Text>
-          ))}
+        <Stack>
+          <Box>
+            <Text _groupHover={{ textDecor: 'underline' }}>{blog.title}</Text>
+            <Text> By: {blog.author}</Text>
+            <Text>{blog.description}</Text>
+          </Box>
+          <Stack direction="row" spacing={8}>
+            {blog.tags.map((tag) => (
+              <Text key={tag}>#{tag}</Text>
+            ))}
+          </Stack>
         </Stack>
       </Box>
     </Link>
