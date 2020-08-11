@@ -37,7 +37,7 @@ These functions allow us to parse MDX as a source in our lifecycle methods like 
 
 ```jsx
 
-/pages/blog/[slug].js
+// -- /pages/blog/[slug].js
 
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
