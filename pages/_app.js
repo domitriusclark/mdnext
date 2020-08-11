@@ -5,7 +5,7 @@ import {
   ColorModeProvider,
   CSSReset,
   GlobalStyle,
-} from "@chakra-ui/core";
+} from '@chakra-ui/core';
 
 import {
   withPersistedTheme,
@@ -23,15 +23,15 @@ export default function App({ Component, pageProps }) {
         description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
         url="www.whatever.com"
         ogImage={{
-          url: "www.whatever.com",
-          title: "OG Image title",
-          description: "Describe the OG image",
+          url: 'www.whatever.com',
+          title: 'OG Image title',
+          description: 'Describe the OG image',
           image: ``,
-          siteName: "Your site name"
+          siteName: 'Your site name',
         }}
         twitter={{
-          handle: "@domitriusclark",
-          site: "https://twitter.com/domitriusclark",
+          handle: '@domitriusclark',
+          site: 'https://twitter.com/domitriusclark',
         }}
       />
       <ColorModeProvider defaultValue={pageProps.initialColorMode}>
@@ -42,12 +42,12 @@ export default function App({ Component, pageProps }) {
       </ColorModeProvider>
     </ThemeProvider>
   );
-};
+}
 
 export async function getInitialProps(props) {
   const {
     ctx,
-    Component: { getInitialProps }
+    Component: { getInitialProps },
   } = props;
 
   const appProps = await NextApp.getInitialProps(props);
@@ -60,9 +60,9 @@ export async function getInitialProps(props) {
     ...appProps,
     pageProps: {
       initialColorMode,
-      ...componentPageProps
-    }
+      ...componentPageProps,
+    },
   };
-};
+}
 
 App.getInitialProps = getInitialProps;

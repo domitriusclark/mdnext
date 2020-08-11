@@ -19,7 +19,7 @@ export default function Code({ children, className }) {
             overflow: 'scroll',
             marginTop: 20,
             marginBottom: 20,
-            padding: 16
+            padding: 16,
           }}
         >
           {tokens.map((line, i) => (

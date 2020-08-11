@@ -11,10 +11,12 @@ export const THEME_COOKIE_NAME = 'chakra-ui-color-mode';
  * If theme.config.initialColorMode is missing, falls back to 'light'.
  */
 export const detectInitialColorMode = (ctx) => {
-  return (nextCookies(ctx)[THEME_COOKIE_NAME] ||
+  return (
+    nextCookies(ctx)[THEME_COOKIE_NAME] ||
     theme.config?.initialColorMode ||
-    'light')
-}
+    'light'
+  );
+};
 
 /**
  *  Spreads the theme, overwriting `initialColorMode` key to `theme.config`.

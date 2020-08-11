@@ -69,14 +69,14 @@ These functions allow us to parse MDX as a source in our lifecycle methods like 
 ```jsx
 // -- /pages/blog/[slug].js
 
-import renderToString from "next-mdx-remote/render-to-string";
-import hydrate from "next-mdx-remote/hydrate";
-import fs from "fs";
-import matter from "gray-matter";
-import glob from "fast-glob";
+import renderToString from 'next-mdx-remote/render-to-string';
+import hydrate from 'next-mdx-remote/hydrate';
+import fs from 'fs';
+import matter from 'gray-matter';
+import glob from 'fast-glob';
 
-import Iframe from "@components/Iframe";
-import Code from "@components/Code";
+import Iframe from '@components/Iframe';
+import Code from '@components/Code';
 
 // Components that pass to the MDX
 const components = { code: Code, Iframe };
@@ -94,15 +94,15 @@ export default ({ mdxSource, frontMatter }) => {
 };
 
 // This glob is what will be used to generate static routes
-const contentGlob = "src/blogs/*.mdx";
+const contentGlob = 'src/blogs/*.mdx';
 
 export async function getStaticPaths() {
   const files = glob.sync(contentGlob);
 
   const paths = files.map((file) => {
-    const split = file.split("/");
+    const split = file.split('/');
     const filename = split[split.length - 1];
-    const slug = filename.replace(".mdx", "");
+    const slug = filename.replace('.mdx', '');
 
     return {
       params: {
@@ -121,16 +121,16 @@ export async function getStaticProps({ params: { slug } }) {
   const files = glob.sync(contentGlob);
 
   const fullPath = files.filter((item) => {
-    const split = item.split("/");
+    const split = item.split('/');
     const filename = split[split.length - 1];
-    return filename.replace(".mdx", "") === slug;
+    return filename.replace('.mdx', '') === slug;
   })[0];
 
   const mdxSource = fs.readFileSync(fullPath);
   const { content, data } = matter(mdxSource);
 
   if (!fullPath) {
-    console.warn("No MDX file found for slug");
+    console.warn('No MDX file found for slug');
   }
 
   const mdx = await renderToString(content, components, null, data);
@@ -151,12 +151,12 @@ A preconfigured `Search` component and accompanying page exist to demonstrate ho
 ```jsx
 // -- /src/components/Search.js
 
-import React, { useState } from "react";
-import Fuse from "fuse.js";
+import React, { useState } from 'react';
+import Fuse from 'fuse.js';
 
-import { Flex, Button, Stack, Input } from "@chakra-ui/core";
+import { Flex, Button, Stack, Input } from '@chakra-ui/core';
 
-const TAG_LIST = ["react", "nextjs", "chakra ui"];
+const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 
 // Configuration options for refining your fuzzy search
 const fuseOptions = {
@@ -167,18 +167,18 @@ const fuseOptions = {
   shouldSort: true,
   includeScore: true,
   useExtendedSearch: true,
-  keys: ["title", "tags"],
+  keys: ['title', 'tags'],
 };
 
 export default function Search({ blogs, handleFilter }) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [searchTags, setSearchTags] = useState([]);
 
   // New instance of your search w/ the content it's searching and the options from your config
   const fuse = new Fuse(blogs, fuseOptions);
 
   React.useEffect(() => {
-    if (searchValue === "" && searchTags.length === 0) {
+    if (searchValue === '' && searchTags.length === 0) {
       handleFilter(blogs);
     } else {
       // Allow for a search for tag
@@ -212,7 +212,7 @@ export default function Search({ blogs, handleFilter }) {
   };
 
   return (
-    <Flex direction="column" w={["100%", "75%", "50%"]}>
+    <Flex direction="column" w={['100%', '75%', '50%']}>
       <Flex justify="space-around">
         <Stack spacing={4}>
           {TAG_LIST.map((tag) => (
