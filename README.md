@@ -1,6 +1,8 @@
 # ✨ MDNEXT ✨
 ---
 The opinionated starter for your MDX + Next needs. 
+<br />
+<br />
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fnextjs-mdx)
 
 # Installation
