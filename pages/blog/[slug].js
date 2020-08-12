@@ -5,19 +5,22 @@ import matter from 'gray-matter';
 import glob from 'fast-glob';
 
 import Code from '@components/Code';
+import { Chakra } from '@components/Chakra';
 
 const components = { code: Code };
 
-export default ({ mdxSource, frontMatter }) => {
+export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, components);
 
   return (
-    <div>
-      <h1>{frontMatter.title}</h1>
-      {content}
-    </div>
+    <Chakra>
+      <div>
+        <h1>{frontMatter.title}</h1>
+        {content}
+      </div>
+    </Chakra>
   );
-};
+}
 
 // This glob is what will be used to generate static routes
 const contentGlob = 'src/blogs/*.mdx';
