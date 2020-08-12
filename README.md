@@ -43,19 +43,19 @@ yarn create next-app your-project-name -e https://github.com/domitriusclark/mdne
 
 Out of the box this template comes with:
 
-- Local MDX examples + how to handle parsing + rendering them
+- Local MDX examples + how to handle parsing & rendering them
 - Built in input & tag search
 - A growing list of components to pass to MDX and get up and running fast (thanks to [Chakra UI](https://chakra-ui.com/))
 - Code highlighting + built in copy functionality
-- Light + Dark mode (with a persisted cookie based config)
-- SEO setup
-- Absolute import path config
+- Built in light + dark mode
+- SEO defaults + configuration
+- Absolute import path support 
 
 Let's dig a bit into the tools used and where to get started in the project.
 
 ## MDX w/ `next-mdx-remote`
 
-To handle MDX flexibly -- mainly to allow MDX to come from any source,not just locally -- we utilize two functions from [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote)
+To focus on flexibility of where our markdown can be sourced, we utilize two functions from [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote).
 
 - `renderToString(source: string, components: object, options?: object, scope?: object)`
   This function consumes a string of mdx along with any components it utilizes in the format { ComponentName: ActualComponent }. It also can optionally be passed options which are passed directly to mdx, and a scope object that can be included in the mdx scope. The function returns an object that is intended to be passed into hydrate directly.
@@ -82,7 +82,7 @@ import Code from '@components/Code';
 const components = { code: Code, Iframe };
 
 export default ({ mdxSource, frontMatter }) => {
-  // we now have the string passed from renderToString that we can turn into something we can render
+  // statically render + hydrate content passed to us from our renderToString output
   const content = hydrate(mdxSource, components);
 
   return (
@@ -146,7 +146,7 @@ export async function getStaticProps({ params: { slug } }) {
 
 ## Built-in Search w/ Fuse.js
 
-A preconfigured `Search` component and accompanying page exist to demonstrate how you can build search easily into your site for your content. [Fuse.js](https://fusejs.io) allows us to very easily build a fuzzy search (with a list of configurations) that we can use with Input or tag based searching.
+A preconfigured `Search` component and accompanying page exist to demonstrate one way you can build out some search functionality for your content. [Fuse.js](https://fusejs.io) allows us to quickly build a fuzzy search (with a list of configurations) that we can use with Input or tag based searching.
 
 ```jsx
 // -- /src/components/Search.js
@@ -228,11 +228,9 @@ export default function Search({ blogs, handleFilter }) {
 
 ## Chakra UI -- Light + Dark Mode & Themeing
 
-Using the (currently experimental) v1 of [Chakra UI](https://chakra-ui.com), there was some new conversation about how to handle persisting a theme choice, especially when utilizing static + server rendering from specifically a Next.js perspective. The solution internally was to set a cookie to persist the theme, then read from that cookie to remove any flicker.
+Using the (currently experimental) v1 of [Chakra UI](https://next.chakra-ui.com/), has given us the tools to handle theme persistence via cookies.
 
-Besides that, the component library itself comes with many goodies for things like configuring a theme, creating custom components through their `Box` model, and utilizing the many components / configurations given by default in Chakra UI. 🥳
-
-If you need to make changes to the theme or config of Dark & Light mode, look at `/pages/_app.js` / `/src/components/ThemeToggleButton` / `/src/hooks/useThemePersistance`
+That combined with approachable & accessible components, direct theme config, and room to experiment for custom needs, gives this template the flexibility & cohesiveness to get you started on building your projects with confidence.
 
 ## Shoutouts
 
@@ -242,9 +240,8 @@ Wanted to highlight some projects + people that helped inspire + round out this 
 - [Prince](https://github.com/maxcell/prince.dev)'s blog
 - [Lee Robinson](https://github.com/leerob/leerob.io)'s blog
 
-## TODO
+## Contributing
 
-- [ ] Build out a more useful base of components to pass to our MDX
-- [ ] Some tests
-- [ ] Improved Lighthouse scores (currently 80+ in all, but would love to push this further)
-- [ ] Examples of different CMS choices in an 'examples' directory
+WIP!
+
+Currently listing some discussion + features in [issues](https://github.com/domitriusclark/mdnext/issues)!
