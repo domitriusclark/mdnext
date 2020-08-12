@@ -16,7 +16,7 @@ export default function SearchPage({ allMdx }) {
   };
 
   return (
-    <Chakra evalutateThemeLazily>
+    <Chakra evaluateThemeLazily>
       <Flex>
         {/* Content Area + Input + Tag filter */}
         <Flex direction="column" justify="center" alignItems="center" w="100%">
