@@ -9,7 +9,7 @@ import { Chakra } from '@components/Chakra';
 
 const components = { code: Code };
 
-export default ({ mdxSource, frontMatter }) => {
+export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, components);
 
   return (
@@ -20,7 +20,7 @@ export default ({ mdxSource, frontMatter }) => {
       </div>
     </Chakra>
   );
-};
+}
 
 // This glob is what will be used to generate static routes
 const contentGlob = 'src/blogs/*.mdx';
