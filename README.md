@@ -6,8 +6,8 @@
 
 The opinionated starter for your MDX + Next.js needs
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fnextjs-mdx)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/nextjs-mdx)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext)
 
 <br/>
 
@@ -49,7 +49,7 @@ Out of the box this template comes with:
 - Code highlighting + built in copy functionality
 - Built in light + dark mode
 - SEO defaults + configuration
-- Absolute import path support 
+- Absolute import path support
 
 Let's dig a bit into the tools used and where to get started in the project.
 
