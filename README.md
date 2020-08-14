@@ -19,24 +19,32 @@ The opinionated starter for your MDX + Next.js needs
 - [Usage](#usage)
 - [MDX w/ `next-mdx-remote`](#mdx-w-next-mdx-remote)
 - [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
-- [Chakra UI -- Light + Dark Mode & Themeing](#chakra-ui----light--dark-mode--themeing)
+- [Chakra UI -- Light + Dark Mode & Theming](#chakra-ui----light--dark-mode--theming)
 - [Shoutouts](#shoutouts)
-- [TODO](#todo)
+- [Contributing](#contributing)
 
 ---
 
 ## Installation
 
+**Using [`create-next-app`](https://create-next-app.js.org)**
+
 We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext
+# create-next-app via npx
+npx create-next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
+
+# create-next-app via yarn
+yarn create next-app your-project-name -e https://github.com/domitriusclark/nextjs-mdx
 ```
 
-or
+**Using [`degit`](https://github.com/Rich-Harris/degit)**
+
+You can also apply this template without the `.git` metadata using [`degit`](https://github.com/Rich-Harris/degit):
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext
+npx degit domitriusclark/mdnext your-project-name
 ```
 
 ## Usage
@@ -226,7 +234,7 @@ export default function Search({ blogs, handleFilter }) {
 }
 ```
 
-## Chakra UI -- Light + Dark Mode & Themeing
+## Chakra UI -- Light + Dark Mode & Theming
 
 Using the (currently experimental) v1 of [Chakra UI](https://next.chakra-ui.com/), has given us the tools to handle theme persistence via cookies.
 
