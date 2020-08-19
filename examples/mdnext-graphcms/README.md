@@ -6,6 +6,9 @@
 
 The opinionated starter for your MDX + Next.js needs
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext)
+
 <br/>
 
 </div>
@@ -27,13 +30,13 @@ The opinionated starter for your MDX + Next.js needs
 We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/packages/mdnext
+npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 or
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/packages/mdnext
+yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 ## Usage
