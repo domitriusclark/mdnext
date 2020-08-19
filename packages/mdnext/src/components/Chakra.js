@@ -3,6 +3,7 @@ import {
   ChakraProvider,
   useColorMode,
   storageKey,
+  Box,
 } from '@chakra-ui/core';
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
@@ -17,9 +18,9 @@ export function Chakra({ children, cookies = '', evaluateThemeLazily }) {
       storageManager={cookieStorageManager(cookies)}
     >
       <SEO
-        title="Domitrius' personal lair"
-        description="Built on top of MDNEXT to write things about tech and games"
-        url="www.domitrius.dev"
+        title="Nextjs + MDX Starter pack"
+        description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
+        url="www.whatever.com"
         ogImage={{
           url: 'www.whatever.com',
           title: 'OG Image title',
@@ -34,7 +35,7 @@ export function Chakra({ children, cookies = '', evaluateThemeLazily }) {
       />
       <Navbar />
       {evaluateThemeLazily && <LazyThemeEvaluator />}
-      {children}
+      <Box mx={[2, 0]}>{children}</Box>
     </ChakraProvider>
   );
 }

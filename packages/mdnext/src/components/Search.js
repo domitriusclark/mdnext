@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 
-import { Flex, Button, Stack, Input } from '@chakra-ui/core';
+import { Flex, Stack, Input } from '@chakra-ui/core';
 
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 
@@ -56,17 +56,16 @@ export default function Search({ blogs, handleFilter }) {
   };
 
   return (
-    <Flex direction="column" w={['100%', '75%', '50%']}>
+    <Stack
+      direction="column"
+      w={['100%', '75%', '50%']}
+      align="center"
+      spacing={[6, 8, 10]}
+    >
       <Flex justify="space-around">
-        <Stack spacing={4}>
-          {TAG_LIST.map((tag, index) => (
-            <Button onClick={() => onTagClick(tag)} key={index}>
-              #{tag}
-            </Button>
-          ))}
-        </Stack>
+        <TagList tags={TAG_LIST} value={searchTags} onChange={setSearchTags} />
       </Flex>
-      <Input mt={6} value={searchValue} onChange={onChange} />
-    </Flex>
+      <Input value={searchValue} onChange={onChange} />
+    </Stack>
   );
 }
