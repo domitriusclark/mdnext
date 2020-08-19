@@ -2,6 +2,7 @@ import { Link as NextLink } from 'next/link';
 import { Box, Link, Text, Stack } from '@chakra-ui/core';
 
 export default function ContentBox({ blog }) {
+  console.log(blog);
   return (
     <Link
       as={NextLink}
