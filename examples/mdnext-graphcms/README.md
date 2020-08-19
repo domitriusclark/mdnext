@@ -6,6 +6,9 @@
 
 The opinionated starter for your MDX + Next.js needs
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext)
+
 <br/>
 
 </div>
@@ -24,28 +27,16 @@ The opinionated starter for your MDX + Next.js needs
 
 ## Installation
 
-To install the base template, we're going to apply our base path to [`create-next-app`](https://create-next-app.js.org/):
+We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/packages/mdnext
+npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 or
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/packages/mdnext
-```
-
-If instead you'd like to use one of the opinionated example templates you can apply them similarly:
-
-```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/examples/{example-template-name}
-```
-
-or
-
-```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/examples/{example-template-name}
+yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext
 ```
 
 ## Usage
