@@ -24,16 +24,28 @@ The opinionated starter for your MDX + Next.js needs
 
 ## Installation
 
-We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
+To install the base template, we're going to apply our base path to [`create-next-app`](https://create-next-app.js.org/):
 
 ```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/packages/mdnext
+npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/packages/mdnext
 ```
 
 or
 
 ```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/packages/mdnext
+yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/packages/mdnext
+```
+
+If instead you'd like to use one of the opinionated example templates you can apply them similarly:
+
+```bash
+npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/examples/{example-template-name}
+```
+
+or
+
+```bash
+yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext/tree/master/examples/{example-template-name}
 ```
 
 ## Usage
