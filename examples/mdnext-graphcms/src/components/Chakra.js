@@ -3,10 +3,11 @@ import {
   ChakraProvider,
   useColorMode,
   storageKey,
+  Box,
 } from '@chakra-ui/core';
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
-import theme from '@chakra-ui/theme';
+import theme from '@theme';
 import { useEffect } from 'react';
 
 export function Chakra({ children, cookies = '', evaluateThemeLazily }) {
@@ -34,7 +35,7 @@ export function Chakra({ children, cookies = '', evaluateThemeLazily }) {
       />
       <Navbar />
       {evaluateThemeLazily && <LazyThemeEvaluator />}
-      {children}
+      <Box mx={[2, 0]}>{children}</Box>
     </ChakraProvider>
   );
 }
