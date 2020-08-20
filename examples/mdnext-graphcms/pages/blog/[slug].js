@@ -10,7 +10,7 @@ import { Chakra } from '@components/Chakra';
 const components = { code: Code };
 
 export default function BlogPost({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, components);
+  const content = hydrate(mdxSource, { components });
 
   return (
     <Chakra evaluateThemeLazily>
@@ -62,7 +62,7 @@ export async function getStaticProps({ params: { slug } }) {
     console.warn('No MDX file found for slug');
   }
 
-  const mdx = await renderToString(content, components, null, data);
+  const mdx = await renderToString(content, { components, scope: data });
 
   return {
     props: {
