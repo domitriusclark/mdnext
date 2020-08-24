@@ -24,7 +24,7 @@ const colorModeTheme = {
     },
   },
 };
-export default {
+const TagButton = {
   baseStyle: ({ colorMode }) => {
     const colorModeStyles =
       colorMode === 'light' ? colorModeTheme.light : colorModeTheme.dark;
@@ -42,3 +42,5 @@ export default {
     };
   },
 };
+
+export default TagButton;

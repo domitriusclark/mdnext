@@ -1,12 +1,9 @@
 import defaultTheme from '@chakra-ui/theme';
-import TagButton from './components/tag-button';
+import components from './components';
 
 const theme = {
   ...defaultTheme,
-  components: {
-    ...defaultTheme.components,
-    TagButton,
-  },
+  components,
 };
 
 export default theme;
