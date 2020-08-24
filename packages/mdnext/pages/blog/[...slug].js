@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
     return {
       params: {
-        slug: [...slug.split('/')],
+        slug: slug.split('/'),
       },
     };
   });
