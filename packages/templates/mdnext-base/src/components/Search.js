@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 
 import { Flex, Stack, Input } from '@chakra-ui/core';
 
-import TagList from './TagList'
+import TagList from './TagList';
 
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 

@@ -1,65 +1,47 @@
 {
   "name": "mdnext",
-  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) content inside your NextJS app w/ Frontmatter & layouts thanks to next-mdx-enhanced.",
-  "version": "1.0.1",
-  "repository": "https://github.com/domitriusclark/mdnext.git",
-  "author": "domitriusclark",
-  "main": "next.config.js",
-  "scripts": {
-    "build": "next build",
-    "dev": "next",
-    "start": "next start",
-    "format": "yarn format:index && yarn format:pages && yarn format:src",
-    "format:index": "prettier --write \"*.{js,json,md}\"",
-    "format:pages": "prettier --write \"pages/**/*.js\"",
-    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  "description": "Select and scaffold MDNEXT based templates using this CLI.",
+  "version": "0.0.0",
+  "author": "DomitriusAnthony @domitriusclark",
+  "bin": {
+    "mdnext": "./bin/run"
   },
+  "bugs": "https://github.com/domitriusclark/mdnext/issues",
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-rc.2",
-    "@chakra-ui/theme": "^1.0.0-rc.2",
-    "fast-glob": "^3.2.4",
-    "fuse.js": "^6.4.1",
-    "gray-matter": "^4.0.2",
-    "js-cookie": "^2.2.1",
-    "next": "^9.5.2",
-    "next-cookies": "^2.0.3",
-    "next-mdx-remote": "^1.0.0",
-    "next-seo": "^4.7.3",
-    "prism-react-renderer": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.11.0",
-    "use-cloudinary": "^3.1.6"
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "copy-template-dir": "^1.4.0",
+    "enquirer": "^2.3.6",
+    "tslib": "^1"
   },
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "@oclif/dev-cli": "^1",
+    "@types/node": "^10",
+    "ts-node": "^8",
+    "typescript": "^3.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "engines": {
+    "node": ">=8.0.0"
   },
-  "lint-staged": {
-    "*.{js,json,md}": [
-      "prettier --write"
-    ],
-    "pages/**/*.js": [
-      "prettier --write"
-    ],
-    "src/**/*.{js,md,mdx}": [
-      "prettier --write"
-    ]
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "keywords": [
-    "nextjs",
-    "mdx"
+  "files": [
+    "/bin",
+    "/lib"
   ],
-  "license": "ISC"
+  "homepage": "https://github.com/domitriusclark/mdnext",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "mdnext"
+  },
+  "repository": "domitriusclark/mdnext",
+  "scripts": {
+    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
 }
