@@ -1,10 +1,10 @@
 /* eslint-disable object-curly-spacing */
 import { Command, flags } from '@oclif/command'
 const { prompt } = require("enquirer")
-const copy = require("copy-template-dir")
 const path = require("path")
 const fs = require("fs")
 const util = require("util")
+const degit = require('degit');
 
 
 class Mycli extends Command {
@@ -16,11 +16,6 @@ class Mycli extends Command {
     // add --version flag to show CLI version
     version: flags.version({ char: 'v' }),
     help: flags.help({ char: 'h' }),
-    // flag with a value (-n, --name=VALUE)
-    username: flags.string({
-      char: 'u',
-      description: 'Your github username',
-    }),
     projectName: flags.string({
       char: 'p',
       description: 'Your project name',
@@ -37,18 +32,6 @@ class Mycli extends Command {
 
   async run() {
     const { args, flags } = this.parse(Mycli)
-
-    // USERNAME 
-    if (typeof flags.username === 'undefined') {
-      flags.username = await prompt({
-        type: 'input',
-        name: 'username',
-        message: 'What is your github username?',
-        required: true
-      })
-        .then(({ username, }: { username: string }) => username)
-        .catch(console.error)
-    }
 
     // PROJECT NAME 
     if (typeof flags.projectName === 'undefined') {
@@ -86,18 +69,18 @@ class Mycli extends Command {
       this.log(`you input --force and --file: ${args.file}`)
     }
 
-    const username = flags.projectName
     const projectName = flags.projectName
     const template = flags.template
 
-    const vars = { projectName: projectName, username: username }
-    const inDir = path.resolve(__dirname, `../templates/${template}`)
-    const outDir = path.join(process.cwd(), projectName)
+    const emitter = degit(`domitriusclark/${template}`, {
+      cache: true,
+      force: true,
+      verbose: true,
+    });
 
-    copy(inDir, outDir, vars, (err: Error, createdFiles: string[]) => {
-      if (err) throw err;
-      console.log("DONE~")
-    })
+    emitter.clone(`${projectName}`).then(() => {
+      console.log('done');
+    });
 
   }
 }
