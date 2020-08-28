@@ -21,23 +21,9 @@ The opinionated starter for your MDX + Next.js needs
 - [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
 - [Chakra UI -- Light + Dark Mode & Themeing](#chakra-ui----light--dark-mode--themeing)
 - [Shoutouts](#shoutouts)
-- [TODO](#todo)
+- [Contributing](#contributing)
 
 ---
-
-## Installation
-
-We're going to apply this repo as a template to [`create-next-app`](https://create-next-app.js.org/):
-
-```bash
-npx create-next-app your-project-name -e https://github.com/domitriusclark/mdnext
-```
-
-or
-
-```bash
-yarn create next-app your-project-name -e https://github.com/domitriusclark/mdnext
-```
 
 ## Usage
 
