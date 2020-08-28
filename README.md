@@ -44,7 +44,7 @@ MDNEXT itself is a collection of opinionated templates, focused on getting you u
 - Styling
 - Handling MDX and how to source it
 - Media handling + optimization
-- + a lot more awesome integrations
+- && a lot more awesome integrations to come 
 
 While these opinions may come installed, you are able to plug and play with your favorite tools as you see fit.
 If you find yourself building out a project you think might be a useful template, definitely submit your project!
