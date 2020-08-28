@@ -39,13 +39,15 @@ yarn mdnext
 
 ## Templates
 
-Templates serve as a base to get started w/ opinoins surruonding the type of project. These projects come with plugged in opinion surrounding:
+MDNEXT itself is a collection of opinionated templates, focused on getting you up and running quickly with your NextJS + MDX based projects. Local content blogs, CMS powered solutions, and ecommerce ready sites all built around awesome tools from our ecosystem. These tools help with:
 
 - Styling
 - Handling MDX and how to source it
 - Media handling + optimization
+- + a lot more awesome integrations
 
-&& a handful of others. These opinions may not fit your use case (and if you think it might be a good template -- we'd love to talk about it), but allow you to plug and play as you see fit. 
+While these opinions may come installed, you are able to plug and play with your favorite tools as you see fit.
+If you find yourself building out a project you think might be a useful template, definitely submit your project!
 
 Current templates:
 - [mdnext-base](https://github.com/domitriusclark/mdnext-base) -
