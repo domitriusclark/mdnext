@@ -1,7 +1,7 @@
 {
   "name": "mdnext",
   "description": "Select and clone MDX + NextJS starters easily with our CLI.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "DomitriusAnthony @domitriusclark",
   "bin": {
     "mdnext": "./bin/run"
