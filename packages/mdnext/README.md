@@ -1,38 +1,39 @@
-# mdnext
+<!-- markdownlint-disable MD033 MD041 -->
 
-Select and scaffold MDNEXT based templates using this CLI.
+![mdnext](./mdnext.png)
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/mdnext.svg)](https://npmjs.org/package/mdnext)
-[![Downloads/week](https://img.shields.io/npm/dw/mdnext.svg)](https://npmjs.org/package/mdnext)
-[![License](https://img.shields.io/npm/l/mdnext.svg)](https://github.com/domitriusclark/mdnext/blob/master/package.json)
+<div align="center">
 
-<!-- toc -->
+A CLI to get your projects up and running fast with opinionated NextJS + MDX starters
 
+<br/>
+
+</div>
+
+---
+
+- [Installation](#installation)
 - [Usage](#usage)
-- [Commands](#commands)
-<!-- tocstop -->
 
-# Usage
+---
 
-<!-- usage -->
+## Installation
 
-```sh-session
-$ npm install -g mdnext
-$ mdnext COMMAND
-running command...
-$ mdnext (-v|--version|version)
-mdnext/0.0.0 darwin-x64 node-v12.16.0
-$ mdnext --help [COMMAND]
-USAGE
-  $ mdnext COMMAND
-...
+You can either use directly with `npx`
+```bash
+npx mdnext {your-project-name}
 ```
 
-<!-- usagestop -->
+or
 
-# Commands
+You can install it globally
+```bash
+yarn add -G mdnext
+```
+then use it like 
+```bash
+yarn mdnext {your-project-name}
+```
 
-<!-- commands -->
 
-<!-- commandsstop -->
+## Usage
