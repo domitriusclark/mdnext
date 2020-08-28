@@ -46,7 +46,7 @@ class Mycli extends Command {
     // TEMPLATE SELECT
     if (typeof flags.template === 'undefined') {
       //joining path of directory 
-      const url = "https://api.github.com/repos/domitriusclark/mdnext/contents/examples"
+      const url = "https://api.github.com/repos/domitriusclark/mdnext/contents/templates"
 
       const dirNames: any = [];
       const getData = async (url: string) => {
