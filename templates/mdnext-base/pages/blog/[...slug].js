@@ -25,18 +25,23 @@ export default function BlogPost({ mdxSource, frontMatter }) {
 
 // This glob is what will be used to generate static routes
 const contentPath = 'src/blogs';
-const contentGlob = `${contentPath}/**/*.mdx`;
+export const contentGlob = `${contentPath}/**/*.mdx`;
+export const getBlogFileSlug = (blogFilePath) => {
+  const filename = blogFilePath.replace(`${contentPath}/`, '');
+  const slug = filename.replace(
+    new RegExp(path.extname(blogFilePath) + '$'),
+    '',
+  );
+  return slug;
+};
 
 export async function getStaticPaths() {
   const files = glob.sync(contentGlob);
 
   const paths = files.map((file) => {
-    const filename = file.replace(`${contentPath}/`, '');
-    const slug = filename.replace(new RegExp(path.extname(file) + '$'), '');
-
     return {
       params: {
-        slug: slug.split('/'),
+        slug: getBlogFileSlug(file).split('/'),
       },
     };
   });
