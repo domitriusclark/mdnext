@@ -1,8 +1,8 @@
 {
-  "name": "mdnext",
-  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) content inside your NextJS app w/ Frontmatter & layouts thanks to next-mdx-enhanced.",
+  "name": "mdnext-base",
+  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) with NextJS utilizing next-mdx-remote",
   "version": "1.0.1",
-  "repository": "https://github.com/domitriusclark/mdnext.git",
+  "repository": "https://github.com/domitriusclark/mdnext-base.git",
   "author": "domitriusclark",
   "main": "next.config.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "mdnext",
-  "description": "Select and scaffold MDNEXT based templates using this CLI.",
+  "description": "Select and clone MDX + NextJS starters easily with our CLI.",
   "version": "0.0.0",
   "author": "DomitriusAnthony @domitriusclark",
   "bin": {
@@ -30,7 +30,9 @@
   ],
   "homepage": "https://github.com/domitriusclark/mdnext",
   "keywords": [
-    "oclif"
+    "oclif",
+    "nextjs",
+    "mdx"
   ],
   "license": "MIT",
   "main": "lib/index.js",
