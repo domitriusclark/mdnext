@@ -54,5 +54,5 @@ Current templates:
 A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data. 
 
 - [mdnext-graphcms](https://github.com/domitriusclark/mdnext-graphcms) -
-Utilizing [GraphCMS](https://graphcms.com) as a datasource for our blog posts, gives an example of how you'd use markdown from the CMS and use it in your Next project.
+Utilizing [GraphCMS](https://graphcms.com) as a datasource for our blog posts, gives an example of how you'd pull markdown from the CMS and use it in your Next project.
 
