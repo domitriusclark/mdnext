@@ -1,9 +1,7 @@
 /* eslint-disable object-curly-spacing */
 import { Command, flags } from '@oclif/command'
+const fetch = require("node-fetch");
 const { prompt } = require("enquirer")
-const path = require("path")
-const fs = require("fs")
-const util = require("util")
 const degit = require('degit');
 
 
@@ -48,15 +46,27 @@ class Mycli extends Command {
     // TEMPLATE SELECT
     if (typeof flags.template === 'undefined') {
       //joining path of directory 
-      const directoryPath = path.join(__dirname, '../../../templates');
-      const readdir = util.promisify(fs.readdir);
-      //passsing directoryPath and callback function
-      const templates = await readdir(directoryPath);
+      const url = "https://api.github.com/repos/domitriusclark/mdnext/contents/examples"
+
+      const dirNames: any = [];
+      const getData = async (url: string) => {
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.log(error)
+        }
+      };
+
+      const dirs: any = await getData(url);
+
+      dirs.map((dir: any) => dirNames.push(dir.name));
 
       flags.template = await prompt({
         type: 'select',
         name: 'template',
-        choices: templates,
+        choices: dirNames,
         message: 'Select which template to use',
         required: true
       })
