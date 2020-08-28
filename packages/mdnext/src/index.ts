@@ -48,7 +48,7 @@ class Mycli extends Command {
     // TEMPLATE SELECT
     if (typeof flags.template === 'undefined') {
       //joining path of directory 
-      const directoryPath = path.join(__dirname, '../templates');
+      const directoryPath = path.join(__dirname, '../../../templates');
       const readdir = util.promisify(fs.readdir);
       //passsing directoryPath and callback function
       const templates = await readdir(directoryPath);

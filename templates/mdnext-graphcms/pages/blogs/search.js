@@ -1,15 +1,12 @@
-import { Box, Flex, Stack } from '@chakra-ui/core';
-
-import glob from 'fast-glob';
-import fs from 'fs';
-import matter from 'gray-matter';
+import { Box, Stack } from '@chakra-ui/core';
 
 import ContentBox from '@components/ContentBox';
 import Search from '@components/Search';
 import { Chakra } from '@components/Chakra';
+import { GraphQLClient } from 'graphql-request';
 
-export default function SearchPage({ allMdx }) {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
+export default function SearchPage({ blogs }) {
+  const [filteredBlogs, setFilteredBlogs] = React.useState(blogs);
 
   const handleFilter = (data) => {
     setFilteredBlogs(data);
@@ -20,11 +17,11 @@ export default function SearchPage({ allMdx }) {
       <Box pb={3}>
         {/* Content Area + Input + Tag filter */}
         <Stack spacing={[4, 8, 12]} justify="center" alignItems="center">
-          <Search blogs={allMdx} handleFilter={handleFilter} />
+          <Search blogs={blogs} handleFilter={handleFilter} />
           <Stack spacing={[2, 6, 12]}>
-            {filteredBlogs?.map((blog) => (
-              <ContentBox key={blog.slug} blog={blog} />
-            ))}
+            {filteredBlogs?.map((blog) => {
+              return <ContentBox key={blog.slug} blog={blog} />;
+            })}
           </Stack>
         </Stack>
       </Box>
@@ -32,26 +29,23 @@ export default function SearchPage({ allMdx }) {
   );
 }
 
-export function getStaticProps() {
-  const files = glob.sync('src/blogs/*.mdx');
+export async function getStaticProps() {
+  const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
-  const allMdx = files.map((file) => {
-    const split = file.split('/');
-    const filename = split[split.length - 1];
-    const slug = filename.replace('.mdx', '');
-
-    const mdxSource = fs.readFileSync(file);
-    const { data } = matter(mdxSource);
-
-    return {
-      slug,
-      ...data,
-    };
-  });
+  const { blogPosts } = await graphcms.request(`
+    {
+      blogPosts {
+        content
+        title
+        description 
+        tags   
+        slug    
+      }
+    }
+  `);
 
   return {
     props: {
-      allMdx,
+      blogs: [...blogPosts],
     },
   };
-}

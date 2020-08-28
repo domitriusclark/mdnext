@@ -1,14 +1,18 @@
 name: Publish MDNEXT Templates
+
 on:
   push:
     branches:
       - master
+      
 jobs:
   master:
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@master
       - uses: ./.github/actions/hub-create-repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
       - name: publish:starters
         uses: johno/actions-push-subdirectories@master
         env:
