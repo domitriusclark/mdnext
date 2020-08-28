@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 
 import { Flex, Stack, Input } from '@chakra-ui/core';
+
 import TagList from './TagList';
 
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
@@ -46,6 +47,14 @@ export default function Search({ blogs, handleFilter }) {
   const onChange = (e) => {
     const { value } = e.target;
     setSearchValue(value);
+  };
+
+  const onTagClick = (tag) => {
+    if (searchTags.includes(tag)) {
+      setSearchTags(searchTags.filter((included) => included != tag));
+    } else {
+      setSearchTags([...searchTags, tag]);
+    }
   };
 
   return (
