@@ -14,6 +14,7 @@ A CLI to get your projects up and running fast with opinionated NextJS + MDX sta
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Templates](#templates)
 
 ---
 
