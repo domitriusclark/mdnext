@@ -29,7 +29,7 @@ or
 
 You can install it globally
 ```bash
-yarn add -G mdnext
+yarn global add mdnext
 ```
 then use it like 
 ```bash
