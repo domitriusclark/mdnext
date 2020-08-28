@@ -47,9 +47,9 @@ Templates serve as a base to get started w/ opinoins surruonding the type of pro
 && a handful of others. These opinions may not fit your use case (and if you think it might be a good template -- we'd love to talk about it), but allow you to plug and play as you see fit. 
 
 Current templates:
-- [mdnext-base](https://github.com/domitriusclark/mdnext-base)
+- [mdnext-base](https://github.com/domitriusclark/mdnext-base) -
 A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data. 
 
-- [mdnext-graphcms](https://github.com/domitriusclark/mdnxet-graphcms)
+- [mdnext-graphcms](https://github.com/domitriusclark/mdnext-graphcms) -
 Utilizing [GraphCMS](https://graphcms.com) as a datasource for our blog posts, gives an example of how you'd use markdown from the CMS and use it in your Next project.
 
