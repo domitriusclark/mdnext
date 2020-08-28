@@ -48,7 +48,7 @@ class Mycli extends Command {
       //joining path of directory 
       const url = "https://api.github.com/repos/domitriusclark/mdnext/contents/templates"
 
-      const dirNames: any = [];
+      const dirNames: string[] = [];
       const getData = async (url: string) => {
         try {
           const response = await fetch(url);
@@ -83,7 +83,7 @@ class Mycli extends Command {
     const template = flags.template
 
     const emitter = degit(`domitriusclark/${template}`, {
-      cache: true,
+      cache: false,
       force: true,
       verbose: true,
     });
