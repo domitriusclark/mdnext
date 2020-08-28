@@ -7,6 +7,7 @@ import matter from 'gray-matter';
 import ContentBox from '@components/ContentBox';
 import Search from '@components/Search';
 import { Chakra } from '@components/Chakra';
+import { contentGlob, getBlogFileSlug } from '../blog/[...slug]';
 
 export default function SearchPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
@@ -33,12 +34,10 @@ export default function SearchPage({ allMdx }) {
 }
 
 export function getStaticProps() {
-  const files = glob.sync('src/blogs/*.mdx');
+  const files = glob.sync(contentGlob);
 
   const allMdx = files.map((file) => {
-    const split = file.split('/');
-    const filename = split[split.length - 1];
-    const slug = filename.replace('.mdx', '');
+    const slug = getBlogFileSlug(file);
 
     const mdxSource = fs.readFileSync(file);
     const { data } = matter(mdxSource);
