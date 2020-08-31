@@ -6,30 +6,27 @@ import matter from 'gray-matter';
 import glob from 'fast-glob';
 
 import Code from '@components/Code';
-import { Chakra } from '@components/Chakra';
 
 const components = { code: Code };
 
-export default function BlogPost({ mdxSource, frontMatter }) {
+export default function Data({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components });
 
   return (
-    <Chakra evaluateThemeLazily>
-      <div>
-        <h1>{frontMatter.title}</h1>
-        {content}
-      </div>
-    </Chakra>
+    <div>
+      <h1>{frontMatter.title}</h1>
+      {content}
+    </div>
   );
 }
 
 // This glob is what will be used to generate static routes
-const contentPath = 'src/blogs';
+const contentPath = 'src/data';
 export const contentGlob = `${contentPath}/**/*.mdx`;
-export const getBlogFileSlug = (blogFilePath) => {
-  const filename = blogFilePath.replace(`${contentPath}/`, '');
+export const getFileSlug = (filePath) => {
+  const filename = filePath.replace(`${contentPath}/`, '');
   const slug = filename.replace(
-    new RegExp(path.extname(blogFilePath) + '$'),
+    new RegExp(path.extname(filePath) + '$'),
     '',
   );
   return slug;
@@ -41,7 +38,7 @@ export async function getStaticPaths() {
   const paths = files.map((file) => {
     return {
       params: {
-        slug: getBlogFileSlug(file).split('/'),
+        slug: getFileSlug(file).split('/'),
       },
     };
   });

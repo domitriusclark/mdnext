@@ -1,12 +1,14 @@
 import glob from 'fast-glob';
 import fs from 'fs';
 import matter from 'gray-matter';
-import { contentGlob, getBlogFileSlug } from '../data/[...slug]';
+import ContentBox from '@components/ContentBox'
+import { contentGlob, getFileSlug } from '../data/[...slug]';
 
-export default function ListData({ allMdx }) {
+export default function AllData({ allMdx }) {
+  console.log(allMdx)
   return (
     <div>
-      {allMdx}
+      {allMdx?.map(data => <ContentBox data={data} />)}
     </div>
   )
 }
@@ -15,7 +17,7 @@ export function getStaticProps() {
   const files = glob.sync(contentGlob);
 
   const allMdx = files.map((file) => {
-    const slug = getBlogFileSlug(file);
+    const slug = getFileSlug(file);
 
     const mdxSource = fs.readFileSync(file);
     const { data } = matter(mdxSource);

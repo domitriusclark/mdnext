@@ -1,16 +1,12 @@
-import { Link } from 'next/link';
-
+import Link from 'next/link';
 
 export default function ContentBox({ data }) {
   return (
-    <Link
-      href={`/data/${data.slug}`}
-      _hover={{ textDecor: 'none' }}
-    >
+    <Link href={`/data/${data.slug}`}>
       <div>
         <div>
           <div>
-            <p _groupHover={{ textDecor: 'underline' }}>{data.title}</p>
+            <p>{data.title}</p>
             <p> By: {data.author}</p>
             <p>{data.description}</p>
           </div>
