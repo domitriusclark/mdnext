@@ -3,7 +3,10 @@ import components from './components';
 
 const theme = {
   ...defaultTheme,
-  components,
+  components: {
+    ...defaultTheme.components,
+    ...components,
+  },
 };
 
 export default theme;
