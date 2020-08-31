@@ -31,9 +31,9 @@ You can install it globally
 ```bash
 yarn global add mdnext
 ```
-then use it like 
+then run `mdnext` to start the CLI prompts 
 ```bash
-yarn mdnext
+mdnext
 ```
 
 
