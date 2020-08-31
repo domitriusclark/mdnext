@@ -47,8 +47,8 @@ export default function Navbar() {
         <NavLink ml={4} href="/">
           Home
         </NavLink>
-        <NavLink ml={4} href="/blogs/search">
-          Search
+        <NavLink ml={4} href="/blog">
+          Blog
         </NavLink>
       </Box>
     </Flex>
