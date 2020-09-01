@@ -9,7 +9,7 @@ import Search from '@components/Search';
 import { Layout } from '@components/Layout';
 import { contentGlob, getBlogFileSlug } from './[...slug]';
 
-export default function SearchPage({ allMdx }) {
+export default function BlogPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
 
   const handleFilter = (data) => {

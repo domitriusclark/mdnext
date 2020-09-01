@@ -1,0 +1,26 @@
+{
+  "name": "@mdnext/components",
+  "description": "A set of components build to make your building MDX projects a breeze.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js,",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "prepare": "microbundle --no-compress --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "next",
+    "@chakra-ui/theme": "next",
+    "@chakra-ui/theme-tools": "next",
+    "react-icons": "^3.11.0"
+  },
+  "keywords": [
+    "mdx",
+    "react",
+    "components"
+  ]
+}

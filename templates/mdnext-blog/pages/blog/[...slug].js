@@ -5,8 +5,9 @@ import hydrate from 'next-mdx-remote/hydrate';
 import matter from 'gray-matter';
 import glob from 'fast-glob';
 
-import Code from '@components/Code';
+
 import { Layout } from '@components/Layout';
+const { Code } = require("@mdnext/components")
 
 const components = { code: Code };
 

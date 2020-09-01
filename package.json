@@ -8,6 +8,7 @@
   "devDependencies": {
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "microbundle": "^0.12.3",
     "prettier": "^2.0.5"
   },
   "scripts": {
