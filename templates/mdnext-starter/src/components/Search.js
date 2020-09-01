@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 
-import { Flex, Stack, Input } from '@chakra-ui/core';
-
-import TagList from './TagList';
-
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
 
 const fuseOptions = {
@@ -60,7 +56,7 @@ export default function Search({ blogs, handleFilter }) {
   return (
     <div>
       <div>
-        <TagList tags={TAG_LIST} value={searchTags} onChange={setSearchTags} />
+        {TAGS_LIST.map((tag) => <button onClick={() => onTagClick}>{tag}</button>)}
       </div>
       <input value={searchValue} onChange={onChange} />
     </div>

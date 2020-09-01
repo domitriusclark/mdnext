@@ -13,10 +13,10 @@ export default function Navbar() {
     <div style={navbar}>
       <div>
         <Link style={{ margin: "10px 0px" }} href="/">
-          Home
+          <a>Home</a>
         </Link>
         <Link style={{ margin: "10px 0px" }} href="/all-data">
-          Data
+          <a>Data</a>
         </Link>
       </div>
     </div>

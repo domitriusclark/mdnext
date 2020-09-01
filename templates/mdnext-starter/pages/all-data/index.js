@@ -5,7 +5,6 @@ import ContentBox from '@components/ContentBox'
 import { contentGlob, getFileSlug } from '../data/[...slug]';
 
 export default function AllData({ allMdx }) {
-  console.log(allMdx)
   return (
     <div>
       {allMdx?.map(data => <ContentBox data={data} />)}
