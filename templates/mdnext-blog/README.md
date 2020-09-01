@@ -4,10 +4,10 @@
 
 <div align="center">
 
-The opinionated starter for your MDX + Next.js needs
+The opinionated starter for your MDX + Next.js blogging projects!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-blog)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-blog)
 
 <br/>
 
@@ -214,9 +214,7 @@ export default function Search({ blogs, handleFilter }) {
 
 ## Chakra UI -- Light + Dark Mode & Themeing
 
-Using the (currently experimental) v1 of [Chakra UI](https://next.chakra-ui.com/), has given us the tools to handle theme persistence via cookies.
-
-That combined with approachable & accessible components, direct theme config, and room to experiment for custom needs, gives this template the flexibility & cohesiveness to get you started on building your projects with confidence.
+Out of the box Light & Dark mode, combined with approachable & accessible components, direct theme config, and room to experiment for custom needs, gives this template the flexibility & cohesiveness to get you started on building your projects.
 
 ## Shoutouts
 
