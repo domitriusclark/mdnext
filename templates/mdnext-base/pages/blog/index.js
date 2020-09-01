@@ -6,8 +6,8 @@ import matter from 'gray-matter';
 
 import ContentBox from '@components/ContentBox';
 import Search from '@components/Search';
-import { Chakra } from '@components/Chakra';
-import { contentGlob, getBlogFileSlug } from '../blog/[...slug]';
+import { Layout } from '@components/Layout';
+import { contentGlob, getBlogFileSlug } from './[...slug]';
 
 export default function SearchPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
@@ -17,7 +17,7 @@ export default function SearchPage({ allMdx }) {
   };
 
   return (
-    <Chakra evaluateThemeLazily>
+    <Layout>
       <Box pb={3}>
         {/* Content Area + Input + Tag filter */}
         <Stack spacing={[4, 8, 12]} justify="center" alignItems="center">
@@ -29,7 +29,7 @@ export default function SearchPage({ allMdx }) {
           </Stack>
         </Stack>
       </Box>
-    </Chakra>
+    </Layout>
   );
 }
 
