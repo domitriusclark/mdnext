@@ -3729,9 +3729,5 @@ function Code(_ref2) {
   });
 }
 
-var components = {
-  Code: Code
-};
-
-exports.components = components;
+exports.Code = Code;
 //# sourceMappingURL=index.js.map

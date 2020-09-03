@@ -1,5 +1,5 @@
 import Code from './components/Code';
 
-export const components = {
+export {
   Code
 }

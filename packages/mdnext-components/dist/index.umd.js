@@ -3730,11 +3730,7 @@
     });
   }
 
-  var components = {
-    Code: Code
-  };
-
-  exports.components = components;
+  exports.Code = Code;
 
 })));
 //# sourceMappingURL=index.umd.js.map

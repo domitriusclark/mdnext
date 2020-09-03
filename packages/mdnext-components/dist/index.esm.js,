@@ -3726,9 +3726,5 @@ function Code(_ref2) {
   });
 }
 
-var components = {
-  Code: Code
-};
-
-export { components };
+export { Code };
 //# sourceMappingURL=index.esm.js,.map

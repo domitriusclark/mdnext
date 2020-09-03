@@ -3700,9 +3700,5 @@ function Code({
   })));
 }
 
-const components = {
-  Code
-};
-
-export { components };
+export { Code };
 //# sourceMappingURL=index.modern.js.map
