@@ -1,22 +1,42 @@
 {
   "name": "@mdnext/components",
+  "version": "0.1.0",
   "description": "A set of components build to make your building MDX projects a breeze.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js,",
-  "license": "MIT",
-  "version": "0.0.1",
-  "scripts": {
-    "prepare": "microbundle --no-compress --jsx React.createElement",
-    "watch": "microbundle watch --no-compress --jsx React.createElement"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1"
-  },
+  "private": false,
   "dependencies": {
+    "cra-template": "1.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
     "@chakra-ui/core": "next",
     "@chakra-ui/theme": "next",
     "@chakra-ui/theme-tools": "next",
     "react-icons": "^3.11.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepare": "microbundle --no-compress --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "keywords": [
     "mdx",

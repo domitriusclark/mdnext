@@ -1,6 +1,17 @@
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/vsDark';
-import CopyButton from '@components/CopyButton.js';
+
+import { useClipboard } from '@chakra-ui/core';
+import { Button } from '@chakra-ui/core';
+
+function CopyButton({ value }) {
+  const { onCopy, hasCopied } = useClipboard(value);
+  return (
+    <Button aria-label="Copy text" role="button" onClick={onCopy}>
+      {hasCopied ? 'Copied' : 'Copy'}
+    </Button>
+  );
+}
 
 export default function Code({ children, className }) {
   const language = className.replace(/language-/, '');

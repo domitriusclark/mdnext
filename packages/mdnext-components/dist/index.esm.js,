@@ -1,0 +1,6 @@
+import 'react';
+
+var index = {};
+
+export default index;
+//# sourceMappingURL=index.esm.js,.map
