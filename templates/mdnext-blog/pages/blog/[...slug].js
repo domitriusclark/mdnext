@@ -7,13 +7,14 @@ import glob from 'fast-glob';
 
 
 import { Layout } from '@components/Layout';
-const { Code } = require("@mdnext/components")
+import { components } from '@mdnext/components';
 
-const components = { code: Code };
+const { Code } = components;
 
 export default function BlogPost({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, { components });
+  const content = hydrate(mdxSource, { components: { code: Code } });
 
+  console.log(Code)
   return (
     <Layout>
       <div>
