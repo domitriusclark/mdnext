@@ -9,17 +9,12 @@
     "cra-template": "1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
     "@chakra-ui/core": "next",
     "@chakra-ui/theme": "next",
     "@chakra-ui/theme-tools": "next",
     "react-icons": "^3.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "prepare": "microbundle --no-compress --jsx React.createElement",
     "watch": "microbundle watch --no-compress --jsx React.createElement"
   },
