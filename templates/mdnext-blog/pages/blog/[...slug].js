@@ -14,8 +14,6 @@ const components = { code: Code };
 export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components });
 
-
-
   return (
     <Layout>
       <div>
