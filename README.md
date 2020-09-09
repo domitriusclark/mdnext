@@ -50,7 +50,7 @@ While these opinions may come installed, you are able to plug and play with your
 If you find yourself building out a project you think might be a useful template, definitely submit your project!
 
 Current templates:
-- [mdnext-base](https://github.com/domitriusclark/mdnext-base) -
+- [mdnext-blog](https://github.com/domitriusclark/mdnext-blog) -
 A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data. 
 
 - [mdnext-graphcms](https://github.com/domitriusclark/mdnext-graphcms) -
