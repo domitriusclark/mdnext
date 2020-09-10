@@ -1,13 +1,10 @@
-import { Box, Flex, Stack } from '@chakra-ui/core';
+import { Box, Stack } from '@chakra-ui/core';
 
-import glob from 'fast-glob';
-import fs from 'fs';
-import matter from 'gray-matter';
-
+import { BLOG_CONTENT_PATH } from '@config/constants';
+import { getMdxContent } from '@utils/get-mdx-content';
 import ContentBox from '@components/ContentBox';
 import Search from '@components/Search';
 import { Layout } from '@components/Layout';
-import { contentGlob, getBlogFileSlug } from './[...slug]';
 
 export default function BlogPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
@@ -33,20 +30,12 @@ export default function BlogPage({ allMdx }) {
   );
 }
 
-export function getStaticProps() {
-  const files = glob.sync(contentGlob);
-
-  const allMdx = files.map((file) => {
-    const slug = getBlogFileSlug(file);
-
-    const mdxSource = fs.readFileSync(file);
-    const { data } = matter(mdxSource);
-
-    return {
-      slug,
-      ...data,
-    };
-  });
+export async function getStaticProps() {
+  const posts = await getMdxContent(BLOG_CONTENT_PATH);
+  const allMdx = posts.map((post) => ({
+    slug: post.slug,
+    ...post.data,
+  }));
 
   return {
     props: {
