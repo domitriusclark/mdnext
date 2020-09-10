@@ -13,7 +13,7 @@
     "@oclif/plugin-help": "^3",
     "degit": "^2.8.0",
     "enquirer": "^2.3.6",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "tslib": "^1"
   },
   "devDependencies": {
