@@ -1,7 +1,7 @@
 {
   "name": "@mdnext/components",
   "version": "0.1.0",
-  "description": "A set of components build to make your building MDX projects a breeze.",
+  "description": "Components dedicated to empowering your MDX based applications.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js,",
   "private": false,

@@ -1,6 +1,4 @@
-import { promises as fs } from 'fs';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
+
 
 import {
   Flex,
@@ -12,13 +10,6 @@ import {
 } from '@chakra-ui/core';
 import { Image } from '@mdnext/components';
 import { Layout } from '@components/Layout';
-
-const MarkdownH1 = ({ children }) => (
-  <Heading as="h1">
-    {children}
-  </Heading>
-);
-
 
 function Section({ image, heading, subtext, reverse }) {
   return (
@@ -66,23 +57,14 @@ function Features({ images }) {
   )
 }
 
-export default function Index({ images, data }) {
-
-  const content = hydrate(data, {
-    components: {
-      Image,
-      h1: MarkdownH1,
-      p: Text
-    }
-  });
+export default function Index({ images }) {
   return (
     <Layout>
       <Features images={images} />
-
-      {content}
     </Layout>
   );
 }
+
 
 export async function getStaticProps() {
   const cloudinary = require('cloudinary').v2;
@@ -117,23 +99,12 @@ export async function getStaticProps() {
     }
   });
 
-  const mdxSource = await fs.readFile("src/blogs/getting-started.mdx");
-
-  const mdx = await renderToString(mdxSource, {
-    components: {
-      Image,
-      h1: MarkdownH1,
-      p: Text
-    }
-  });
-
   return {
     props: {
       images: {
         logo,
         ...urls
       },
-      data: mdx
     }
   }
 }
