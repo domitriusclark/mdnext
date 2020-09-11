@@ -3,6 +3,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 var core = require('@chakra-ui/core');
+var useCloudinary = require('use-cloudinary');
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -20,6 +21,21 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
 }
 
 /**
@@ -3729,5 +3745,81 @@ function Code(_ref2) {
   });
 }
 
+function Image(_ref) {
+  var src = _ref.src,
+      publicId = _ref.publicId,
+      transforms = _ref.transforms,
+      width = _ref.width,
+      height = _ref.height,
+      lazy = _ref.lazy,
+      props = _objectWithoutPropertiesLoose(_ref, ["src", "cloudName", "publicId", "transforms", "width", "height", "whileLoading", "lazy"]);
+
+  var _useImage = useCloudinary.useImage({
+    cloudName: "mdnextjs",
+    transforms: transforms && _extends({}, transforms)
+  }),
+      generateUrl = _useImage.generateUrl,
+      blurredPlaceholderUrl = _useImage.blurredPlaceholderUrl,
+      url = _useImage.url,
+      ref = _useImage.ref,
+      supportsLazyLoading = _useImage.supportsLazyLoading,
+      inView = _useImage.inView;
+
+  React__default.useEffect(function () {
+    if (publicId) {
+      generateUrl({
+        publicId: publicId,
+        transformations: _extends({}, transforms)
+      });
+    }
+  }, [publicId]); // Not using Cloudinary
+
+  if (!publicId) {
+    // Try to lazy load all images when { lazy === true }
+    if (lazy) {
+      return /*#__PURE__*/React__default.createElement("div", {
+        ref: !supportsLazyLoading ? ref : undefined,
+        style: {
+          width: width + "px",
+          height: height + "px"
+        }
+      }, inView || supportsLazyLoading && /*#__PURE__*/React__default.createElement(core.Image, _extends({
+        src: src,
+        loading: "lazy",
+        width: "100%"
+      }, props)));
+    } else {
+      // Otherwise, just use the Chakra image component
+      return /*#__PURE__*/React__default.createElement(core.Image, _extends({
+        src: src
+      }, props));
+    } // Or if you are using Cloudinary, it will move to here
+
+  } else {
+    // lazy load w/ a blurred placeholder of the image that's loading
+    if (lazy) {
+      return /*#__PURE__*/React__default.createElement("div", {
+        ref: !supportsLazyLoading ? ref : undefined,
+        style: {
+          width: width + "px",
+          height: height + "px",
+          background: "no-repeat url(" + blurredPlaceholderUrl(publicId, width, height) + ")"
+        }
+      }, inView || supportsLazyLoading && /*#__PURE__*/React__default.createElement(core.Image, _extends({
+        src: url,
+        loading: "lazy",
+        width: "100%"
+      }, props)));
+    } else {
+      // Just render the image 
+      return /*#__PURE__*/React__default.createElement(core.Image, _extends({
+        src: url,
+        width: "100%"
+      }, props));
+    }
+  }
+}
+
 exports.Code = Code;
+exports.Image = Image;
 //# sourceMappingURL=index.js.map

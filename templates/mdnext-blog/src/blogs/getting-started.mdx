@@ -1,0 +1,33 @@
+# Welcome to MDNEXT
+
+
+Let's take a second to breakdown our file structure along with some of the important places to navigate.
+
+<Image 
+  publicId="files"
+  w="25%"
+/>
+
+`jsconfig.js`
+NextJS lets us configure absolute paths for our app. We use this to easily import all of our functions and utilities inside of our src directory
+
+## pages
+The pages directory defines your routing. Lifecycle methods like `getStaticProps` / `getStaticPaths` / `getServerProps` are available at the page level. This is where we consume our MDX content as data to pass to our components.
+
+`pages/_app.js`: 
+NextJS allows you to override the App component, which is used to initialize pages. More [here](https://nextjs.org/docs/advanced-features/custom-app)
+
+`pages/_document.js`: 
+ Allows you to augment our application's `<html>` and `<body>` tags.
+
+`pages/blog/index.js`:
+This page is an example of displaying links to all of your individual MDX data pages. Here we use `getStaticProps` to feed the frontmatter of our `MDX` files for our components.
+
+`pages/blog/[slug].js`: 
+Here we utilize NextJS dynamic routing. By using `getStaticPaths` we're able to feed a dynamic slug, handling all of the logic once and applying it to each `MDX` data that we load. This allows us to then match to our data in `getStaticProps` and display that to the page and our components.
+
+`index.js`: 
+Our page at the root of our app, lives inside of the `pages` directories `index.js`.
+
+## src
+Our `src` directory holds all of our client code. Our `components`, custom `hooks`, `utility` functions, and our `MDX` files all live here

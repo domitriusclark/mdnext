@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { useClipboard, Button } from '@chakra-ui/core';
+import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/core';
+import { useImage } from 'use-cloudinary';
 
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
@@ -3700,5 +3701,85 @@ function Code({
   })));
 }
 
-export { Code };
+function Image({
+  src,
+  cloudName,
+  publicId,
+  transforms,
+  width,
+  height,
+  whileLoading,
+  lazy,
+  ...props
+}) {
+  const {
+    generateUrl,
+    blurredPlaceholderUrl,
+    isLoading,
+    url,
+    ref,
+    supportsLazyLoading,
+    inView
+  } = useImage({
+    cloudName: "mdnextjs",
+    transforms: transforms && { ...transforms
+    }
+  });
+  React.useEffect(() => {
+    if (publicId) {
+      generateUrl({
+        publicId,
+        transformations: { ...transforms
+        }
+      });
+    }
+  }, [publicId]); // Not using Cloudinary
+
+  if (!publicId) {
+    // Try to lazy load all images when { lazy === true }
+    if (lazy) {
+      return /*#__PURE__*/React.createElement("div", {
+        ref: !supportsLazyLoading ? ref : undefined,
+        style: {
+          width: `${width}px`,
+          height: `${height}px`
+        }
+      }, inView || supportsLazyLoading && /*#__PURE__*/React.createElement(Image$1, Object.assign({
+        src: src,
+        loading: "lazy",
+        width: "100%"
+      }, props)));
+    } else {
+      // Otherwise, just use the Chakra image component
+      return /*#__PURE__*/React.createElement(Image$1, Object.assign({
+        src: src
+      }, props));
+    } // Or if you are using Cloudinary, it will move to here
+
+  } else {
+    // lazy load w/ a blurred placeholder of the image that's loading
+    if (lazy) {
+      return /*#__PURE__*/React.createElement("div", {
+        ref: !supportsLazyLoading ? ref : undefined,
+        style: {
+          width: `${width}px`,
+          height: `${height}px`,
+          background: `no-repeat url(${blurredPlaceholderUrl(publicId, width, height)})`
+        }
+      }, inView || supportsLazyLoading && /*#__PURE__*/React.createElement(Image$1, Object.assign({
+        src: url,
+        loading: "lazy",
+        width: "100%"
+      }, props)));
+    } else {
+      // Just render the image 
+      return /*#__PURE__*/React.createElement(Image$1, Object.assign({
+        src: url,
+        width: "100%"
+      }, props));
+    }
+  }
+}
+
+export { Code, Image };
 //# sourceMappingURL=index.modern.js.map

@@ -11,7 +11,6 @@ import { contentGlob, getBlogFileSlug } from './[...slug]';
 
 export default function BlogPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
-
   const handleFilter = (data) => {
     setFilteredBlogs(data);
   };
@@ -35,13 +34,10 @@ export default function BlogPage({ allMdx }) {
 
 export function getStaticProps() {
   const files = glob.sync(contentGlob);
-
   const allMdx = files.map((file) => {
     const slug = getBlogFileSlug(file);
-
     const mdxSource = fs.readFileSync(file);
     const { data } = matter(mdxSource);
-
     return {
       slug,
       ...data,

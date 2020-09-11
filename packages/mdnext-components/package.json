@@ -6,13 +6,14 @@
   "module": "dist/index.esm.js,",
   "private": false,
   "dependencies": {
-    "cra-template": "1.0.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "@chakra-ui/core": "next",
     "@chakra-ui/theme": "next",
     "@chakra-ui/theme-tools": "next",
-    "react-icons": "^3.11.0"
+    "cra-template": "1.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "use-cloudinary": "^3.1.6"
   },
   "scripts": {
     "prepare": "microbundle --no-compress --jsx React.createElement",
