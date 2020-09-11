@@ -17,13 +17,43 @@ Welcome to `mdnext-starter`
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [MDX w/ `next-mdx-remote`](#mdx-w-next-mdx-remote)
-- [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
-- [Shoutouts](#shoutouts)
-- [Contributing](#contributing)
 
 ---
 
 ## Usage
+Coming with a base understanding of the [NextJS opinions and documentation](https://nextjs.org/docs/getting-started), will give you a solid grasp on the structure of our templates. 
 
-WIP
+# File structure
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png)
+
+# Breakdown
+
+—  ***jsconfig.js***
+
+NextJS lets us configure absolute paths for our app. We use this to easily import all of our functions and utilities inside of our `src` directory
+
+—  ***pages***
+
+The pages directory defines your routing. Lifecycle methods like `getStaticProps` / `getStaticPaths` / `getServerProps` are available at the page level. This is where we consume our MDX content as data to pass to our components.
+
+`_app.js`: 
+NextJS allows you to override the App component, which is used to initialize pages. More [here](https://nextjs.org/docs/advanced-features/custom-app)
+
+`_document.js`: 
+ Allows you to augment our application's `<html>` and `<body>` tags.
+
+`all-data/index.js`:
+This page is an example of displaying links to all of your individual MDX data pages. Here we use `getStaticProps` to feed the frontmatter of our `MDX` files for our components.
+
+`data/[slug].js`: 
+Here we utilize NextJS dynamic routing. By using `getStaticPaths` we're able to feed a dynamic slug, handling all of the logic once and applying it to each `MDX` data that we load. This allows us to then match to our data in `getStaticProps` and display that to the page and our components.
+
+`index.js`: 
+Our page at the root of our app, lives inside of the `pages` directories `index.js`. 
+
+— ***src***
+Our `src` directory holds all of our client code. Our `components`, custom `hooks`, `utility` functions, and our `MDX` files all live here, with the first three available for absolute path imports 👍
+
+— ***next.config.js***
+For custom configuration around things like `environment variables`, `webpack`, `pageExtensions`, and many [more](https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts#L12-L63), you can utilize `next.config.js`

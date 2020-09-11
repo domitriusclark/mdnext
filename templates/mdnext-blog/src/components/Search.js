@@ -5,8 +5,6 @@ import { Flex, Stack, Input } from '@chakra-ui/core';
 
 import TagList from './TagList';
 
-const TAG_LIST = ['react', 'nextjs', 'chakra ui'];
-
 const fuseOptions = {
   threshold: 0.35,
   location: 0,
@@ -22,6 +20,7 @@ export default function Search({ blogs, handleFilter }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchTags, setSearchTags] = useState([]);
   const fuse = new Fuse(blogs, fuseOptions);
+  const tags = [...new Set(blogs.flatMap(({ tags }) => tags))];
 
   React.useEffect(() => {
     if (searchValue === '' && searchTags.length === 0) {
@@ -65,7 +64,7 @@ export default function Search({ blogs, handleFilter }) {
       spacing={[6, 8, 10]}
     >
       <Flex justify="space-around">
-        <TagList tags={TAG_LIST} value={searchTags} onChange={setSearchTags} />
+        <TagList tags={tags} value={searchTags} onChange={setSearchTags} />
       </Flex>
       <Input value={searchValue} onChange={onChange} />
     </Stack>

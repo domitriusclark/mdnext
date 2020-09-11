@@ -1,15 +1,9 @@
-import { promises as fs } from 'fs';
-import path from 'path';
-import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import matter from 'gray-matter';
-import glob from 'fast-glob';
 
-
+import { BLOG_CONTENT_PATH } from '@config/constants';
+import { getMdxContent } from '@utils/get-mdx-content';
+import components from '@components/MDXComponents';
 import { Layout } from '@components/Layout';
-import { Code } from '@mdnext/components';
-
-const components = { code: Code };
 
 export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components });
@@ -24,28 +18,13 @@ export default function BlogPost({ mdxSource, frontMatter }) {
   );
 }
 
-// This glob is what will be used to generate static routes
-const contentPath = 'src/blogs';
-export const contentGlob = `${contentPath}/**/*.mdx`;
-export const getBlogFileSlug = (blogFilePath) => {
-  const filename = blogFilePath.replace(`${contentPath}/`, '');
-  const slug = filename.replace(
-    new RegExp(path.extname(blogFilePath) + '$'),
-    '',
-  );
-  return slug;
-};
-
 export async function getStaticPaths() {
-  const files = glob.sync(contentGlob);
-
-  const paths = files.map((file) => {
-    return {
-      params: {
-        slug: getBlogFileSlug(file).split('/'),
-      },
-    };
-  });
+  const posts = await getMdxContent(BLOG_CONTENT_PATH);
+  const paths = posts.map(({ slug }) => ({
+    params: {
+      slug: slug.split('/'),
+    },
+  }));
 
   return {
     paths,
@@ -54,24 +33,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const files = glob.sync(contentGlob);
+  const posts = await getMdxContent(BLOG_CONTENT_PATH);
+  const postSlug = slug.join('/');
+  const [post] = posts.filter((post) => post.slug === postSlug);
 
-  const pathRegex = new RegExp(`^${contentPath}/${path.join(...slug)}.mdx$`);
-  const fullPath = files.find((file) => pathRegex.test(file));
-
-  if (!fullPath) {
-    console.warn('No MDX file found for slug');
+  if (!post) {
+    console.warn(`No content found for slug ${postSlug}`);
   }
-
-  const mdxSource = await fs.readFile(fullPath);
-  const { content, data } = matter(mdxSource);
-
-  const mdx = await renderToString(content, { components, scope: data });
 
   return {
     props: {
-      mdxSource: mdx,
-      frontMatter: data,
+      mdxSource: post.mdx,
+      frontMatter: post.data,
     },
   };
 }
