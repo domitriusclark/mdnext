@@ -23,7 +23,7 @@ export default function ContentBox({ blog }) {
             <Text>{blog.description}</Text>
           </Box>
           <Stack direction="row" spacing={8}>
-            {blog.tags.map((tag) => (
+            {blog?.tags.map((tag) => (
               <Text key={tag}>#{tag}</Text>
             ))}
           </Stack>
