@@ -3809,7 +3809,7 @@ function Image(_ref) {
         width: "100%"
       }, props)));
     } else {
-      // Just render the image 
+      // Just render the image
       return /*#__PURE__*/React$1.createElement(Image$1, _extends({
         src: url,
         width: "100%"
