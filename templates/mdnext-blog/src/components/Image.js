@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image as ChakraImage } from "@chakra-ui/core";
+import { Image as ChakraImage } from '@chakra-ui/core';
 import { useImage } from 'use-cloudinary';
 
 export default function Image({
@@ -20,19 +20,22 @@ export default function Image({
     url,
     ref,
     supportsLazyLoading,
-    inView
-  } = useImage({ cloudName: "mdnextjs", transforms: transforms && { ...transforms } });
+    inView,
+  } = useImage({
+    cloudName: 'mdnextjs',
+    transforms: transforms && { ...transforms },
+  });
 
   React.useEffect(() => {
     if (publicId) {
       generateUrl({
         publicId,
         transformations: {
-          ...transforms
-        }
-      })
+          ...transforms,
+        },
+      });
     }
-  }, [publicId])
+  }, [publicId]);
 
   // Not using Cloudinary
   if (!publicId) {
@@ -44,28 +47,17 @@ export default function Image({
           style={{
             width: `${width}px`,
             height: `${height}px`,
-
-          }}>
-          {inView || supportsLazyLoading && (
-            <ChakraImage
-              src={src}
-              loading="lazy"
-              width="100%"
-              {...props}
-            />
-          )}
+          }}
+        >
+          {inView ||
+            (supportsLazyLoading && (
+              <ChakraImage src={src} loading="lazy" width="100%" {...props} />
+            ))}
         </div>
-      )
+      );
     } else {
       // Otherwise, just use the Chakra image component
-      return (
-        <ChakraImage
-          src={src}
-          {...props}
-        />
-      )
-
-
+      return <ChakraImage src={src} {...props} />;
     }
 
     // Or if you are using Cloudinary, it will move to here
@@ -78,29 +70,22 @@ export default function Image({
           style={{
             width: `${width}px`,
             height: `${height}px`,
-            background: `no-repeat url(${blurredPlaceholderUrl(publicId, width, height)})`
-          }}>
-          {inView || supportsLazyLoading && (
-            <ChakraImage
-              src={url}
-              loading="lazy"
-              width="100%"
-              {...props}
-            />
-
-          )}
+            background: `no-repeat url(${blurredPlaceholderUrl(
+              publicId,
+              width,
+              height,
+            )})`,
+          }}
+        >
+          {inView ||
+            (supportsLazyLoading && (
+              <ChakraImage src={url} loading="lazy" width="100%" {...props} />
+            ))}
         </div>
-      )
+      );
     } else {
-      // Just render the image 
-      return (
-        <ChakraImage
-          src={url}
-          width="100%"
-          {...props}
-        />
-      )
+      // Just render the image
+      return <ChakraImage src={url} width="100%" {...props} />;
     }
-
   }
 }
