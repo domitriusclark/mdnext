@@ -2,8 +2,8 @@ function _interopDefault(ex) {
   return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
 }
 
-var React$1 = require('react');
-var React$1__default = _interopDefault(React$1);
+var React = require('react');
+var React__default = _interopDefault(React);
 var core = require('@chakra-ui/core');
 var useCloudinary = require('use-cloudinary');
 
@@ -3959,7 +3959,7 @@ var Highlight = /*@__PURE__*/ (function (Component) {
   };
 
   return Highlight;
-})(React$1.Component);
+})(React.Component);
 
 // Converted automatically using ./tools/themeFromVsCode
 var theme$1 = {
@@ -4073,7 +4073,7 @@ function CopyButton(_ref) {
     onCopy = _useClipboard.onCopy,
     hasCopied = _useClipboard.hasCopied;
 
-  return /*#__PURE__*/ React.createElement(
+  return /*#__PURE__*/ React__default.createElement(
     core.Button,
     {
       'aria-label': 'Copy text',
@@ -4088,7 +4088,7 @@ function Code(_ref2) {
   var children = _ref2.children,
     className = _ref2.className;
   var language = className.replace(/language-/, '');
-  return /*#__PURE__*/ React.createElement(
+  return /*#__PURE__*/ React__default.createElement(
     Highlight,
     _extends({}, defaultProps, {
       theme: theme$1,
@@ -4101,7 +4101,7 @@ function Code(_ref2) {
         tokens = _ref3.tokens,
         getLineProps = _ref3.getLineProps,
         getTokenProps = _ref3.getTokenProps;
-      return /*#__PURE__*/ React.createElement(
+      return /*#__PURE__*/ React__default.createElement(
         'pre',
         {
           className: className,
@@ -4113,7 +4113,7 @@ function Code(_ref2) {
           }),
         },
         tokens.map(function (line, i) {
-          return /*#__PURE__*/ React.createElement(
+          return /*#__PURE__*/ React__default.createElement(
             'div',
             _extends(
               {
@@ -4125,7 +4125,7 @@ function Code(_ref2) {
               }),
             ),
             line.map(function (token, key) {
-              return /*#__PURE__*/ React.createElement(
+              return /*#__PURE__*/ React__default.createElement(
                 'span',
                 _extends(
                   {
@@ -4140,7 +4140,7 @@ function Code(_ref2) {
             }),
           );
         }),
-        /*#__PURE__*/ React.createElement(CopyButton, {
+        /*#__PURE__*/ React__default.createElement(CopyButton, {
           value: children.trim(),
         }),
       );
@@ -4178,7 +4178,7 @@ function Image(_ref) {
     supportsLazyLoading = _useImage.supportsLazyLoading,
     inView = _useImage.inView;
 
-  React$1__default.useEffect(
+  React__default.useEffect(
     function () {
       if (publicId) {
         generateUrl({
@@ -4193,7 +4193,7 @@ function Image(_ref) {
   if (!publicId) {
     // Try to lazy load all images when { lazy === true }
     if (lazy) {
-      return /*#__PURE__*/ React$1__default.createElement(
+      return /*#__PURE__*/ React__default.createElement(
         'div',
         {
           ref: !supportsLazyLoading ? ref : undefined,
@@ -4204,7 +4204,7 @@ function Image(_ref) {
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React$1__default.createElement(
+            /*#__PURE__*/ React__default.createElement(
               core.Image,
               _extends(
                 {
@@ -4218,7 +4218,7 @@ function Image(_ref) {
       );
     } else {
       // Otherwise, just use the Chakra image component
-      return /*#__PURE__*/ React$1__default.createElement(
+      return /*#__PURE__*/ React__default.createElement(
         core.Image,
         _extends(
           {
@@ -4231,7 +4231,7 @@ function Image(_ref) {
   } else {
     // lazy load w/ a blurred placeholder of the image that's loading
     if (lazy) {
-      return /*#__PURE__*/ React$1__default.createElement(
+      return /*#__PURE__*/ React__default.createElement(
         'div',
         {
           ref: !supportsLazyLoading ? ref : undefined,
@@ -4246,7 +4246,7 @@ function Image(_ref) {
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React$1__default.createElement(
+            /*#__PURE__*/ React__default.createElement(
               core.Image,
               _extends(
                 {
@@ -4260,7 +4260,7 @@ function Image(_ref) {
       );
     } else {
       // Just render the image
-      return /*#__PURE__*/ React$1__default.createElement(
+      return /*#__PURE__*/ React__default.createElement(
         core.Image,
         _extends(
           {

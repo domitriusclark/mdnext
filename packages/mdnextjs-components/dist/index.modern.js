@@ -1,4 +1,4 @@
-import React$1, { Component } from 'react';
+import React, { Component } from 'react';
 import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/core';
 import { useImage } from 'use-cloudinary';
 
@@ -4115,7 +4115,7 @@ function Image({
     cloudName: cloudName || null,
     transforms: transforms && { ...transforms },
   });
-  React$1.useEffect(() => {
+  React.useEffect(() => {
     if (publicId) {
       generateUrl({
         publicId,
@@ -4127,7 +4127,7 @@ function Image({
   if (!publicId) {
     // Try to lazy load all images when { lazy === true }
     if (lazy) {
-      return /*#__PURE__*/ React$1.createElement(
+      return /*#__PURE__*/ React.createElement(
         'div',
         {
           ref: !supportsLazyLoading ? ref : undefined,
@@ -4138,7 +4138,7 @@ function Image({
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React$1.createElement(
+            /*#__PURE__*/ React.createElement(
               Image$1,
               Object.assign(
                 {
@@ -4152,7 +4152,7 @@ function Image({
       );
     } else {
       // Otherwise, just use the Chakra image component
-      return /*#__PURE__*/ React$1.createElement(
+      return /*#__PURE__*/ React.createElement(
         Image$1,
         Object.assign(
           {
@@ -4165,7 +4165,7 @@ function Image({
   } else {
     // lazy load w/ a blurred placeholder of the image that's loading
     if (lazy) {
-      return /*#__PURE__*/ React$1.createElement(
+      return /*#__PURE__*/ React.createElement(
         'div',
         {
           ref: !supportsLazyLoading ? ref : undefined,
@@ -4181,7 +4181,7 @@ function Image({
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React$1.createElement(
+            /*#__PURE__*/ React.createElement(
               Image$1,
               Object.assign(
                 {
@@ -4195,7 +4195,7 @@ function Image({
       );
     } else {
       // Just render the image
-      return /*#__PURE__*/ React$1.createElement(
+      return /*#__PURE__*/ React.createElement(
         Image$1,
         Object.assign(
           {
