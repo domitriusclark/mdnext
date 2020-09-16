@@ -4,7 +4,7 @@ const fs = require('fs');
 async function run() {
   try {
     const dirs = fs.readdirSync(process.env.GITHUB_WORKSPACE + '/templates');
-    exec(`gh auth login --with-token ${process.env.GITHUB_TOKEN}`);
+
     for (let dir of dirs) {
       exec(`gh repo create ${dir} --public --enable-issues=false`);
     }
