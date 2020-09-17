@@ -15,7 +15,7 @@ jobs:
         uses: johno/actions-push-subdirectories@master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           args: templates domitriusclark
       
