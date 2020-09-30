@@ -44,10 +44,10 @@ export default function Navbar() {
       </Flex>
       <Box>
         <ThemeTogglebutton />
-        <NavLink ml={4} href="/">
+        <NavLink m={4} href="/">
           Home
         </NavLink>
-        <NavLink ml={4} href="/blog">
+        <NavLink m={4} href="/blog">
           Blog
         </NavLink>
       </Box>
