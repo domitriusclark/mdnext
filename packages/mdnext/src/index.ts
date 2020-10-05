@@ -3,6 +3,7 @@ import { Command, flags } from '@oclif/command'
 const fetch = require("node-fetch");
 const { prompt } = require("enquirer")
 const degit = require('degit');
+const fs = require('fs');
 
 
 class Mycli extends Command {
@@ -89,7 +90,15 @@ class Mycli extends Command {
     });
 
     emitter.clone(`${projectName}`).then(() => {
-      console.log('done');
+      const pkg = JSON.parse(fs.readFileSync(`${projectName}/package.json`, 'utf8'));
+      if (pkg && pkg.name) {
+        pkg.name = `${projectName}`;
+        fs.writeFileSync(
+          `${projectName}/package.json`,
+          JSON.stringify(pkg, null, 2),
+        );
+      }
+      console.log(`${projectName} is alive!`);
     });
 
   }
