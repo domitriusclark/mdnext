@@ -5,7 +5,7 @@ export default function Index() {
         Welcome to MDNEXT + Tailwind
       </h1>
       <p className="text-my-custom-color mt-4">
-        This paragraph uses a custom CSS colour class defined in{' '}
+        This paragraph uses a custom CSS color class defined in{' '}
         <code>tailwind.config.js</code>.
       </p>
     </div>

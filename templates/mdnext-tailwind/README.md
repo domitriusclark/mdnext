@@ -4,10 +4,10 @@
 
 <div align="center">
 
-Welcome to `mdnext-starter`
+Welcome to `mdnext-tailwind`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-starter)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-tailwind)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-tailwind)
 
 <br/>
 
@@ -15,8 +15,10 @@ Welcome to `mdnext-starter`
 
 ---
 
-- [Installation](#installation)
 - [Usage](#usage)
+- [File structure](#file-structure)
+- [Breakdown](#breakdown)
+- [Tailwind Setup](#tailwind-setup)
 
 ---
 
@@ -24,11 +26,11 @@ Welcome to `mdnext-starter`
 
 Coming with a base understanding of the [NextJS opinions and documentation](https://nextjs.org/docs/getting-started), will give you a solid grasp on the structure of our templates.
 
-# File structure
+## File structure
 
 ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png)
 
-# Breakdown
+## Breakdown
 
 — **_jsconfig.js_**
 
@@ -58,3 +60,21 @@ Our `src` directory holds all of our client code. Our `components`, custom `hook
 
 — **_next.config.js_**
 For custom configuration around things like `environment variables`, `webpack`, `pageExtensions`, and many [more](https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts#L12-L63), you can utilize `next.config.js`
+
+---
+
+## Tailwind Setup
+
+— **_tailwind.config.js_**
+
+Blank [Tailwind configuration](https://tailwindcss.com/docs/configuration) with the addition of `purge` option to [remove unused CSS](https://tailwindcss.com/docs/controlling-file-size#removing-unused-css) in production, and `theme.extend.colors` to add a [custom color palette](https://tailwindcss.com/docs/customizing-colors#extending-the-default-palette).
+
+— **_postcss.config.js_**
+
+Next.js's [default PostCSS configuration](https://nextjs.org/docs/advanced-features/customizing-postcss-config) with the addition of Tailwind.
+
+— **_src/tailwind.css_**
+
+Stylesheet containing the Tailwind directive. You can rename and move it as you wish; make sure to import it correctly from `pages/_app.js`.
+
+Also see: [TailwindCSS documentation](https://tailwindcss.com/).

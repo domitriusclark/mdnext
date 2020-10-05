@@ -4,6 +4,7 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
+  // Purge unused Tailwind styles in production to keep build CSS file small.
   purge: ['./**/*.{js,jsx,ts,tsx,mdx}'],
   theme: {
     extend: {
