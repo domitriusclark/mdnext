@@ -1,12 +1,14 @@
 import glob from 'fast-glob';
 import fs from 'fs';
 import matter from 'gray-matter';
+import tw from 'twin.macro';
+
 import ContentBox from '@components/ContentBox';
 import { contentGlob, getFileSlug } from '../data/[...slug]';
 
 export default function AllData({ allMdx }) {
   return (
-    <div>
+    <div tw="flex-col px-4 lg:flex lg:flex-row lg:gap-4">
       {allMdx?.map((data) => (
         <ContentBox key={data.slug} data={data} />
       ))}

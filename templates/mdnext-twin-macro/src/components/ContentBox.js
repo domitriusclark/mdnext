@@ -1,12 +1,13 @@
+import tw from 'twin.macro';
 import Link from 'next/link';
 
 export default function ContentBox({ data }) {
   return (
-    <Link href={`/data/${data.slug}`}>
-      <div>
+    <Link href={`/data/${data.slug}`} passHref={true}>
+      <a tw="lg:border lg:border-gray-400 px-4 py-8 mx-auto lg:mx-0 mb-8 lg:mt-16">
         <div>
           <div>
-            <p>{data.title}</p>
+            <p tw="text-xl font-bold">{data.title}</p>
             <p> By: {data.author}</p>
             <p>{data.description}</p>
           </div>
@@ -16,7 +17,7 @@ export default function ContentBox({ data }) {
             ))}
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

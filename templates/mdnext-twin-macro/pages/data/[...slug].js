@@ -4,17 +4,23 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import matter from 'gray-matter';
 import glob from 'fast-glob';
+import tw from 'twin.macro';
 
 import Code from '@components/Code';
 
-const components = { code: Code };
+const components = {
+  code: Code,
+  h1: (props) => <h1 tw="text-2xl font-semibold text-center" {...props} />,
+  h2: (props) => <h2 tw="text-xl font-normal text-center" {...props} />,
+  p: (props) => <p tw="text-center" {...props} />,
+};
 
 export default function Data({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components });
 
   return (
     <div>
-      <h1>{frontMatter.title}</h1>
+      <h1 tw="text-center text-3xl font-bold py-8">{frontMatter.title}</h1>
       {content}
     </div>
   );
