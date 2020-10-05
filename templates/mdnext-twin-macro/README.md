@@ -6,8 +6,8 @@
 
 Welcome to `mdnext-twin-macro`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-starter)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-twin-macro)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-twin-macro)
 
 <br/>
 
@@ -56,4 +56,4 @@ Our `src` directory holds all of our client code. Our `components`, custom `hook
 For custom configuration around things like `environment variables`, `webpack`, `pageExtensions`, and many [more](https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts#L12-L63), you can utilize `next.config.js`
 
 — **_tailwind.config.js_**
-For extending or overriding the default tailwind utility classes. `twin.macro` builds off of this file, so any custom styling you'd like to include will be picked up by `twin` and available for use with the `tw` prop.
+For extending or overriding the default tailwind utility classes. `twin.macro` builds off of this file, so any custom styling you'd like to include will be picked up by `twin` and available for use with the `tw` prop. [Read more about Tailwind configuration options.](https://tailwindcss.com/docs/configuration#app)
