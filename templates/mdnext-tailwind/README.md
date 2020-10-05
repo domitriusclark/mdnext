@@ -65,6 +65,8 @@ For custom configuration around things like `environment variables`, `webpack`, 
 
 ## Tailwind Setup
 
+This template is mostly based on Vercel's [Next.js + Tailwind example](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss).
+
 — **_tailwind.config.js_**
 
 Blank [Tailwind configuration](https://tailwindcss.com/docs/configuration) with the addition of `purge` option to [remove unused CSS](https://tailwindcss.com/docs/controlling-file-size#removing-unused-css) in production, and `theme.extend.colors` to add a [custom color palette](https://tailwindcss.com/docs/customizing-colors#extending-the-default-palette).
