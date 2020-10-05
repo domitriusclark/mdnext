@@ -8,7 +8,7 @@ export function Layout({ props, children }) {
     <>
       <SEO {...props} />
       <Navbar />
-      <div tw="bg-gray-200 min-h-screen">{children}</div>
+      <div tw="flex justify-center px-4 lg:px-0">{children}</div>
     </>
   );
 }

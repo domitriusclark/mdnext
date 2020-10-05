@@ -8,7 +8,7 @@ import { contentGlob, getFileSlug } from '../data/[...slug]';
 
 export default function AllData({ allMdx }) {
   return (
-    <div tw="flex-col px-4 lg:flex lg:flex-row lg:gap-4">
+    <div tw="flex flex-col px-4 mx-auto lg:flex-row lg:gap-4">
       {allMdx?.map((data) => (
         <ContentBox key={data.slug} data={data} />
       ))}
