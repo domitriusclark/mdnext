@@ -1,3 +1,5 @@
+import tw from 'twin.macro';
+
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
 
@@ -6,7 +8,7 @@ export function Layout({ props, children }) {
     <>
       <SEO {...props} />
       <Navbar />
-      <div style={{ maxWidth: '32rem' }}>{children}</div>
+      <div tw="bg-gray-200 min-h-screen">{children}</div>
     </>
   );
 }
