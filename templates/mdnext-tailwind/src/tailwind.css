@@ -2,5 +2,9 @@
 @tailwind components;
 
 /* Write your own custom component styles here */
+.tomato-box {
+  border: 4px dotted tomato;
+  border-radius: 4px;
+}
 
 @tailwind utilities;
