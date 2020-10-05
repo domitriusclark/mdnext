@@ -10,15 +10,15 @@ const navbar = {
 
 export default function Navbar() {
   return (
-    <div style={navbar}>
+    <nav style={navbar} className="px-4 py-8">
       <div>
-        <Link style={{ margin: '10px 0px' }} href="/">
-          <a>Home</a>
+        <Link passHref href="/">
+          <a className="mdnext-nav__item">Home</a>
         </Link>
-        <Link style={{ margin: '10px 0px' }} href="/all-data">
-          <a>Data</a>
+        <Link passHref href="/all-data">
+          <a className="mdnext-nav__item">Data</a>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }

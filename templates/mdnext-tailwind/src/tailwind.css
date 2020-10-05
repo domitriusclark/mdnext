@@ -7,5 +7,11 @@
   border-radius: 4px;
   transition: all 0.5s;
 }
+.mdnext-nav__item {
+  @apply p-2 font-bold text-gray-700;
+}
+.mdnext-nav__item:hover {
+  @apply text-my-custom-color underline;
+}
 
 @tailwind utilities;
