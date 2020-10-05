@@ -15,6 +15,9 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
     "@mdnext/components": "^0.1.0",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
@@ -26,12 +29,22 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
+    "twin.macro": "^1.10.0",
     "use-cloudinary": "^3.1.6"
   },
   "devDependencies": {
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "emotion",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
   },
   "husky": {
     "hooks": {
