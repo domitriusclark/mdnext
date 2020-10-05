@@ -32,6 +32,7 @@
     "autoprefixer": "^10.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.8.10"

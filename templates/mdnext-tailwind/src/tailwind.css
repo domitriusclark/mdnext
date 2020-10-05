@@ -5,6 +5,7 @@
 .tomato-box {
   border: 4px dotted tomato;
   border-radius: 4px;
+  transition: all 0.5s;
 }
 
 @tailwind utilities;
