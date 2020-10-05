@@ -4,6 +4,10 @@ export default function Index() {
       <h1 className="tomato-box text-center p-4">
         Welcome to MDNEXT + Tailwind
       </h1>
+      <p className="text-my-custom-color mt-4">
+        This paragraph uses a custom CSS colour class defined in{' '}
+        <code>tailwind.config.js</code>.
+      </p>
     </div>
   );
 }
