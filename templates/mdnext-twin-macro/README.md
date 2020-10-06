@@ -13,13 +13,6 @@ Welcome to `mdnext-twin-macro`
 
 </div>
 
----
-
-- [Breakdown](#breakdown)
-  - [Resources](#resources)
-
----
-
 ## Usage
 
 Coming with a base understanding of the [NextJS opinions and documentation](https://nextjs.org/docs/getting-started), will give you a solid grasp on the structure of our templates.
