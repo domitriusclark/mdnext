@@ -15,8 +15,8 @@ Welcome to `mdnext-twin-macro`
 
 ---
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Breakdown](#breakdown)
+  - [Resources](#resources)
 
 ---
 
@@ -57,3 +57,10 @@ For custom configuration around things like `environment variables`, `webpack`, 
 
 — **_tailwind.config.js_**
 For extending or overriding the default tailwind utility classes. `twin.macro` builds off of this file, so any custom styling you'd like to include will be picked up by `twin` and available for use with the `tw` prop. [Read more about Tailwind configuration options.](https://tailwindcss.com/docs/configuration#app)
+
+## Resources
+
+- The [Tailwind CSS documentation](https://tailwindcss.com/) is excellent. Definitely a great resource for learning how to effectively apply the tailwind utility classes. 💯
+- There's an excellent [Tailwind cheat sheet](https://nerdcave.com/tailwind-cheat-sheet) as well, if you'd like more condensed documentation.
+- Twin.macro's documentation for the most part lives in [their README](https://github.com/ben-rogerson/twin.macro).
+- They also have a [Discord community](https://discord.gg/Xj6x9z7) that is a good place to get support or advice.
