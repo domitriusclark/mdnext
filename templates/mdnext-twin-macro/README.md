@@ -64,4 +64,5 @@ For extending or overriding the default tailwind utility classes. `twin.macro` b
 - The [Tailwind CSS documentation](https://tailwindcss.com/) is excellent. Definitely a great resource for learning how to effectively apply the tailwind utility classes. 💯
 - There's an excellent [Tailwind cheat sheet](https://nerdcave.com/tailwind-cheat-sheet) as well, if you'd like more condensed documentation.
 - Twin.macro's documentation for the most part lives in [their README](https://github.com/ben-rogerson/twin.macro).
-- They also have a [Discord community](https://discord.gg/Xj6x9z7) that is a good place to get support or advice.
+- They have a [Discord community](https://discord.gg/Xj6x9z7) that is a good place to get support or advice.
+- They also maintain [an example project](https://codesandbox.io/embed/next-tailwind-emotion-starter-8h2b2?module=%2Fpages%2Findex.js) to demonstrate how the library works.
