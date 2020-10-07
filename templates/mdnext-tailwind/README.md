@@ -18,7 +18,8 @@ Welcome to `mdnext-tailwind`
 - [Usage](#usage)
 - [File structure](#file-structure)
 - [Breakdown](#breakdown)
-- [Tailwind Setup](#tailwind-setup)
+- [Tailwind](#tailwind)
+  - [Tailwind Resources](#tailwind-resources)
 
 ---
 
@@ -63,20 +64,31 @@ For custom configuration around things like `environment variables`, `webpack`, 
 
 ---
 
-## Tailwind Setup
+## Tailwind
 
-This template is mostly based on Vercel's [Next.js + Tailwind example](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss).
+This template uses the utility-first CSS framework **Tailwind** for styling. Take a look at the following files to get started.
 
 — **_tailwind.config.js_**
 
-Blank [Tailwind configuration](https://tailwindcss.com/docs/configuration) with the addition of `purge` option to [remove unused CSS](https://tailwindcss.com/docs/controlling-file-size#removing-unused-css) in production, and `theme.extend.colors` to add a [custom color palette](https://tailwindcss.com/docs/customizing-colors#extending-the-default-palette).
+Blank Tailwind configuration with the `purge` option to remove unused CSS in production, thus keeping the resulting CSS file small, and `theme.extend.colors` to add a custom color palette.
 
 — **_postcss.config.js_**
 
-Next.js's [default PostCSS configuration](https://nextjs.org/docs/advanced-features/customizing-postcss-config) with the addition of Tailwind.
+PostCSS configuration file. Other than Tailwind, it uses Next.js's [default PostCSS configuration](https://nextjs.org/docs/advanced-features/customizing-postcss-config).
 
 — **_src/tailwind.css_**
 
-Stylesheet containing the Tailwind directive. You can rename and move it as you wish; make sure to import it correctly from `pages/_app.js`.
+CSS file containing the `@tailwind` directive. It also contains examples of Tailwind's `@apply` directive and custom styles. You can rename and move it as you wish, but make sure you adjust the import path in `pages/_app.js`.
 
-Also see: [TailwindCSS documentation](https://tailwindcss.com/).
+You can see examples of Tailwind CSS in action in these component files, `src/components/ContentBox.js` and `src/components/Navbar.js`.
+
+### Tailwind Resources
+
+- [Tailwind Documentation](https://tailwindcss.com/)
+  - [Configuration](https://tailwindcss.com/docs/configuration)
+  - [Customizing Colors](https://tailwindcss.com/docs/customizing-colors)
+  - [Directives](https://tailwindcss.com/docs/functions-and-directives) (`@tailwind`, `@apply`, `@layer`, etc)
+- [Official Tailwind component examples](https://tailwindcss.com/components) – UI components
+- [Tailwind Components](https://tailwindcomponents.com/) – free UI components by the community
+- [Tailwind cheat sheet](https://tailwindcomponents.com/cheatsheet/)
+- [Awesome Tailwind CSS](https://github.com/aniftyco/awesome-tailwindcss) – more Tailwind resources
