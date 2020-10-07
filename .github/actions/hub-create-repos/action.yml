@@ -1,5 +1,7 @@
 name: 'hub-create-repos'
 description: 'Read a directory and create repos from subdirs'
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: 'node12'
   main: 'index.js'
