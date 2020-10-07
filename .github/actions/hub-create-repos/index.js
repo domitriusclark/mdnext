@@ -14,7 +14,7 @@ async function run() {
           exec(
             `gh repo create ${dir} --public --enable-issues=false -y`,
             {
-              timeout: 120000,
+              timeout: 60000,
             },
             (err, stdout, stderr) => {
               if (err) {
@@ -23,6 +23,7 @@ async function run() {
                 console.error('Failed to create repo for ', dir);
                 console.error(err);
                 console.error(stderr);
+                console.error('Finished logging related to failure of ', dir);
                 return resolve('failed');
               }
               console.log('Finished creating repo for ', dir);
