@@ -2,8 +2,8 @@
   "name": "mdnext-tailwind",
   "description": "MDNEXT template with Tailwind CSS",
   "version": "1.0.1",
-  "repository": "https://github.com/domitriusclark/mdnext-base.git",
-  "author": "ekafyi",
+  "repository": "https://github.com/domitriusclark/mdnext-tailwind.git",
+  "author": "Eka @ekafyi",
   "main": "next.config.js",
   "scripts": {
     "build": "next build",
@@ -29,7 +29,6 @@
     "use-cloudinary": "^3.1.6"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "postcss-flexbugs-fixes": "^4.2.1",
