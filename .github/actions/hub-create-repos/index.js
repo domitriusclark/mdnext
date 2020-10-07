@@ -14,7 +14,7 @@ async function run() {
           exec(
             `gh repo create ${dir} --public --enable-issues=false`,
             {
-              timeout: 120,
+              timeout: 120000,
             },
             (err, stdout, stderr) => {
               if (err) {
