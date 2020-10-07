@@ -12,19 +12,21 @@ async function run() {
         new Promise((resolve, reject) => {
           console.log('Kicking off creating repo for ', dir);
           exec(
-            `gh repo create ${dir} --public --enable-issues=false`,
+            `gh repo create ${dir} --public --enable-issues=false -y`,
             {
               timeout: 120000,
             },
             (err, stdout, stderr) => {
               if (err) {
+                if (err.message.includes('already exists'))
+                  return resolve('success');
                 console.error('Failed to create repo for ', dir);
                 console.error(err);
                 console.error(stderr);
-                resolve('failed');
+                return resolve('failed');
               }
               console.log('Finished creating repo for ', dir);
-              resolve('success');
+              return resolve('success');
             },
           );
         }),
