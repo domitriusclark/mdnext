@@ -13,6 +13,9 @@ async function run() {
           console.log('Kicking off creating repo for ', dir);
           exec(
             `gh repo create ${dir} --public --enable-issues=false`,
+            {
+              timeout: 120,
+            },
             (err, stdout, stderr) => {
               if (err) {
                 console.error('Failed to create repo for ', dir);
@@ -27,7 +30,9 @@ async function run() {
         }),
       );
     }
+    console.log('All creations kicked off', promises.length);
     const results = await Promise.all(promises);
+    console.log('The await for results has finished');
     if (results.some((result) => result === 'failed')) {
       throw new Error(`Failed to create a repo`);
     }
