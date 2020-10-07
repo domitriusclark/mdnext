@@ -4,13 +4,15 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   master:
     runs-on: ubuntu-latest
-    steps:      
+    steps:
       - uses: actions/checkout@master
       - uses: ./.github/actions/hub-create-repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: publish:starters
         uses: johno/actions-push-subdirectories@master
         env:
@@ -18,4 +20,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: templates domitriusclark
-      
