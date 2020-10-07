@@ -25,11 +25,16 @@ async function run() {
         }),
       );
     }
-    await Promise.all(promises);
+    const results = await Promise.all(promises);
+    if (results.some((result, index) => result === 'failed')) {
+      throw new Error(`Failed to create repo for ${dirs[index]}`);
+    }
+
     console.debug('Finished creating repos');
   } catch (error) {
     console.error('Failed in hub-create-repos action');
     console.error(error.message);
+    throw new Error('hub-create-repos failed to create a repo');
   }
 }
 
