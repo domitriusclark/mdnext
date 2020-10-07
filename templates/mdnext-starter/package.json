@@ -2,7 +2,7 @@
   "name": "mdnext-starter",
   "description": "This serves as the base for creating new starters for MDNEXT using NextJS & MDX",
   "version": "1.0.1",
-  "repository": "https://github.com/domitriusclark/mdnext-base.git",
+  "repository": "https://github.com/domitriusclark/mdnext-starter.git",
   "author": "domitriusclark",
   "main": "next.config.js",
   "scripts": {
