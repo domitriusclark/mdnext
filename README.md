@@ -66,3 +66,5 @@ Community templates:
 
 * [mdnext-graphcms](https://github.com/domitriusclark/mdnext-graphcms) -
   Utilizing [GraphCMS](https://graphcms.com) as a datasource for our blog posts, gives an example of how you'd pull markdown from the CMS and use it in your Next project.
+
+Want to submit a new template? Head over to our [Contributing section](https://github.com/domitriusclark/mdnext/blob/master/CONTRIBUTORS.md) and check out [mdnext-starter](https://github.com/domitriusclark/mdnext-starter)
