@@ -4,10 +4,10 @@
 
 <div align="center">
 
-Welcome to `mdnext-starter`
+Welcome to `mdnext-twin-macro`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-starter)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-twin-macro)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-twin-macro)
 
 <br/>
 
@@ -15,8 +15,9 @@ Welcome to `mdnext-starter`
 
 ---
 
-- [Installation](#installation)
 - [Usage](#usage)
+- [Breakdown](#breakdown)
+- [Resources](#resources)
 
 ---
 
@@ -24,11 +25,7 @@ Welcome to `mdnext-starter`
 
 Coming with a base understanding of the [NextJS opinions and documentation](https://nextjs.org/docs/getting-started), will give you a solid grasp on the structure of our templates.
 
-# File structure
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png)
-
-# Breakdown
+## Breakdown
 
 — **_jsconfig.js_**
 
@@ -39,7 +36,7 @@ NextJS lets us configure absolute paths for our app. We use this to easily impor
 The pages directory defines your routing. Lifecycle methods like `getStaticProps` / `getStaticPaths` / `getServerProps` are available at the page level. This is where we consume our MDX content as data to pass to our components.
 
 `_app.js`:
-NextJS allows you to override the App component, which is used to initialize pages. More [here](https://nextjs.org/docs/advanced-features/custom-app)
+NextJS allows you to override the App component, which is used to initialize pages. We have also wrapped our application with a custom `Layout` component in this file, to persist site-wide styling across pages. More [here](https://nextjs.org/docs/advanced-features/custom-app)
 
 `_document.js`:
 Allows you to augment our application's `<html>` and `<body>` tags.
@@ -59,10 +56,13 @@ Our `src` directory holds all of our client code. Our `components`, custom `hook
 — **_next.config.js_**
 For custom configuration around things like `environment variables`, `webpack`, `pageExtensions`, and many [more](https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts#L12-L63), you can utilize `next.config.js`
 
-# Creating your own starter
+— **_tailwind.config.js_**
+For extending or overriding the default tailwind utility classes. `twin.macro` builds off of this file, so any custom styling you'd like to include will be picked up by `twin` and available for use with the `tw` prop. [Read more about Tailwind configuration options.](https://tailwindcss.com/docs/configuration#app)
 
-To create a starter to add to our templates directory:
+## Resources
 
-- Fork the `mdnext` repo
-- run `mdnext`'s cli in the templates folder and select `mdnext-starter`
-- Prepare some resources for your new additions to the template and update the README
+- The [Tailwind CSS documentation](https://tailwindcss.com/) is excellent. Definitely a great resource for learning how to effectively apply the tailwind utility classes. 💯
+- There's an excellent [Tailwind cheat sheet](https://nerdcave.com/tailwind-cheat-sheet) as well, if you'd like more condensed documentation.
+- Twin.macro's documentation for the most part lives in [their README](https://github.com/ben-rogerson/twin.macro).
+- They have a [twin.macro Discord community](https://discord.gg/Xj6x9z7) that is a good place to get support or advice.
+- They also maintain [a twin.macro example project](https://codesandbox.io/embed/next-tailwind-emotion-starter-8h2b2?module=%2Fpages%2Findex.js) to demonstrate how the library works.
