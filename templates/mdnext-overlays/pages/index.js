@@ -1,10 +1,9 @@
-import { Flex } from '@chakra-ui/core';
-import { Layout } from '@components/Layout';
+import { Flex, Heading } from '@chakra-ui/core';
 
 export default function Index() {
   return (
-    <Layout>
-      <Flex direction="column"></Flex>
-    </Layout>
+    <Flex direction="column">
+      <Heading as="h1">mdnext-overlays</Heading>
+    </Flex>
   );
 }
