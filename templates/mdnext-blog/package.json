@@ -23,7 +23,7 @@
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",
     "js-cookie": "^2.2.1",
-    "next": "^9.5.2",
+    "next": "^9.5.4",
     "next-cookies": "^2.0.3",
     "next-mdx-remote": "^1.0.0",
     "next-seo": "^4.7.3",
