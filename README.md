@@ -58,11 +58,13 @@ Currently supported templates:
 - [mdnext-starter](https://github.com/domitriusclark/mdnext-starter) - This is the starter used to create new templates. This comes with a very minimal setup strictly for handling MDX with Next.
 
 - [mdnext-blog](https://github.com/domitriusclark/mdnext-blog) -
-  A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data.
+  A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data.This comes pre-configured with Chakra-UI for your styles and Cloudinary for all your media handling!
 
 Community templates:
 
-- [mdnext-twin-macro](https://github.com/domitriusclark/mdnext-twin-macro]) - Our starter configured to utilize [twin.macro]() for styling. This allows you to utilize [Tailwind's](https://tailwindcss.com/) utility classes and [Emotion's](https://emotion.sh/docs/introduction) CSS method for one off style! By [Will Harris](https://twitter.com/will__tweets)
+- [mdnext-tailwind](https://github.com/domitriusclark/mdnext/tree/master/templates/mdnext-tailwind) - Want to get up and running quickly with a Tailwind + mdnext project?? Now is your chance. A proper config alongside some great resources can help even those new to Tailwind feel productive. By [Eka](https://twitter.com/ekafyi)
+
+- [mdnext-twin-macro](https://github.com/domitriusclark/mdnext/tree/master/templates/mdnext-twin-macro) - Our starter configured to utilize [twin.macro](https://github.com/ben-rogerson/twin.macro) for styling. This allows you to utilize [Tailwind's](https://tailwindcss.com/) utility classes and [Emotion's](https://emotion.sh/docs/introduction) CSS method for one off style! By [Will Harris](https://twitter.com/will__tweets)
 
 * [mdnext-graphcms](https://github.com/domitriusclark/mdnext-graphcms) -
   Utilizing [GraphCMS](https://graphcms.com) as a datasource for our blog posts, gives an example of how you'd pull markdown from the CMS and use it in your Next project.
