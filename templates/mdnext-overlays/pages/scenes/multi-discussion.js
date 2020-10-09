@@ -1,27 +1,28 @@
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
-const tmi = require('tmi.js');
 
-import { Flex, Box, Text, Heading, Icon } from '@chakra-ui/core';
-import SceneContainer from '@components/SceneContainer';
+import { Flex, Text, Icon } from '@chakra-ui/core';
 import { FaTwitter } from 'react-icons/fa';
+import SceneContainer from '@components/SceneContainer';
+import TwitchChatBox from '@components/TwitchChatBox';
 
 function GuestCard({ guest }) {
   return (
     <Flex
-      height="300px"
-      width="300px"
+      height="400px"
+      width="400px"
       border="2px solid black"
       borderRadius="8px"
       alignItems="flex-start"
+      mr={24}
     >
       <Flex
         alignItems="center"
         w="50%"
-        justifyContent="space-between"
+        justifyContent="space-evenly"
         alignSelf="flex-end"
       >
-        <Text size="lg">{guest.name}</Text>
+        <Text>{guest.name}</Text>
         <Icon as={FaTwitter} />
       </Flex>
     </Flex>
@@ -29,32 +30,20 @@ function GuestCard({ guest }) {
 }
 
 export default function MultiDiscussion({ frontMatter }) {
-  const [messages, setMessages] = React.useState([]);
-  const client = new tmi.Client({
-    connection: {
-      secure: true,
-      reconnect: true,
-    },
-    channels: ['domitriusclark'],
-  });
-
-  client.connect();
-  React.useEffect(() => {
-    client.on('chat', (channel, userstate, message, self) => {
-      // Do your stuff.
-      return setMessages([...messages, message]);
-    });
-  }, [messages]);
   return (
-    <SceneContainer>
-      <Flex height="100%" w="100%" alignItems="center" justifyContent="center">
+    <SceneContainer display="flex" alignItems="center" justifyContent="center">
+      <TwitchChatBox
+        height="600px"
+        width="300px"
+        direction="column"
+        border="6px solid yellow"
+        ml={24}
+      />
+      <Flex w="100%" justifyContent="center">
         {frontMatter.guests.map((guest) => {
           return <GuestCard guest={guest} />;
         })}
       </Flex>
-      {messages.map((message) => (
-        <Text>{message}</Text>
-      ))}
     </SceneContainer>
   );
 }
