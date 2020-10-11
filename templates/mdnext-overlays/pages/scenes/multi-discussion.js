@@ -1,10 +1,12 @@
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
+import useFollower from '@hooks/useFollower';
 
 import { Flex, Text, Icon } from '@chakra-ui/core';
 import { FaTwitter } from 'react-icons/fa';
 import SceneContainer from '@components/SceneContainer';
 import TwitchChatBox from '@components/TwitchChatBox';
+import FollowerAlert from '@components/FollowerAlert';
 
 function GuestCard({ guest }) {
   return (
@@ -29,7 +31,9 @@ function GuestCard({ guest }) {
   );
 }
 
-export default function MultiDiscussion({ frontMatter }) {
+export default function MultiDiscussionScene({ frontMatter }) {
+  const { follower } = useFollower();
+
   return (
     <SceneContainer display="flex" alignItems="center" justifyContent="center">
       <TwitchChatBox
@@ -39,6 +43,7 @@ export default function MultiDiscussion({ frontMatter }) {
         border="6px solid yellow"
         ml={24}
       />
+      {follower && <FollowerAlert follower={follower} />}
       <Flex w="100%" justifyContent="center">
         {frontMatter.guests.map((guest) => {
           return <GuestCard guest={guest} />;

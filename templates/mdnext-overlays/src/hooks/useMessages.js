@@ -73,6 +73,9 @@ export default function useTwitchChat({ channel }) {
 
 /*
 
+Use this to acquire custom tokens for the webhooks
+https://twitchtokengenerator.com/
+
 Use this to configure with oauth to get deeper permissions on your own account
 
 let options = {
