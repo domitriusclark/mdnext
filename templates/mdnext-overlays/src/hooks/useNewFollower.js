@@ -6,14 +6,14 @@ const pn = new PubNub({
   subscribeKey: process.env.PUBNUB_SUBSCRIBE_KEY,
 });
 
-export default function useFollower() {
+export default function useNewFollower({ disappear, channels }) {
   const [follower, setFollower] = React.useState('');
 
   React.useEffect(() => {
     fetch('/api/webhooks/ping');
 
     pn.subscribe({
-      channels: ['twitch-follower'],
+      channels: [...channels],
     });
 
     pn.addListener({
@@ -25,7 +25,7 @@ export default function useFollower() {
     setTimeout(() => {
       console.log('clear out the follower');
       setFollower('');
-    }, 4000);
+    }, disappear);
   }, [follower]);
 
   return {

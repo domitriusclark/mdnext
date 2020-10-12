@@ -8,5 +8,6 @@ module.exports = {
     PUBNUB_PUBLISH_KEY: process.env.PUBNUB_PUBLISH_KEY,
     PUBNUB_SUBSCRIBE_KEY: process.env.PUBNUB_SUBSCRIBE_KEY,
     PUNUB_SECRET_KEY: process.env.PUBNUB_SUBSCRIBE_KEY,
+    AUTH_TOKEN: process.env.AUTH_TOKEN,
   },
 };

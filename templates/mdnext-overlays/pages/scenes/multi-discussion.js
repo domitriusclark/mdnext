@@ -1,12 +1,17 @@
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
-import useFollower from '@hooks/useFollower';
+import useNewFollower from '@hooks/useNewFollower';
+import useChatListener from '@hooks/useChatListener';
 
 import { Flex, Text, Icon } from '@chakra-ui/core';
 import { FaTwitter } from 'react-icons/fa';
 import SceneContainer from '@components/SceneContainer';
 import TwitchChatBox from '@components/TwitchChatBox';
 import FollowerAlert from '@components/FollowerAlert';
+
+const CHAT_COMMANDS = {
+  '!test': "Yo bro this test worked, you're the best",
+};
 
 function GuestCard({ guest }) {
   return (
@@ -19,7 +24,7 @@ function GuestCard({ guest }) {
       mr={24}
     >
       <Flex
-        alignItems="center"
+        alignItems="center "
         w="50%"
         justifyContent="space-evenly"
         alignSelf="flex-end"
@@ -32,22 +37,40 @@ function GuestCard({ guest }) {
 }
 
 export default function MultiDiscussionScene({ frontMatter }) {
-  const { follower } = useFollower();
+  const { follower } = useNewFollower({
+    disappear: 4000,
+    channels: ['twitch-follower'],
+  });
+
+  const { command } = useChatListener({
+    commands: CHAT_COMMANDS,
+    channel: 'domitriusclark',
+  });
+
+  console.log(command);
 
   return (
-    <SceneContainer display="flex" alignItems="center" justifyContent="center">
-      <TwitchChatBox
-        height="600px"
-        width="300px"
-        direction="column"
-        border="6px solid yellow"
-        ml={24}
-      />
+    <SceneContainer
+      display="flex"
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+    >
       {follower && <FollowerAlert follower={follower} />}
-      <Flex w="100%" justifyContent="center">
-        {frontMatter.guests.map((guest) => {
-          return <GuestCard guest={guest} />;
-        })}
+      <Flex>
+        <TwitchChatBox
+          height="600px"
+          width="300px"
+          direction="column"
+          border="6px solid yellow"
+          ml={24}
+        />
+
+        <Flex w="100%" justifyContent="center">
+          {frontMatter.guests.map((guest) => {
+            return <GuestCard guest={guest} />;
+          })}
+        </Flex>
       </Flex>
     </SceneContainer>
   );

@@ -8,6 +8,8 @@ export default function FollowerAlert({ follower }) {
   return (
     <AnimatePresence>
       <Flex
+        alignSelf="center"
+        justifySelf="center"
         as={motion.div}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ opacity: 1, scale: 1 }}
