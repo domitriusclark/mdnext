@@ -3,6 +3,7 @@ import tmi from 'tmi.js';
 
 export default function useChatListener({ commands, channel }) {
   const [command, setCommand] = React.useState('');
+
   // We should take an argument for CHAT_COMMANDS ✅
 
   // Setup connection with Twitch to listen for messages
@@ -20,18 +21,12 @@ export default function useChatListener({ commands, channel }) {
 
   React.useEffect(() => {
     client.connect();
-    client.on('chat', (channel, userstate, message, self) => {
-      console.log({
-        channel,
-        userstate,
-      });
 
+    client.on('chat', (channel, userstate, message, self) => {
       // Check to make sure the chat message is a command & exists
       if (message.match(/^(!|--)/)) {
         const [command] = message.split(' ');
         const commandResult = commands[command.toLowerCase()];
-
-        console.log({ commandResult });
 
         if (!commandResult) {
           return;
@@ -42,7 +37,11 @@ export default function useChatListener({ commands, channel }) {
 
       setCommand(message);
     });
-  });
+
+    setTimeout(() => setCommand(''), 4000);
+
+    return () => client.off;
+  }, [command]);
 
   return {
     command,

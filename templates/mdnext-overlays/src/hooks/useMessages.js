@@ -30,8 +30,9 @@ const parseEmotes = (emotes, message) => {
   return messageWithEmotes;
 };
 
-export default function useTwitchChat({ channel }) {
+export default function useMessages({ channel, commands = {} }) {
   const [messages, setMessages] = React.useState([]);
+  const [command, setCommand] = React.useState('');
 
   const client = new tmi.Client({
     connection: {
@@ -39,19 +40,32 @@ export default function useTwitchChat({ channel }) {
       reconnect: true,
     },
     channels: [channel],
+    identity: {
+      username: 'domitriusclark',
+      password: process.env.AUTH_TOKEN,
+    },
   });
 
   React.useEffect(() => {
     client.connect();
 
     client.on('chat', (channel, userstate, message, self) => {
-      console.log({
-        channel,
-        userstate,
-      });
-
       if (message.emotes) {
         message = parseEmotes(message.emotes, message);
+      }
+
+      if (message.match(/^(!|--)/)) {
+        console.log('Does this fire?');
+        const [command] = message.split(' ');
+        const commandResult = commands[command.toLowerCase()];
+
+        if (!commandResult) {
+          return;
+        }
+
+        client.say(channel, commandResult);
+
+        setCommand(message);
       }
 
       return setMessages([
@@ -60,14 +74,20 @@ export default function useTwitchChat({ channel }) {
       ]);
     });
 
+    if (command.length > 0) {
+      console.log({ command });
+      setTimeout(() => setCommand(''), 3000);
+    }
+
     return () => {
       console.log('Disconnecting from socket');
       return client.disconnect();
     };
-  });
+  }, [messages]);
 
   return {
     messages,
+    command,
   };
 }
 
@@ -75,22 +95,5 @@ export default function useTwitchChat({ channel }) {
 
 Use this to acquire custom tokens for the webhooks
 https://twitchtokengenerator.com/
-
-Use this to configure with oauth to get deeper permissions on your own account
-
-let options = {
-    options: {
-        debug: true
-    },
-    connection: {
-        secure: true,
-        reconnect: true
-    },
-    identity: {
-        username: "Schmoopiie",
-        password: "oauth:a29b68aede41e25179a66c5978b21437"
-    },
-    channels: [ "#schmoopiie" ]
-};
 
 */
