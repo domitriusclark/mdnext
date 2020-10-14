@@ -9,7 +9,7 @@ MDNEXT is an ecosystem of tools to get your NextJS + MDX projects blasting off :
 
 
 <br/>
-<div align="left">
+<div align="center">
   A CLI for selecting which template to start with
   <br />
   A growing components library for MDX based interactions and UI 
