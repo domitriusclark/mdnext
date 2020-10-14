@@ -6,13 +6,15 @@
 
 MDNEXT is an ecosystem of tools that will get your Next + MDX projects blasting off :rocket:
 
-  - A CLI for selecting which template to start with
-  - A growing components library for MDX based interactions and UI 
-  - Internal & Community templates covering the bases of getting you started with some of the best tooling in the ecosystem
+
 
 <br/>
 
 </div>
+
+  - A CLI for selecting which template to start with
+  - A growing components library for MDX based interactions and UI 
+  - Internal & Community templates covering the bases of getting you started with some of the best tooling in the ecosystem
 
 ---
 
