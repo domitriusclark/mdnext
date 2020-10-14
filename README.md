@@ -4,7 +4,12 @@
 
 <div align="center">
 
-A CLI to get your projects up and running fast with opinionated NextJS + MDX starters
+MDNEXT is an ecosystem of tools that will get your Next + MDX projects blasting off :rocket:
+
+It includes:
+  - A CLI for selecting which template you want to start from
+  - A growing components library for MDX based interactions and UI 
+  - Internal & Community templates covering the bases of getting you started with some of the best tooling in the ecosystem
 
 <br/>
 
