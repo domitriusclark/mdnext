@@ -16,7 +16,7 @@ MDNEXT is an ecosystem of tools to get your NextJS + MDX projects blasting off :
     <br />
   Internal & Community templates covering the bases of getting you started with some of the best tooling in the ecosystem
   
- </div
+ </div>
 
 </div>
 
