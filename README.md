@@ -42,12 +42,6 @@ then run `mdnext` to start the CLI prompts
 mdnext
 ```
 
-MDNEXT has grown to from a simple collection of templates, to an expanding ecosystem of tools for MDX + NextJS users.
-
-- A CLI for choosing form our growing selection of templates
-- An MDX based component library (built on top of ChakraUI :partying-face:
-- Internally maintained and community templates that weave together the amazing tools at our disposal
-
 ## Templates
 
 MDNEXT tempaltes are focused on getting you up and running quickly with your NextJS + MDX based projects. Local content blogs, CMS powered solutions, and (hopefully soon) ecommerce ready sites all built around awesome tools from our ecosystem. These tools include:
