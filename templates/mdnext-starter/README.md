@@ -24,9 +24,6 @@ Welcome to `mdnext-starter`
 
 Coming with a base understanding of the [NextJS opinions and documentation](https://nextjs.org/docs/getting-started), will give you a solid grasp on the structure of our templates.
 
-# File structure
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e0ceedc-c244-488f-b984-4bc507a81348/Screen_Shot_2020-09-04_at_1.51.10_AM.png)
 
 # Breakdown
 
