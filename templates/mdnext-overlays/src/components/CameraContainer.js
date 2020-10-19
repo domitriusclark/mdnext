@@ -4,7 +4,7 @@ import { Flex, Box, Text, Icon } from '@chakra-ui/core';
 
 import { FaTwitter } from 'react-icons/fa';
 
-export default function GuestCard({ guest }) {
+export default function CameraContainer({ guest }) {
   return (
     <Flex direction="column" height="500px" width="500px">
       <Box

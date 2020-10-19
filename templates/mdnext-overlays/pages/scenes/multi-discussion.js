@@ -6,7 +6,7 @@ import useEvent from '@hooks/useEvent';
 import useTwitchHelix from '@hooks/useTwitchHelix';
 
 import { Flex, Text, useToast } from '@chakra-ui/core';
-import GuestCard from '@components/GuestCard';
+import CameraContainer from '@components/CameraContainer';
 import SceneContainer from '@components/SceneContainer';
 import TwitchChatBox from '@components/TwitchChatBox';
 
@@ -76,7 +76,7 @@ export default function MultiDiscussionScene({ frontMatter, streamDetails }) {
       </Text>
       <Flex w="100%" justifyContent="space-evenly">
         {frontMatter.guests.map((guest) => {
-          return <GuestCard key={guest.name} guest={guest} />;
+          return <CameraContainer key={guest.name} guest={guest} />;
         })}
       </Flex>
       <TwitchChatBox
