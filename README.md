@@ -59,8 +59,9 @@ Currently supported templates:
 
 - [mdnext-starter](https://github.com/domitriusclark/mdnext-starter) - This is the starter used to create new templates. This comes with a very minimal setup strictly for handling MDX with Next.
 
-- [mdnext-blog](https://github.com/domitriusclark/mdnext-blog) -
-  A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data.This comes pre-configured with Chakra-UI for your styles and Cloudinary for all your media handling!
+- [mdnext-blog](https://github.com/domitriusclark/mdnext-blog) - A blog based project that lays the ground work on how to handle MDX locally w/ an easy transition into remote data.This comes pre-configured with Chakra-UI for your styles and Cloudinary for all your media handling!
+
+- [mdnext-overlays](https://github.com/domitriusclark/mdnext-overlays) - Control your OBS scenes for your twitch through your browser. Animations, alerts, live chat, & more configured and ready to level your streams up with your web skills!
 
 Community templates:
 
