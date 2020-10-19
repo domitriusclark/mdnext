@@ -1,0 +1,71 @@
+{
+  "name": "mdnext-overlays",
+  "description": "Set your stream scenes + more up with overlays powered by MDX, Framer, and Chakra!",
+  "version": "1.0.1",
+  "repository": "https://github.com/domitriusclark/mdnext-overlays.git",
+  "author": "domitriusclark",
+  "main": "next.config.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@chakra-ui/theme": "^1.0.0-rc.5",
+    "@chakra-ui/theme-tools": "^1.0.0-rc.5",
+    "@mdnext/components": "^0.1.0",
+    "@repeaterjs/react-hooks": "^0.1.1",
+    "fast-glob": "^3.2.4",
+    "framer-motion": "^2.7.7",
+    "gray-matter": "^4.0.2",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "^9.5.2",
+    "next-mdx-remote": "^1.0.0",
+    "next-seo": "^4.7.3",
+    "pubnub": "^4.29.9",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "tmi.js": "^1.5.0",
+    "use-cloudinary": "^3.1.6",
+    "use-sound": "^1.0.2"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx",
+    "twitch",
+    "framer"
+  ],
+  "license": "ISC"
+}
