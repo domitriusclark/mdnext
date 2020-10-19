@@ -12,14 +12,18 @@ export default async (req, res) => {
   } else if (req.method === 'POST') {
     console.log('POSTED');
 
-    let followers = [];
-    const follow = req.body.data[0].from_name;
-    followers.push(follow);
+    let events = [];
+
+    if (req.body.data[0].followed_at) {
+      events.push({ type: 'follow', from: req.body.data[0].from_name });
+    } else if (req.body.data[0].subscribed_at) {
+      events.push({ type: 'subscribe', from: req.body.data[0].from_name });
+    }
 
     pn.publish(
       {
-        channel: 'twitch-follower',
-        message: followers[0],
+        channel: 'events',
+        message: events[0],
       },
       (status, response) => console.log({ status, response }),
     );

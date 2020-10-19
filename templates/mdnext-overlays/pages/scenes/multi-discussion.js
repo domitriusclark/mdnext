@@ -1,62 +1,89 @@
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
-import useNewFollower from '@hooks/useNewFollower';
+import { useRouter } from 'next/router';
+import useChatListener from '@hooks/useChatListener';
+import useEvent from '@hooks/useEvent';
 import useTwitchHelix from '@hooks/useTwitchHelix';
-import useMessages from '@hooks/useMessages';
 
-import { Flex, Heading } from '@chakra-ui/core';
+import { Flex, Text, useToast } from '@chakra-ui/core';
 import GuestCard from '@components/GuestCard';
 import SceneContainer from '@components/SceneContainer';
 import TwitchChatBox from '@components/TwitchChatBox';
-import FollowerAlert from '@components/FollowerAlert';
 
 const CHAT_COMMANDS = {
-  '!test': "Yo bro this test worked, you're the best",
+  '!test': 'This is a test response from your chat command 👍',
 };
 
-export default function MultiDiscussionScene({
-  frontMatter,
-  currentUser,
-  streamDetails,
-}) {
-  const { messages, command } = useMessages({
+const ALERT_TIMER = 4000;
+
+export default function MultiDiscussionScene({ frontMatter, streamDetails }) {
+  const { connectListener, messages } = useChatListener({
     channel: 'domitriusClark ',
     commands: CHAT_COMMANDS,
   });
 
-  const { follower } = useNewFollower({
-    disappear: 4000,
-    channels: ['twitch-follower'],
+  const event = useEvent({
+    disappear: ALERT_TIMER,
+    channels: ['events'],
   });
+
+  const [current, setCurrent] = React.useState(event);
+  const [stale, setStale] = React.useState(false);
+  const timeout = React.useRef();
+  const toast = useToast();
+  const router = useRouter();
+  const urlRef = React.useRef(router.pathname);
+
+  React.useEffect(() => {
+    connectListener('on');
+    return () => {
+      if (urlRef.current !== router.pathname) {
+        connectListener('off');
+      }
+    };
+  }, [router.pathname]);
+
+  React.useEffect(() => {
+    if (current !== event) {
+      clearTimeout(timeout.current);
+
+      setStale(false);
+      setCurrent(event);
+
+      timeout.current = setTimeout(() => {
+        setStale(true);
+      }, ALERT_TIMER);
+    }
+  }, [event, current, stale, setStale, setCurrent]);
 
   return (
     <SceneContainer
       display="flex"
-      direction="column"
+      flexDirection="column"
       alignItems="center"
       justifyContent="center"
     >
-      {follower && <FollowerAlert follower={follower} />}
-      <Flex>
-        <TwitchChatBox
-          height="600px"
-          width="300px"
-          direction="column"
-          border="6px solid yellow"
-          ml={24}
-          messages={messages}
-        />
-
-        <Flex w="100%" justifyContent="center">
-          {frontMatter.guests.map((guest) => {
-            return <GuestCard key={guest.name} guest={guest} />;
-          })}
-        </Flex>
-      </Flex>
-      {command && <p>This shows when a command fires in chat</p>}
-      <Heading as="h1" size="lg">
+      {!stale &&
+        current &&
+        toast({
+          position: 'top',
+          title: `${event.type} from ${event.from}`,
+          duration: ALERT_TIMER,
+          status: 'success',
+        })}
+      <Text fontSize="5xl" mb={8}>
         {streamDetails.title}
-      </Heading>
+      </Text>
+      <Flex w="100%" justifyContent="space-evenly">
+        {frontMatter.guests.map((guest) => {
+          return <GuestCard key={guest.name} guest={guest} />;
+        })}
+      </Flex>
+      <TwitchChatBox
+        direction="column"
+        alignSelf="center"
+        messages={messages}
+      />
     </SceneContainer>
   );
 }

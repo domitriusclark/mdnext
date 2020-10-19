@@ -4,7 +4,7 @@ import { Flex, Box, Text, Icon } from '@chakra-ui/core';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function FollowerAlert({ follower }) {
+export default function Alert({ event }) {
   return (
     <AnimatePresence>
       <Flex
@@ -29,7 +29,11 @@ export default function FollowerAlert({ follower }) {
         <Box width="30%">
           <Icon />
         </Box>
-        <Box flex="1">{follower}</Box>
+        <Box flex="1">
+          <p>
+            {event.type} from {event.from}
+          </p>
+        </Box>
       </Flex>
     </AnimatePresence>
   );

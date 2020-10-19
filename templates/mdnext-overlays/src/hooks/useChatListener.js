@@ -1,12 +1,19 @@
 import React from 'react';
 import tmi from 'tmi.js';
 
-export default function useChatListener({ commands, channel }) {
-  const [command, setCommand] = React.useState('');
+import parseEmotes from '@utils/parseEmotes';
 
-  // We should take an argument for CHAT_COMMANDS ✅
+/*
 
-  // Setup connection with Twitch to listen for messages
+  Use this to acquire custom tokens for the webhooks
+  https://twitchtokengenerator.com/
+
+*/
+
+export default function useChatListener({ channel, commands = {} }) {
+  const [messages, setMessages] = React.useState([]);
+  const [command, setCommand] = React.useState();
+
   const client = new tmi.Client({
     connection: {
       secure: true,
@@ -19,11 +26,22 @@ export default function useChatListener({ commands, channel }) {
     },
   });
 
-  React.useEffect(() => {
-    client.connect();
+  function connectListener(value) {
+    if (value === 'on') {
+      console.log('Turning on the chat client');
+      return client.connect();
+    } else if (value === 'off') {
+      console.log('Turning off the chat client');
+      return client.disconnect();
+    }
+  }
 
-    client.on('chat', (channel, userstate, message, self) => {
-      // Check to make sure the chat message is a command & exists
+  React.useEffect(() => {
+    client.on('chat', async (channel, userstate, message, self) => {
+      if (message.emotes) {
+        message = parseEmotes(message.emotes, message);
+      }
+
       if (message.match(/^(!|--)/)) {
         const [command] = message.split(' ');
         const commandResult = commands[command.toLowerCase()];
@@ -32,18 +50,26 @@ export default function useChatListener({ commands, channel }) {
           return;
         }
 
-        client.say(channel, commandResult);
+        setMessages((prev) => [
+          ...prev,
+          { text: message, user: userstate.username },
+        ]);
+
+        await client.say(channel, commandResult);
+
+        return setCommand(message);
       }
 
-      setCommand(message);
+      return setMessages((prev) => [
+        ...prev,
+        { text: message, user: userstate.username },
+      ]);
     });
-
-    setTimeout(() => setCommand(''), 4000);
-
-    return () => client.off;
-  }, [command]);
+  }, []);
 
   return {
+    connectListener,
+    messages,
     command,
   };
 }

@@ -3399,6 +3399,18 @@
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.2.0.tgz#531c320e6b8f01f614336c14cee50ecf9fca4a4d"
   integrity sha512-0oVULza+qc8+j7I9OB74FVjbrH6JzUAYDAkTYXbsaPt/w4quAlgd4ADy9yxIVYyN1GCXp/z0AUuocaYDHA8O6Q==
 
+"@repeaterjs/react-hooks@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@repeaterjs/react-hooks/-/react-hooks-0.1.1.tgz#b0f82345a695595a18dea6265265597eb3125abe"
+  integrity sha512-3aYv5taEVA62gd6EKBzwfcJl4asMy9t4Yjh0FrZ4A5pmY3gjb6tkes0xgTshDu90OALlo1lbVbTlfonXYyEBQQ==
+  dependencies:
+    "@repeaterjs/repeater" "^3.0.1"
+
+"@repeaterjs/repeater@^3.0.1":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@repeaterjs/repeater/-/repeater-3.0.4.tgz#a04d63f4d1bf5540a41b01a921c9a7fddc3bd1ca"
+  integrity sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==
+
 "@rollup/plugin-alias@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-3.1.1.tgz#bb96cf37fefeb0a953a6566c284855c7d1cd290c"
