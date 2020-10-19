@@ -37,15 +37,15 @@ If this is your first time using an `mdnext` template and you wanna know more ab
 
 First let's drop into what's new in the file structure for `mdnext-overlays`
 
-- **_pages/api/webhooks_**
+**_pages/api/webhooks_**
 
 This is where our webhooks are setup with Twitch for events ie Follow/Subscribe & more
 
-- **_pages/scenes_**
+**_pages/scenes_**
 
 This allows us to have each scene be it's own route and own the current scene's data in `getStaticProps`
 
-- **_src/components_**
+**_src/components_**
 
 Some new components for usage around your scenes. They are preconfigured with some styles, but can be changed where you need!
 
@@ -58,7 +58,7 @@ Some new components for usage around your scenes. They are preconfigured with so
 - `TwitchChatBox.js`
   Use this to handle feeding your live chat into your scene
 
-- **_src/hooks_**
+**_src/hooks_**
 
 These hooks allow you to interface with the twitch chat through `tmi.js` for things like chat commands, live feed of chat, and more found (here)[link the tmi.js docs]. They also make use of pubnub to leverage a connection to the webhooks setup in our api
 
@@ -71,7 +71,7 @@ These hooks allow you to interface with the twitch chat through `tmi.js` for thi
 - `useTwitchHelix.js`
   This hook can be used to interact with the Twitch Helix API for anything concerning your account, stream, and other info. You'll see we use it at the page level to feed stream info to `getStaticProps`
 
-- **_src/scenes_**
+**_src/scenes_**
 
 This is where all the frontmatter data you need to fill your scene is sources. Anything hard coded you'd like can fit here, otherwise you'll be able to pull the data in through the page from the helix API.
 
