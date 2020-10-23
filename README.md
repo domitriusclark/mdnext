@@ -20,28 +20,26 @@ MDNEXT is an ecosystem of tools to get your NextJS + MDX projects blasting off :
 - [Templates](#templates)
 
 ---
-# Quick start
+# Quick start 🚀
 
 Looking to start a new project?
 
 ```bash
--- Using NPX we'll start up the mdnext CLI prompts --
+# Using NPX we'll start up the mdnext CLI prompts --
 npx mdnext
 
--- You will first be prompted with.. --
+# You will first be prompted with.. --
 What is the name of your project? 
 
--- Then you will choose which template to use --
+# Then you will choose which template to use 
 Select which template to use ...
 ```
 
 Just want to access components in your `MDX` based apps?
 
 ```bash
--- 
-	Even though we're a Next based ecosystem, our `MDX` components should be usable in most
-	React based applications 
---
+
+# Even though we're a Next based ecosystem, our `MDX` components should be usable in most React based applications 
 
 yarn add @mdnext/components
 
@@ -50,7 +48,7 @@ or
 npm i @mdnext/components
 ```
 
-# What is MDNEXT?
+# What is MDNEXT? 🤔
 
 `mdnext` is an ecosystem of tools to empower working with NextJS + MDX. 
 
@@ -61,7 +59,7 @@ The `mdnext` CLI surfaces a collection officially maintained and community submi
 The `mdnext` template collection are NextJS based projects with opinions around how to style, handle `MDX` (and other data sources), deliver media, and handle your most usual workflows (ecomm / blogs / product pages). While there is an officially maintained collection of templates, I was excited to see and share what the community has created. I know there's many different opinions and comfortabilities as a web developer and want our ecosystem to be accessible. 
 
 
-# Understanding MDNEXT
+# Understanding MDNEXT 📓
 
 The basic structure of the `mdnext-starter` can be seen throughout all other templates at it's core of how it utilizes `MDX` and `Next`.
 
@@ -90,7 +88,7 @@ For custom configuration around things like `environment variables`, `webpack`
 
 Each template will have it's own `README` with explicit documentation pertaining to the additions that make up the new configuration. Otherwise, you will find each template at it's core, starts similarly to `mdnext-starter`
 
-# Templates
+# Templates 🏗️
 
 The templates inside of `mdnext` were made to alleviate the friction when starting a new website. Blogs, personal sites, client work, etc can always feel very daunting to get started on. 
 
