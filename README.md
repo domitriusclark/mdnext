@@ -67,11 +67,11 @@ The basic structure of the `mdnext-starter` can be seen throughout all other tem
 
 Getting to know this structure will help inform you of the current best practices that are being followed (which are free to interpretation!) and easy enough to plug and play. Let's dive into the starter:
 
-`*jsconfig*.js`
+***`jsconfig.js`*** 
 
 NextJS lets us configure absolute paths for our app. We use this to easily import all of our functions and utilities inside of our `src` directory
 
-*`pages`*
+***`pages`*** 
 
 The pages directory defines your routing. Lifecycle methods like `getStaticProps` / `getStaticPaths` / `getServerProps` are available at the page level. This is where we consume our MDX content as data to pass to our components.
 
@@ -89,9 +89,6 @@ Our `src` directory holds all of our client code. Our `components`, custom `
 For custom configuration around things like `environment variables`, `webpack`, `pageExtensions`, and many [more](https://github.com/vercel/next.js/blob/canary/packages/next/next-server/server/config.ts#L12-L63), you can utilize `next.config.js`
 
 Each template will have it's own `README` with explicit documentation pertaining to the additions that make up the new configuration. Otherwise, you will find each template at it's core, starts similarly to `mdnext-starter`
-
-Want to submit a new template? Head over to our [Contributing section](https://github.com/domitriusclark/mdnext/blob/master/CONTRIBUTORS.md) and check out [mdnext-starter](https://github.com/domitriusclark/mdnext-starter)
-
 
 # Templates
 
@@ -124,3 +121,6 @@ Want to get up and running quickly with a `Tailwind` + `mdnext` project? This is
 This starter is configured with `twin.macro` as it's choice of styling. This allows you to utilize `Tailwind's` utility classes and `emotion's` `css` method for one off styles.
 - `mdnext-graphcms`
 Utilizing `GraphCMS` as our datasource, we setup the basics for a blog. It starts you off with a simple example of how you can pull Markdown from GraphCMS and feed it to our UI with our `MDX`
+
+Want to submit a new template? Head over to our [Contributing section](https://github.com/domitriusclark/mdnext/blob/master/CONTRIBUTORS.md) and check out [mdnext-starter](https://github.com/domitriusclark/mdnext-starter)
+
