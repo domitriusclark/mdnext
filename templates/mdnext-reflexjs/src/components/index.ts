@@ -10,4 +10,5 @@ export * from './mode-toggle';
 export * from './mdx-components';
 export * from './navbar-link';
 export * from './navbar';
+export * from './page';
 export * from './prism';

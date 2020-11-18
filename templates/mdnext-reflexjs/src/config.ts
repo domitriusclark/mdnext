@@ -13,16 +13,19 @@ const config = {
       url: '/',
     },
     {
-      title: 'Twitter',
-      url: '#',
+      title: 'Blog',
+      url: '/blog',
     },
     {
-      title: 'GitHub',
+      title: 'Twitter',
       url: '#',
     },
   ],
   blog: {
-    contentPath: './content/blog',
+    contentPath: './content/posts',
+  },
+  page: {
+    contentPath: './content/pages',
   },
   mdx: {
     options: {},

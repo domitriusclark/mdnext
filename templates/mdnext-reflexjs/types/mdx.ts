@@ -18,3 +18,7 @@ export interface MdxContent extends MdxPath {
     caption?: string;
   };
 }
+
+export interface BlogPost extends MdxContent {}
+
+export interface MdxPage extends MdxContent {}

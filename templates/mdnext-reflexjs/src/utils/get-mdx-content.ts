@@ -26,7 +26,7 @@ export async function getMdxPaths(source: string): Promise<MdxPath[]> {
 
       return {
         filepath,
-        slug,
+        slug: slug === 'index' ? '' : slug,
       };
     }),
   );
@@ -35,6 +35,7 @@ export async function getMdxPaths(source: string): Promise<MdxPath[]> {
 export async function getMdxContent(
   source: string,
   slugs?: string[],
+  basePath?: string,
 ): Promise<MdxContent[]> {
   const mdxPaths = (await getMdxPaths(source)).filter((mdxPath) =>
     slugs ? slugs.includes(mdxPath.slug) : true,
@@ -61,7 +62,7 @@ export async function getMdxContent(
 
       const mdxContent: MdxContent = {
         ...mdxPath,
-        url: `/blog/${mdxPath.slug}`,
+        url: `${basePath}/${mdxPath.slug}`,
         hash,
         content,
         readingTime: readingTime(content).text,

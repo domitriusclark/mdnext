@@ -36,12 +36,11 @@ export function Navbar({ ...props }) {
             {config.site.name}
           </a>
         </Link>
-        <Flex w="100%">
+        <Flex w="100%" justifyContent="space-between|flex-end" ml="0|auto">
           <div
             display="inline-grid"
-            col={config.links.length}
+            col={`repeat(${config.links.length}, minmax(0,auto))`}
             gap="6"
-            ml="0|auto"
           >
             {config.links.map((link) => (
               <NavbarLink key={link.url} href={link.url}>

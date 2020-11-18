@@ -1,22 +1,22 @@
-import { Layout, BlogPage } from '@components';
+import { Layout, Page } from '@components';
 import { getMdxPaths, getMdxContent } from '@utils';
 import config from '@config';
-import { BlogPost } from 'types';
+import { MdxPage } from 'types';
 
-export interface BlogsPageProps {
-  blog: BlogPost;
+export interface MdxPageProps {
+  page: MdxPage;
 }
 
-export default function BlogPostPage({ blog }: BlogsPageProps) {
+export default function PagePage({ page }: MdxPageProps) {
   return (
     <Layout>
-      <BlogPage blog={blog} />
+      <Page page={page} />
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const mdxPaths = await getMdxPaths(config.blog.contentPath);
+  const mdxPaths = await getMdxPaths(config.page.contentPath);
   const paths = mdxPaths.map(({ slug }) => ({
     params: {
       slug: slug.split('/'),
@@ -30,15 +30,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const [blog] = await getMdxContent(
-    config.blog.contentPath,
-    slug.join('/'),
-    '/blog',
+  const [page] = await getMdxContent(
+    config.page.contentPath,
+    slug ? slug.join('/') : '',
   );
 
   return {
     props: {
-      blog,
+      page,
     },
   };
 }
