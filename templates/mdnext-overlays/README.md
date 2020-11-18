@@ -95,4 +95,6 @@ We'll be using:
   - CALLBACK_URL
   - TWITCH_AUTH_TOKEN
 
+You can obtain your Twitch keys for the above variables from https://twitchapps.com/tmi/ & https://twitchtokengenerator.com/
+
 For local testing you're going to want to use [ngrok](https://ngrok.com/) so we can deliver a callback url for Twitch to use and us to listen to
