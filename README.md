@@ -14,10 +14,10 @@ MDNEXT is an ecosystem of tools to get your NextJS + MDX projects blasting off :
 
 ---
 
-- [Quick Start](#quick-start)
-- [What is MDNEXT?](#what-is-mdnext)
-- [Understanding MDNEXT's structure](#understanding-mdnext)
-- [Templates](#templates)
+- [Quick Start](#quick-start-)
+- [What is MDNEXT?](#what-is-mdnext-)
+- [Understanding MDNEXT's structure](#understanding-mdnext-)
+- [Templates](#templates-%EF%B8%8F)
 
 ---
 # Quick start 🚀
