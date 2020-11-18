@@ -245,7 +245,7 @@ export default {
     },
   },
   container: {
-    px: 4,
+    px: '6|4|4',
     maxW: 1024,
     mx: 'auto',
 
@@ -350,7 +350,7 @@ export default {
     },
     title: {
       variant: 'heading.h1',
-      fontSize: '2xl|3lg|5xl',
+      fontSize: '4xl|5xl|6xl',
     },
   },
 

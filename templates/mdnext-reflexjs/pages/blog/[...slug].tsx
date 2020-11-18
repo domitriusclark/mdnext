@@ -10,9 +10,7 @@ export interface BlogsPageProps {
 export default function BlogPostPage({ blog }: BlogsPageProps) {
   return (
     <Layout>
-      <div variant="container.sm" py="10|12">
-        <BlogPage blog={blog} />
-      </div>
+      <BlogPage blog={blog} />
     </Layout>
   );
 }

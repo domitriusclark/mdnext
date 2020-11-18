@@ -1,3 +1,4 @@
+export * from './bio';
 export * from './blog-meta';
 export * from './blog-page';
 export * from './blog-teaser';

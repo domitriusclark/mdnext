@@ -3,15 +3,22 @@ const config = {
     name: 'MDNEXT',
     copyright: `© ${new Date().getFullYear()} MDXNEXT = MDX + Nextjs`,
   },
+  bio: {
+    heading: "Hey, I'm Emily 👋",
+    text: 'I code, design and run a podcast.',
+  },
   links: [
     {
       title: 'Home',
       url: '/',
     },
     {
-      title: 'Blog',
-      url: '/blog',
-      pathnames: ['/blog/[...slug]'],
+      title: 'Twitter',
+      url: '#',
+    },
+    {
+      title: 'GitHub',
+      url: '#',
     },
   ],
   blog: {

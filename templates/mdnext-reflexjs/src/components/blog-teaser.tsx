@@ -10,6 +10,7 @@ export interface BlogTeaserProps {
 export function BlogTeaser({ blog, ...props }: BlogTeaserProps) {
   return (
     <article {...props}>
+      <hr my="12|16" />
       <BlogMeta blog={blog} fontSize="sm" />
       <h2 variant="heading.h2" my="4">
         <Link href={blog.url} passHref>
@@ -44,7 +45,6 @@ export function BlogTeaser({ blog, ...props }: BlogTeaserProps) {
           Read more <Icon name="arrow" size="4" ml="2" />
         </a>
       </Link>
-      <hr my="12|16" />
     </article>
   );
 }

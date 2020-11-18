@@ -19,6 +19,7 @@ export function NavbarLink({
       <a
         textDecoration="none"
         color="text"
+        fontSize="lg|md"
         fontWeight={
           pathname === href || activePathNames?.includes(pathname)
             ? 'semibold'

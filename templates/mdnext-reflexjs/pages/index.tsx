@@ -1,11 +1,31 @@
-export default function IndexPage() {
+import { Layout, BlogTeaser, Bio } from '@components';
+import { getMdxContent } from '@utils';
+import config from '@config';
+import { BlogPost } from 'types';
+
+export interface BlogPageProps {
+  blogs: BlogPost[];
+}
+
+export default function BlogPage({ blogs }: BlogPageProps) {
   return (
-    <div variant="container">
-      <h1>Quam cupiditate odit fuga</h1>
-      <p>
-        Catch decade him. Enter crime discuss would skin current look. Radio
-        generation material pick.
-      </p>
-    </div>
+    <Layout>
+      <div variant="container.sm" py="10|12">
+        <Bio {...config.bio} />
+        {blogs.map((blog) => (
+          <BlogTeaser key={blog.slug} blog={blog} />
+        ))}
+      </div>
+    </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const blogs = await getMdxContent(config.blog.contentPath);
+
+  return {
+    props: {
+      blogs,
+    },
+  };
 }
