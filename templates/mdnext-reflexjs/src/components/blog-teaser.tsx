@@ -15,7 +15,7 @@ export function BlogTeaser({ blog, ...props }: BlogTeaserProps) {
       <h2 variant="heading.h2" my="4">
         <Link href={blog.url} passHref>
           <a
-            color="text"
+            color="heading"
             textDecoration="none"
             _hover={{
               color: 'primary',

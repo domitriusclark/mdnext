@@ -13,3 +13,4 @@ export * from './navbar-link';
 export * from './navbar';
 export * from './page';
 export * from './prism';
+export * from './search-box';

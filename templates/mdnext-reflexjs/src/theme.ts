@@ -7,6 +7,7 @@ export default {
     primary: '#06f',
     gray: '#6c6c6c',
     border: '#eaeaea',
+    muted: '#f7f7f8',
     prism: {
       text: '#d6deeb',
       lineNumber: '#88a0d6',
@@ -33,6 +34,7 @@ export default {
         primary: '#fb559a',
         border: '#2d3748',
         gray: '#718096',
+        muted: '#2d3748',
       },
     },
   },
