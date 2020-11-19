@@ -1,6 +1,6 @@
 ![Screenshot](https://arshad.io/uploads/mdnext-reflexjs.jpg)
 
-# Build beautiful websites
+# Build stunning websites
 
 Blast off with the speed of **Nextjs**, the power of **MDX** and the best-in-class developer experience of [Reflexjs](https://reflexjs.org).
 
@@ -118,7 +118,7 @@ export default function IndexPage() {
   return (
     <div variant="container.sm">
       <h1 variant="heading.h1" color="heading">
-        Build beautiful websites
+        Build stunning websites
       </h1>
       <p fontSize="2xl" mt="4" fontFamily="serif">
         This is some text.

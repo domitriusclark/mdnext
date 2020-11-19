@@ -6,14 +6,14 @@ export default function HomePage() {
   return (
     <Layout>
       <NextSeo
-        title="Build beautiful websites"
+        title="Build stunning websites"
         description="Blast off with the speed of Nextjs, the power of MDX and the
         best-in-class developer experience of Reflexjs."
       />
       <section py="10|18">
         <div variant="container">
           <div textAlign="center">
-            <h1 variant="heading.h1">Build beautiful websites</h1>
+            <h1 variant="heading.h1">Build stunning websites</h1>
             <p variant="text.lead" maxW="800" mx="auto">
               Blast off with the speed of Nextjs, the power of MDX and the
               best-in-class developer experience of Reflexjs.
