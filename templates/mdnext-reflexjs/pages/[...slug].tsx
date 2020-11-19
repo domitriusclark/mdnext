@@ -2,6 +2,7 @@ import { Layout, Page } from '@components';
 import { getMdxPaths, getMdxContent } from '@utils';
 import config from '@config';
 import { MdxPage } from 'types';
+import { NextSeo } from 'next-seo';
 
 export interface MdxPageProps {
   page: MdxPage;
@@ -10,6 +11,7 @@ export interface MdxPageProps {
 export default function PagePage({ page }: MdxPageProps) {
   return (
     <Layout>
+      <NextSeo title={page.data.title} description={page.data.excerpt} />
       <Page page={page} />
     </Layout>
   );

@@ -6,6 +6,7 @@ export * from './code-block';
 export * from './copy-button';
 export * from './layout';
 export * from './linked-heading';
+export * from './mini-card';
 export * from './mode-toggle';
 export * from './mdx-components';
 export * from './navbar-link';

@@ -1,5 +1,5 @@
 import { Box } from 'reflexjs';
-import { CodeBlock, LinkedHeading } from '.';
+import { CodeBlock, LinkedHeading, Bio } from '.';
 
 export const MdxComponents = {
   a: (props) => (
@@ -20,6 +20,7 @@ export const MdxComponents = {
   h4: (props) => <LinkedHeading is="h4" fontS {...props} />,
   h5: (props) => <LinkedHeading is="h5" {...props} />,
   h6: (props) => <LinkedHeading is="h6" {...props} />,
+  hr: (props) => <hr {...props} />,
   p: (props) => <p variant="text.paragraph" {...props} />,
   ul: (props) => <ul variant="list.unordered" {...props} />,
   ol: (props) => <ol variant="list.ordered" {...props} />,
@@ -50,4 +51,5 @@ export const MdxComponents = {
     />
   ),
   Box,
+  Bio,
 };

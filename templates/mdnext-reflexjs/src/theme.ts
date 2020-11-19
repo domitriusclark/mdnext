@@ -30,7 +30,7 @@ export default {
         text: '#a0aec0',
         heading: '#fff',
         background: '#1a202c',
-        primary: '#f9ac00',
+        primary: '#fb559a',
         border: '#2d3748',
         gray: '#718096',
       },
@@ -389,6 +389,62 @@ export default {
       fontSize: 'xl',
     },
 
+    primary: {
+      bg: 'primary',
+      color: 'white',
+      borderColor: 'primary',
+
+      '&:hover, &:focus': {
+        bg: 'primaryHover',
+        color: 'white',
+        borderColor: 'primaryHover',
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg',
+      },
+    },
+
+    secondary: {
+      bg: 'secondary',
+      color: 'white',
+      borderColor: 'secondary',
+
+      '&:hover, &:focus': {
+        bg: 'secondaryHover',
+        color: 'white',
+        borderColor: 'secondaryHover',
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg',
+      },
+    },
+
+    accent: {
+      bg: 'accent',
+      color: 'white',
+      borderColor: 'accent',
+
+      '&:hover, &:focus': {
+        bg: 'accentHover',
+        color: 'white',
+        borderColor: 'accentHover',
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg',
+      },
+    },
+
+    link: {
+      bg: 'transparent',
+      color: 'text',
+      borderColor: 'transparent',
+
+      '&:hover, &:focus': {
+        bg: 'transparent',
+        borderColor: 'transparent',
+        transform: 'translateY(-2px)',
+        boxShadow: 'none',
+        color: 'primary',
+      },
+    },
+
     icon: {
       bg: 'transparent',
       p: 2,
@@ -430,5 +486,10 @@ export default {
     sun: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
     moon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`,
     arrow: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`,
+    code: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>`,
+    search: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>`,
+    swatch: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>`,
+    users: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`,
+    chart: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>`,
   },
 };

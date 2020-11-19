@@ -16,7 +16,7 @@ export function Navbar({ ...props }) {
       {...props}
     >
       <div
-        variant="container.sm"
+        variant="container"
         display="flex"
         flexDirection="column|row"
         alignItems="flex-start|center"
