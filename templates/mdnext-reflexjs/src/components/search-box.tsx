@@ -13,6 +13,7 @@ export function SearchBox({ ...props }: SearchBoxProps) {
         fontSize="lg"
         bg="transparent"
         w="100%"
+        color="text"
         {...props}
       />
       <div
