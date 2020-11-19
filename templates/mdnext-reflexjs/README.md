@@ -5,15 +5,19 @@ Blast off with the speed of **Nextjs**, the power of **MDX** and the best-in-cla
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-reflexjs)
 [![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-reflexjs)
 
+## Demo
+
+https://mdnext-reflexjs.vercel.app/
+
 ## Features
 
 Everything you expect and more.
 
-- **Landing pages and blog** - Build landing pages and your blog using MDX
+- **Landing pages and blog** - Build landing pages and write blog posts using MDX
 - **Customize everything** - Personalize your theme’s colors, typography...etc
 - **Code blocks** - With line highlighting, title and line numbers
 - **Built-in Search** - Powerful and lightweight fuzzy search
-- **SEO** - With meta tags and open
+- **SEO** - With meta tags and open graph
 - **Dark mode** - Optimized for light and dark modes.
 - **Fully Accessible** - Compliant with WAI-ARIA
 
