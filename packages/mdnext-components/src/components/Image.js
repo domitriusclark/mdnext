@@ -9,32 +9,16 @@ export default function Image({
   transforms,
   width,
   height,
-  whileLoading,
   lazy,
   ...props
 }) {
   const {
-    generateUrl,
+    generateImageUrl,
     blurredPlaceholderUrl,
-    url,
     ref,
     supportsLazyLoading,
     inView,
-  } = useImage({
-    cloudName: cloudName || null,
-    transforms: transforms && { ...transforms },
-  });
-
-  React.useEffect(() => {
-    if (publicId) {
-      generateUrl({
-        publicId,
-        transformations: {
-          ...transforms,
-        },
-      });
-    }
-  }, [publicId]);
+  } = useImage(cloudName);
 
   // Not using Cloudinary
   if (!publicId) {
@@ -78,7 +62,15 @@ export default function Image({
         >
           {inView ||
             (supportsLazyLoading && (
-              <ChakraImage src={url} loading="lazy" width="100%" {...props} />
+              <ChakraImage
+                src={generateImageUrl({
+                  delivery: { publicId },
+                  transformation: { ...transforms },
+                })}
+                loading="lazy"
+                width="100%"
+                {...props}
+              />
             ))}
         </div>
       );
