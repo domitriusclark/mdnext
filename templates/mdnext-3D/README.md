@@ -4,10 +4,10 @@
 
 <div align="center">
 
-Welcome to `mdnext-starter`
+Welcome to `mdnext-3d`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-starter)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fdomitriusclark%2Fmdnext-3d)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/domitriusclark/mdnext-3d)
 
 <br/>
 
@@ -17,6 +17,9 @@ Welcome to `mdnext-starter`
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Breakdown](#breakdown)
+- [3D](#3D)
+  - [3D Resources](#3D-resources)
 
 ---
 
