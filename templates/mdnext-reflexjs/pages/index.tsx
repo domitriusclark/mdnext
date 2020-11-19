@@ -14,7 +14,7 @@ export default function HomePage() {
         <div variant="container">
           <div textAlign="center">
             <h1 variant="heading.h1">Build stunning websites</h1>
-            <p variant="text.lead" maxW="800" mx="auto">
+            <p variant="text.lead" maxW="800" mx="auto" mt="4">
               Blast off with the speed of Nextjs, the power of MDX and the
               best-in-class developer experience of Reflexjs.
             </p>
@@ -40,7 +40,7 @@ export default function HomePage() {
           <p variant="text.lead" textAlign="center">
             Everything you expect and more.
           </p>
-          <Grid col="2" gap="10" mt="10">
+          <Grid col="1|2" gap="6|8|10" mt="10">
             <MiniCard
               icon="swatch"
               iconColor="#fca311"

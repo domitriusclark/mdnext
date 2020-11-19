@@ -338,7 +338,7 @@ export default {
     letterSpacing: 'tight',
 
     h1: {
-      fontSize: '4xl|5xl|6xl',
+      fontSize: '5xl|6xl',
       fontWeight: 'black',
     },
     h2: {

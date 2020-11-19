@@ -6,7 +6,7 @@ import { Flex } from 'reflexjs';
 export function Navbar({ ...props }) {
   return (
     <header
-      position="sticky"
+      position="static|sticky"
       top="0"
       bg="background"
       opacity="0.85"
