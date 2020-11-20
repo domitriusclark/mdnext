@@ -1,0 +1,67 @@
+{
+  "name": "mdnext-3D",
+  "description": "This template shows how to use 3D goodies in your Next project",
+  "version": "1.0.1",
+  "repository": "https://github.com/domitriusclark/mdnext-3D.git",
+  "author": "domitriusclark",
+  "main": "next.config.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  },
+  "dependencies": {
+    "@mdnext/components": "^0.1.0",
+    "@react-three/cannon": "^0.5.3",
+    "@react-three/drei": "^2.2.7",
+    "fast-glob": "^3.2.4",
+    "fuse.js": "^6.4.1",
+    "gray-matter": "^4.0.2",
+    "next": "^9.5.2",
+    "next-mdx-remote": "^1.0.0",
+    "next-seo": "^4.7.3",
+    "next-transpile-modules": "^4.1.0",
+    "prism-react-renderer": "^1.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-three-fiber": "^5.3.0",
+    "three": "^0.122.0",
+    "use-cloudinary": "^4.0.2"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx"
+  ],
+  "license": "ISC"
+}
