@@ -20,7 +20,6 @@ export default function Navbar() {
       alignItems="center"
     >
       <Flex flexDirection="row" justifyContent="center" alignItems="center">
-
         <Text pl={3}>MDNEXT</Text>
       </Flex>
       <Box>

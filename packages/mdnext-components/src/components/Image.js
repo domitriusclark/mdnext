@@ -65,7 +65,7 @@ export default function Image({
               <ChakraImage
                 src={generateImageUrl({
                   delivery: { publicId },
-                  transformation: { ...transforms }
+                  transformation: { ...transforms },
                 })}
                 loading="lazy"
                 width="100%"

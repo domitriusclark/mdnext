@@ -1,0 +1,62 @@
+---
+title: Stable Incremental Static Regeneration
+excerpt: 'Next.js introduced Static Site Generation methods in 9.3 with a clear goal in mind: we should get the benefits of static but with excellent support for dynamic data.'
+date: '2020-11-10'
+author: 'Emily Brown'
+image: '/images/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg'
+caption: 'Photo by Eniko Kis on Unsplash'
+---
+
+To get the best of both worlds, Next.js introduced **Incremental Static Generation**, updating static content after you have already built your site. By using the `fallback: true` option in `getStaticPaths`, you can **register new static pages at _runtime_**.
+
+Next.js can statically pre-render an infinite number of pages this way, on-demand, no matter how large your dataset is.
+
+Today, we are announcing the _general availability_ of **Incremental Static Re-generation**, which is a mechanism to update existing pages, by re-rendering them in the background as traffic comes in.
+
+Inspired by [stale-while-revalidate](https://tools.ietf.org/html/rfc5861), background regeneration ensures traffic is served uninterruptedly, always from static storage, and the newly built page is pushed only after _it's done generating_.
+
+```js showLineNumbers=true
+export async function getStaticProps() {
+  return {
+    props: await getDataFromCMS(),
+    // we will attempt to re-generate the page:
+    // - when a request comes in
+    // - at most once every second
+    revalidate: 1,
+  };
+}
+```
+
+Unlike traditional SSR, Incremental Static Regeneration ensures you retain the benefits of static:
+
+- No spikes in latency. Pages are served consistently fast.
+- Pages never go offline. If the background page re-generation fails, the old page remains unaltered.
+- Low database and backend load. Pages are re-computed at most once concurrently.
+
+Both incremental features (adding pages and lazily updating them), as well as preview mode, are now stable and already fully supported by both next start and the Vercel edge platform out of the box.
+
+## Customizable Base Path
+
+Next.js projects are not always served from the root a domain. Sometimes you might want to host your Next.js project under a subpath like /docs so that the Next.js project only covers that subsection of the domain.
+
+While this has been possible so far, it was at the expense of quite a bit of extra configuration. For example, adding the prefix to every single `<Link>` and making sure Next.js was serving the JavaScript bundles from the right path.
+
+### Rewrites
+
+To address this pain point, we're introducing a new configuration option. basePath allows you to easily host your Next.js project on a subpath of your domain.
+
+To get started using basePath you can add it to `next.config.js`:
+
+```js title=next.config.js
+module.exports = {
+  basePath: '/docs',
+};
+```
+
+### Redirects
+
+Using `next/link` in this way will result in the following HTML rendered to the web browser:
+
+```html
+<a href="/docs/documentation-page">Documentation page</a>
+```

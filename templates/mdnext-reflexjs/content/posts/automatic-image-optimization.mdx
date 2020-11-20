@@ -1,0 +1,28 @@
+---
+title: Automatic Image Optimization
+date: '2020-11-19'
+excerpt: 'Built-in Image Optimization automatically serves the images in modern image formats and works with any image source.'
+author: 'Emily Brown'
+image: '/images/eniko-kis-KsLPTsYaqIQ-unsplash.jpg'
+caption: 'Photo by Ian Dooley on Unsplash'
+---
+
+Even with these improvements compared to the HTML `<img>` element, there's still a major problem. The 2000 by 2000 pixel image is sent to phones that render a smaller image.
+
+With Next.js 10 we're also solving that problem. The `next/image` component will automatically generate smaller sizes through built-in Image Optimization.
+
+```jsx
+<img src="/profile-picture.jpg" width="400" height="400" alt="Profile Picture">
+```
+
+Built-in Image Optimization automatically serves the images in modern image formats like WebP, which is about 30% smaller than JPEG, if the browser supports it. It also allows Next.js to automatically adopt **future** image formats and serve them to browsers that support those formats.
+
+```jsx
+import Image from 'next/image'
+
+<Image src="/profile-picture.jpg" width="400" height="400" alt="Profile Picture">
+```
+
+Image Optimization works with any image source. Even if images come from an external data source, like a CMS, they are optimized.
+
+Instead of optimizing images at build time, Next.js 10 optimizes images on-demand, as users request them. Unlike static site generators and static-only solutions, your build times aren't increased, whether shipping 10 images or 10 million images.
