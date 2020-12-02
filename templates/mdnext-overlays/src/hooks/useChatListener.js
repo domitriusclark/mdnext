@@ -21,7 +21,7 @@ export default function useChatListener({ channel, commands = {} }) {
     },
     channels: [channel],
     identity: {
-      username: process.env.CHANNEL,
+      username: channel,
       password: process.env.AUTH_TOKEN,
     },
   });
