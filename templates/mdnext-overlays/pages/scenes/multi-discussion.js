@@ -18,7 +18,7 @@ const ALERT_TIMER = 4000;
 
 export default function MultiDiscussionScene({ frontMatter, streamDetails }) {
   const { connectListener, messages } = useChatListener({
-    channel: 'domitriusClark ',
+    channel: process.env.CHANNEL,
     commands: CHAT_COMMANDS,
   });
 
