@@ -7,7 +7,7 @@ module.exports = {
     CALLBACK_URL: process.env.CALLBACK_URL,
     PUBNUB_PUBLISH_KEY: process.env.PUBNUB_PUBLISH_KEY,
     PUBNUB_SUBSCRIBE_KEY: process.env.PUBNUB_SUBSCRIBE_KEY,
-    PUNUB_SECRET_KEY: process.env.PUBNUB_SUBSCRIBE_KEY,
+    PUBNUB_SECRET_KEY: process.env.PUBNUB_SECRET_KEY,
     AUTH_TOKEN: process.env.TWITCH_AUTH_TOKEN,
   },
 };
