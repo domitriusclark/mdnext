@@ -1,5 +1,7 @@
 import { DefaultSeo } from 'next-seo';
 import { GlobalStyles } from 'twin.macro';
+import { CacheProvider } from '@emotion/react';
+import { cache } from '@emotion/css';
 
 import { Layout } from '@components/Layout';
 
@@ -22,9 +24,12 @@ export default function App({ Component, pageProps }) {
           site: 'https://twitter.com/domitriusclark',
         }}
       />
-      {/* This component, provided by twin.macro, applies the tailwind preflight base styles to our app */}
-      <GlobalStyles />
-      <Component {...pageProps} />;
+      {/* This provider ensures our styles get distributed by Next */}
+      <CacheProvider value={cache}>
+        {/* This component applies the tailwind preflight base styles to our app */}
+        <GlobalStyles />
+        <Component {...pageProps} />;
+      </CacheProvider>
     </Layout>
   );
 }
