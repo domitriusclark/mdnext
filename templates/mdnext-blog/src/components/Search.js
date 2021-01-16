@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Fuse from 'fuse.js';
 
-import { Flex, Stack, Input } from '@chakra-ui/core';
+import { Flex, Stack, Input } from '@chakra-ui/react';
 
 import TagList from './TagList';
 
@@ -17,8 +17,8 @@ const fuseOptions = {
 };
 
 export default function Search({ blogs, handleFilter }) {
-  const [searchValue, setSearchValue] = useState('');
-  const [searchTags, setSearchTags] = useState([]);
+  const [searchValue, setSearchValue] = React.useState('');
+  const [searchTags, setSearchTags] = React.useState([]);
   const fuse = new Fuse(blogs, fuseOptions);
   const tags = [...new Set(blogs.flatMap(({ tags }) => tags))];
 

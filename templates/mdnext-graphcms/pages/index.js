@@ -1,11 +1,14 @@
-import { Flex } from '@chakra-ui/core';
+import { Flex } from '@chakra-ui/react';
 
 import { Chakra } from '@components/Chakra';
+import Layout from '@components/Layout';
 
 export default function Index({ cookies }) {
   return (
     <Chakra cookies={cookies}>
-      <Flex direction="column"></Flex>
+      <Layout>
+        <Flex direction="column"></Flex>
+      </Layout>
     </Chakra>
   );
 }

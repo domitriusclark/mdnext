@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Link } from '@chakra-ui/core';
+import { Flex, Text, Box, Link } from '@chakra-ui/react';
 import ThemeTogglebutton from '@components/ThemeToggleButton';
 import { Link as NextLink } from 'next/link';
 
