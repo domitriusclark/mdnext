@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { useRouter } from 'next/router';
@@ -5,7 +6,7 @@ import useChatListener from '@hooks/useChatListener';
 import useEvent from '@hooks/useEvent';
 import useTwitchHelix from '@hooks/useTwitchHelix';
 
-import { Flex, Text, useToast } from '@chakra-ui/core';
+import { Flex, Text, useToast } from '@chakra-ui/react';
 import CameraContainer from '@components/CameraContainer';
 import SceneContainer from '@components/SceneContainer';
 import TwitchChatBox from '@components/TwitchChatBox';
@@ -27,14 +28,14 @@ export default function MultiDiscussionScene({ frontMatter, streamDetails }) {
     channels: ['events'],
   });
 
-  const [current, setCurrent] = React.useState(event);
-  const [stale, setStale] = React.useState(false);
-  const timeout = React.useRef();
+  const [current, setCurrent] = useState(event);
+  const [stale, setStale] = useState(false);
+  const timeout = useRef();
   const toast = useToast();
   const router = useRouter();
-  const urlRef = React.useRef(router.pathname);
+  const urlRef = useRef(router.pathname);
 
-  React.useEffect(() => {
+  useEffect(() => {
     connectListener('on');
     return () => {
       if (urlRef.current !== router.pathname) {
@@ -43,7 +44,7 @@ export default function MultiDiscussionScene({ frontMatter, streamDetails }) {
     };
   }, [router.pathname]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (current !== event) {
       clearTimeout(timeout.current);
 

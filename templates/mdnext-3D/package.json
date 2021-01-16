@@ -16,7 +16,6 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
-    "@mdnext/components": "^0.1.0",
     "@react-three/cannon": "^0.5.3",
     "@react-three/drei": "^2.2.7",
     "fast-glob": "^3.2.4",

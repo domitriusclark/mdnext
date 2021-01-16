@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Flex, Box, Text, Icon } from '@chakra-ui/core';
+import { Flex, Box, Text, Icon } from '@chakra-ui/react';
 
 import { FaTwitter } from 'react-icons/fa';
 
