@@ -1,4 +1,4 @@
-import NextDocument, { Head, Main, NextScript } from 'next/document';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/core';
 import React from 'react';
 
@@ -9,14 +9,14 @@ class Document extends NextDocument {
   }
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head></Head>
         <body>
           <ColorModeScript defaultMode="system" />
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

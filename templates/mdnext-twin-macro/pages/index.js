@@ -38,8 +38,8 @@ export default function Index() {
         >
           Tailwind CSS
         </a>{' '}
-        class to an element by using the{' '}
-        <span tw="text-orange-500 font-semibold">tw</span> prop.
+        class to an element by using the <span tw="font-semibold">tw</span>{' '}
+        prop.
       </p>
       <p tw="text-center mb-5">
         Add any extra, one-off CSS you'd like to an element using{' '}
