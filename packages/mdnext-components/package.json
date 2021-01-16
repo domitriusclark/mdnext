@@ -1,6 +1,6 @@
 {
   "name": "@mdnext/components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Components dedicated to empowering your MDX based applications.",
   "main": "dist/index.js",
   "license": "MIT",
@@ -11,9 +11,8 @@
     "@emotion/styled": "^11.0.0",
     "cra-template": "1.0.3",
     "framer-motion": "^3.2.1",
-    "prism-react-renderer": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "use-cloudinary": "^4.0.2"
   },

@@ -2,11 +2,9 @@ function _interopDefault(ex) {
   return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
 }
 
-var React = _interopDefault(require('react'));
-var Highlight = require('prism-react-renderer');
-var Highlight__default = _interopDefault(Highlight);
-var theme = _interopDefault(require('prism-react-renderer/themes/vsDark'));
-var core = require('@chakra-ui/core');
+var React = require('react');
+var React__default = _interopDefault(React);
+var react = require('@chakra-ui/react');
 var useCloudinary = require('use-cloudinary');
 
 function _extends() {
@@ -47,12 +45,12 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 function CopyButton(_ref) {
   var value = _ref.value;
 
-  var _useClipboard = core.useClipboard(value),
+  var _useClipboard = react.useClipboard(value),
     onCopy = _useClipboard.onCopy,
     hasCopied = _useClipboard.hasCopied;
 
-  return /*#__PURE__*/ React.createElement(
-    core.Button,
+  return /*#__PURE__*/ React__default.createElement(
+    react.Button,
     {
       'aria-label': 'Copy text',
       role: 'button',
@@ -165,8 +163,8 @@ function Image(_ref) {
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React.createElement(
-              core.Image,
+            /*#__PURE__*/ React__default.createElement(
+              react.Image,
               _extends(
                 {
                   src: src,
@@ -179,8 +177,8 @@ function Image(_ref) {
       );
     } else {
       // Otherwise, just use the Chakra image component
-      return /*#__PURE__*/ React.createElement(
-        core.Image,
+      return /*#__PURE__*/ React__default.createElement(
+        react.Image,
         _extends(
           {
             src: src,
@@ -207,8 +205,8 @@ function Image(_ref) {
         },
         inView ||
           (supportsLazyLoading &&
-            /*#__PURE__*/ React.createElement(
-              core.Image,
+            /*#__PURE__*/ React__default.createElement(
+              react.Image,
               _extends(
                 {
                   src: generateImageUrl({
@@ -226,8 +224,8 @@ function Image(_ref) {
       );
     } else {
       // Just render the image
-      return /*#__PURE__*/ React.createElement(
-        core.Image,
+      return /*#__PURE__*/ React__default.createElement(
+        react.Image,
         _extends(
           {
             src: url,

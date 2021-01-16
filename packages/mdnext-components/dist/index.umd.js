@@ -3,40 +3,25 @@
     ? factory(
         exports,
         require('react'),
-        require('prism-react-renderer'),
-        require('prism-react-renderer/themes/vsDark'),
-        require('@chakra-ui/core'),
+        require('@chakra-ui/react'),
         require('use-cloudinary'),
       )
     : typeof define === 'function' && define.amd
     ? define([
         'exports',
         'react',
-        'prism-react-renderer',
-        'prism-react-renderer/themes/vsDark',
-        '@chakra-ui/core',
+        '@chakra-ui/react',
         'use-cloudinary',
       ], factory)
     : ((global = global || self),
       factory(
         (global.components = {}),
         global.react,
-        global.prismReactRenderer,
-        global.theme,
-        global.core,
+        global.react,
         global.useCloudinary,
       ));
-})(this, function (exports, React, Highlight, theme, core, useCloudinary) {
-  React =
-    React && Object.prototype.hasOwnProperty.call(React, 'default')
-      ? React['default']
-      : React;
-  var Highlight__default =
-    'default' in Highlight ? Highlight['default'] : Highlight;
-  theme =
-    theme && Object.prototype.hasOwnProperty.call(theme, 'default')
-      ? theme['default']
-      : theme;
+})(this, function (exports, React, react, useCloudinary) {
+  var React__default = 'default' in React ? React['default'] : React;
 
   function _extends() {
     _extends =
@@ -76,12 +61,12 @@
   function CopyButton(_ref) {
     var value = _ref.value;
 
-    var _useClipboard = core.useClipboard(value),
+    var _useClipboard = react.useClipboard(value),
       onCopy = _useClipboard.onCopy,
       hasCopied = _useClipboard.hasCopied;
 
-    return /*#__PURE__*/ React.createElement(
-      core.Button,
+    return /*#__PURE__*/ React__default.createElement(
+      react.Button,
       {
         'aria-label': 'Copy text',
         role: 'button',
@@ -194,8 +179,8 @@
           },
           inView ||
             (supportsLazyLoading &&
-              /*#__PURE__*/ React.createElement(
-                core.Image,
+              /*#__PURE__*/ React__default.createElement(
+                react.Image,
                 _extends(
                   {
                     src: src,
@@ -208,8 +193,8 @@
         );
       } else {
         // Otherwise, just use the Chakra image component
-        return /*#__PURE__*/ React.createElement(
-          core.Image,
+        return /*#__PURE__*/ React__default.createElement(
+          react.Image,
           _extends(
             {
               src: src,
@@ -236,8 +221,8 @@
           },
           inView ||
             (supportsLazyLoading &&
-              /*#__PURE__*/ React.createElement(
-                core.Image,
+              /*#__PURE__*/ React__default.createElement(
+                react.Image,
                 _extends(
                   {
                     src: generateImageUrl({
@@ -255,8 +240,8 @@
         );
       } else {
         // Just render the image
-        return /*#__PURE__*/ React.createElement(
-          core.Image,
+        return /*#__PURE__*/ React__default.createElement(
+          react.Image,
           _extends(
             {
               src: url,
