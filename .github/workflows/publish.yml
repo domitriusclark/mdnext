@@ -3,7 +3,7 @@ name: Publish MDNEXT Templates
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   master:
