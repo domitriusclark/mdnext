@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image as ChakraImage } from '@chakra-ui/core';
+import { Image as ChakraImage } from '@chakra-ui/react';
 import { useImage } from 'use-cloudinary';
 
 export default function Image({
@@ -65,7 +65,7 @@ export default function Image({
               <ChakraImage
                 src={generateImageUrl({
                   delivery: { publicId },
-                  transformation: { ...transforms }
+                  transformation: { ...transforms },
                 })}
                 loading="lazy"
                 width="100%"
