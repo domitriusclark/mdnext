@@ -1,5 +1,6 @@
 {
   "name": "mdnext-3D",
+  "starter-name": "mdnext-3D",
   "description": "This template shows how to use 3D goodies in your Next project",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext-3D.git",

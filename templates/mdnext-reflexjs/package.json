@@ -1,5 +1,6 @@
 {
   "name": "mdnext-reflexjs",
+  "starter-name": "mdnext-reflexjs",
   "description": "Nextjs, MDX and Reflexjs.",
   "version": "0.0.1",
   "repository": "https://github.com/domitriusclark/mdnext.git",
