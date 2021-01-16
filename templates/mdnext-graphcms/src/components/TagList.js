@@ -5,7 +5,7 @@ import {
   useCheckbox,
   useCheckboxGroup,
   useStyleConfig,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 function TagButton(props) {
   const { getCheckboxProps, getInputProps } = useCheckbox(props);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 
-import { Flex, Stack, Input } from '@chakra-ui/core';
+import { Flex, Stack, Input } from '@chakra-ui/react';
 import TagList from './TagList';
 
 const TAG_LIST = ['react', 'nextjs', 'chakra ui'];

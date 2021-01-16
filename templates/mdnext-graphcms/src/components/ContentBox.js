@@ -1,5 +1,5 @@
 import { Link as NextLink } from 'next/link';
-import { Box, Link, Text, Stack } from '@chakra-ui/core';
+import { Box, Link, Text, Stack } from '@chakra-ui/react';
 
 export default function ContentBox({ blog }) {
   return (
