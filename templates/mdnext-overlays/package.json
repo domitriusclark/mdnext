@@ -1,5 +1,6 @@
 {
   "name": "mdnext-overlays",
+  "starter-name": "mdnext-overlays",
   "description": "Set your stream scenes + more up with overlays powered by MDX, Framer, and Chakra!",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext-overlays.git",

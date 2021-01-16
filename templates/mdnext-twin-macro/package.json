@@ -1,5 +1,6 @@
 {
   "name": "mdnext-twin-macro",
+  "starter-name": "mdnext-twin-macro",
   "description": "This serves as the base for creating new starters for MDNEXT using NextJS & MDX",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext-twin-macro.git",

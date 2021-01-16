@@ -1,5 +1,6 @@
 {
   "name": "mdnext-blog",
+  "starter-name": "mdnext-blog",
   "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) with NextJS utilizing next-mdx-remote",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext-base.git",

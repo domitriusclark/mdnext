@@ -1,5 +1,6 @@
 {
   "name": "mdnext-graphcms",
+  "starer-name": "mdnext-graphcms",
   "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) content inside your NextJS app w/ GraphCMS",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext.git",

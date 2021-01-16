@@ -1,5 +1,6 @@
 {
   "name": "mdnext-tailwind",
+  "starter-name": "mdnext-tailwind",
   "description": "MDNEXT template with Tailwind CSS",
   "version": "1.0.1",
   "repository": "https://github.com/domitriusclark/mdnext-tailwind.git",
