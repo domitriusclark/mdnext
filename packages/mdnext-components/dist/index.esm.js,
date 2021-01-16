@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/core';
+import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/react';
 import { useImage } from 'use-cloudinary';
 
 function _extends() {
@@ -3750,27 +3750,15 @@ function Image(_ref) {
       width = _ref.width,
       height = _ref.height,
       lazy = _ref.lazy,
-      props = _objectWithoutPropertiesLoose(_ref, ["src", "cloudName", "publicId", "transforms", "width", "height", "whileLoading", "lazy"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["src", "cloudName", "publicId", "transforms", "width", "height", "lazy"]);
 
-  var _useImage = useImage({
-    cloudName: cloudName || null,
-    transforms: transforms && _extends({}, transforms)
-  }),
-      generateUrl = _useImage.generateUrl,
+  var _useImage = useImage(cloudName),
+      generateImageUrl = _useImage.generateImageUrl,
       blurredPlaceholderUrl = _useImage.blurredPlaceholderUrl,
-      url = _useImage.url,
       ref = _useImage.ref,
       supportsLazyLoading = _useImage.supportsLazyLoading,
-      inView = _useImage.inView;
+      inView = _useImage.inView; // Not using Cloudinary
 
-  React.useEffect(function () {
-    if (publicId) {
-      generateUrl({
-        publicId: publicId,
-        transformations: _extends({}, transforms)
-      });
-    }
-  }, [publicId]); // Not using Cloudinary
 
   if (!publicId) {
     // Try to lazy load all images when { lazy === true }
@@ -3804,7 +3792,12 @@ function Image(_ref) {
           background: "no-repeat url(" + blurredPlaceholderUrl(publicId, width, height) + ")"
         }
       }, inView || supportsLazyLoading && /*#__PURE__*/React.createElement(Image$1, _extends({
-        src: url,
+        src: generateImageUrl({
+          delivery: {
+            publicId: publicId
+          },
+          transformation: _extends({}, transforms)
+        }),
         loading: "lazy",
         width: "100%"
       }, props)));

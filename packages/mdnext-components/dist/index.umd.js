@@ -3,19 +3,24 @@
     ? factory(
         exports,
         require('react'),
-        require('@chakra-ui/core'),
+        require('@chakra-ui/react'),
         require('use-cloudinary'),
       )
     : typeof define === 'function' && define.amd
-    ? define(['exports', 'react', '@chakra-ui/core', 'use-cloudinary'], factory)
+    ? define([
+        'exports',
+        'react',
+        '@chakra-ui/react',
+        'use-cloudinary',
+      ], factory)
     : ((global = global || self),
       factory(
         (global.components = {}),
         global.react,
-        global.core,
+        global.react,
         global.useCloudinary,
       ));
-})(this, function (exports, React, core, useCloudinary) {
+})(this, function (exports, React, react, useCloudinary) {
   var React__default = 'default' in React ? React['default'] : React;
 
   function _extends() {
@@ -4105,12 +4110,12 @@
   function CopyButton(_ref) {
     var value = _ref.value;
 
-    var _useClipboard = core.useClipboard(value),
+    var _useClipboard = react.useClipboard(value),
       onCopy = _useClipboard.onCopy,
       hasCopied = _useClipboard.hasCopied;
 
     return /*#__PURE__*/ React__default.createElement(
-      core.Button,
+      react.Button,
       {
         'aria-label': 'Copy text',
         role: 'button',
@@ -4199,32 +4204,15 @@
         'transforms',
         'width',
         'height',
-        'whileLoading',
         'lazy',
       ]);
 
-    var _useImage = useCloudinary.useImage({
-        cloudName: cloudName || null,
-        transforms: transforms && _extends({}, transforms),
-      }),
-      generateUrl = _useImage.generateUrl,
+    var _useImage = useCloudinary.useImage(cloudName),
+      generateImageUrl = _useImage.generateImageUrl,
       blurredPlaceholderUrl = _useImage.blurredPlaceholderUrl,
-      url = _useImage.url,
       ref = _useImage.ref,
       supportsLazyLoading = _useImage.supportsLazyLoading,
-      inView = _useImage.inView;
-
-    React__default.useEffect(
-      function () {
-        if (publicId) {
-          generateUrl({
-            publicId: publicId,
-            transformations: _extends({}, transforms),
-          });
-        }
-      },
-      [publicId],
-    ); // Not using Cloudinary
+      inView = _useImage.inView; // Not using Cloudinary
 
     if (!publicId) {
       // Try to lazy load all images when { lazy === true }
@@ -4241,7 +4229,7 @@
           inView ||
             (supportsLazyLoading &&
               /*#__PURE__*/ React__default.createElement(
-                core.Image,
+                react.Image,
                 _extends(
                   {
                     src: src,
@@ -4255,7 +4243,7 @@
       } else {
         // Otherwise, just use the Chakra image component
         return /*#__PURE__*/ React__default.createElement(
-          core.Image,
+          react.Image,
           _extends(
             {
               src: src,
@@ -4283,10 +4271,15 @@
           inView ||
             (supportsLazyLoading &&
               /*#__PURE__*/ React__default.createElement(
-                core.Image,
+                react.Image,
                 _extends(
                   {
-                    src: url,
+                    src: generateImageUrl({
+                      delivery: {
+                        publicId: publicId,
+                      },
+                      transformation: _extends({}, transforms),
+                    }),
                     loading: 'lazy',
                     width: '100%',
                   },
@@ -4297,7 +4290,7 @@
       } else {
         // Just render the image
         return /*#__PURE__*/ React__default.createElement(
-          core.Image,
+          react.Image,
           _extends(
             {
               src: url,

@@ -4,7 +4,7 @@ function _interopDefault(ex) {
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var core = require('@chakra-ui/core');
+var react = require('@chakra-ui/react');
 var useCloudinary = require('use-cloudinary');
 
 function _extends() {
@@ -4069,12 +4069,12 @@ var theme$1 = {
 function CopyButton(_ref) {
   var value = _ref.value;
 
-  var _useClipboard = core.useClipboard(value),
+  var _useClipboard = react.useClipboard(value),
     onCopy = _useClipboard.onCopy,
     hasCopied = _useClipboard.hasCopied;
 
   return /*#__PURE__*/ React__default.createElement(
-    core.Button,
+    react.Button,
     {
       'aria-label': 'Copy text',
       role: 'button',
@@ -4163,32 +4163,15 @@ function Image(_ref) {
       'transforms',
       'width',
       'height',
-      'whileLoading',
       'lazy',
     ]);
 
-  var _useImage = useCloudinary.useImage({
-      cloudName: cloudName || null,
-      transforms: transforms && _extends({}, transforms),
-    }),
-    generateUrl = _useImage.generateUrl,
+  var _useImage = useCloudinary.useImage(cloudName),
+    generateImageUrl = _useImage.generateImageUrl,
     blurredPlaceholderUrl = _useImage.blurredPlaceholderUrl,
-    url = _useImage.url,
     ref = _useImage.ref,
     supportsLazyLoading = _useImage.supportsLazyLoading,
-    inView = _useImage.inView;
-
-  React__default.useEffect(
-    function () {
-      if (publicId) {
-        generateUrl({
-          publicId: publicId,
-          transformations: _extends({}, transforms),
-        });
-      }
-    },
-    [publicId],
-  ); // Not using Cloudinary
+    inView = _useImage.inView; // Not using Cloudinary
 
   if (!publicId) {
     // Try to lazy load all images when { lazy === true }
@@ -4205,7 +4188,7 @@ function Image(_ref) {
         inView ||
           (supportsLazyLoading &&
             /*#__PURE__*/ React__default.createElement(
-              core.Image,
+              react.Image,
               _extends(
                 {
                   src: src,
@@ -4219,7 +4202,7 @@ function Image(_ref) {
     } else {
       // Otherwise, just use the Chakra image component
       return /*#__PURE__*/ React__default.createElement(
-        core.Image,
+        react.Image,
         _extends(
           {
             src: src,
@@ -4247,10 +4230,15 @@ function Image(_ref) {
         inView ||
           (supportsLazyLoading &&
             /*#__PURE__*/ React__default.createElement(
-              core.Image,
+              react.Image,
               _extends(
                 {
-                  src: url,
+                  src: generateImageUrl({
+                    delivery: {
+                      publicId: publicId,
+                    },
+                    transformation: _extends({}, transforms),
+                  }),
                   loading: 'lazy',
                   width: '100%',
                 },
@@ -4261,7 +4249,7 @@ function Image(_ref) {
     } else {
       // Just render the image
       return /*#__PURE__*/ React__default.createElement(
-        core.Image,
+        react.Image,
         _extends(
           {
             src: url,

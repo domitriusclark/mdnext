@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/core';
+import { useClipboard, Button, Image as Image$1 } from '@chakra-ui/react';
 import { useImage } from 'use-cloudinary';
 
 /**
@@ -4100,29 +4100,16 @@ function Image({
   transforms,
   width,
   height,
-  whileLoading,
   lazy,
   ...props
 }) {
   const {
-    generateUrl,
+    generateImageUrl,
     blurredPlaceholderUrl,
-    url,
     ref,
     supportsLazyLoading,
     inView,
-  } = useImage({
-    cloudName: cloudName || null,
-    transforms: transforms && { ...transforms },
-  });
-  React.useEffect(() => {
-    if (publicId) {
-      generateUrl({
-        publicId,
-        transformations: { ...transforms },
-      });
-    }
-  }, [publicId]); // Not using Cloudinary
+  } = useImage(cloudName); // Not using Cloudinary
 
   if (!publicId) {
     // Try to lazy load all images when { lazy === true }
@@ -4185,7 +4172,12 @@ function Image({
               Image$1,
               Object.assign(
                 {
-                  src: url,
+                  src: generateImageUrl({
+                    delivery: {
+                      publicId,
+                    },
+                    transformation: { ...transforms },
+                  }),
                   loading: 'lazy',
                   width: '100%',
                 },
