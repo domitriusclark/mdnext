@@ -1,10 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/core';
-import theme from '@theme';
+import { Chakra } from '@components/Chakra';
 import { DefaultSeo } from 'next-seo';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps, cookies }) => {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <Chakra cookies={cookies}>
       <DefaultSeo
         title="Nextjs + MDX Starter pack"
         description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
@@ -22,8 +21,10 @@ const App = ({ Component, pageProps }) => {
         }}
       />
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Chakra>
   );
 };
 
 export default App;
+
+export { getServerSideProps } from '@components/Chakra';

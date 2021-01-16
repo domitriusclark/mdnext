@@ -15,16 +15,15 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
-    "@mdnext/components": "^0.1.0",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",
-    "next": "^9.5.2",
+    "next": "^10.0.5",
     "next-mdx-remote": "^1.0.0",
     "next-seo": "^4.7.3",
     "prism-react-renderer": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "use-cloudinary": "^4.0.2"
   },

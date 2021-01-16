@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Link } from '@chakra-ui/core';
+import { Flex, Text, Box, Link } from '@chakra-ui/react';
 import ThemeTogglebutton from '@components/ThemeToggleButton';
 import { Link as NextLink } from 'next/link';
 
@@ -20,7 +20,6 @@ export default function Navbar() {
       alignItems="center"
     >
       <Flex flexDirection="row" justifyContent="center" alignItems="center">
-
         <Text pl={3}>MDNEXT</Text>
       </Flex>
       <Box>
