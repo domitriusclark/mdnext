@@ -1,5 +1,5 @@
 import { Chakra } from '@components/Chakra';
-import { DefaultSeo } from 'next-seo';
+
 
 const App = ({ Component, pageProps, cookies }) => {
   return (
