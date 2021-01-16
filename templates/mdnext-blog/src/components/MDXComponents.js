@@ -1,9 +1,7 @@
-import {
-  Code,
-  Image
-} from "@mdnext/components";
+import Code from '@components/Code';
+import Image from '@components/Image';
 
 export default {
   code: Code,
-  img: Image
+  img: Image,
 };

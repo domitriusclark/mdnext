@@ -15,7 +15,6 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
-    "@mdnext/components": "^0.1.0",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",

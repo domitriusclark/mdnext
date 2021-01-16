@@ -18,7 +18,6 @@
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "@mdnext/components": "^0.1.0",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",

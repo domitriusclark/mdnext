@@ -15,9 +15,9 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-rc.2",
-    "@chakra-ui/theme": "^1.0.0-rc.2",
-    "@mdnext/components": "^0.1.0",
+    "@chakra-ui/react": "^1.1.4",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "graphql": "^15.3.0",

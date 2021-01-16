@@ -1,4 +1,5 @@
-import { Box, Stack } from '@chakra-ui/core';
+import { Box, Stack } from '@chakra-ui/react';
+import { useState } from 'react';
 
 import { BLOG_CONTENT_PATH } from '@config/constants';
 import { getMdxContent } from '@utils/get-mdx-content';
@@ -7,7 +8,7 @@ import Search from '@components/Search';
 import { Layout } from '@components/Layout';
 
 export default function BlogPage({ allMdx }) {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
+  const [filteredBlogs, setFilteredBlogs] = useState(allMdx);
 
   const handleFilter = (data) => {
     setFilteredBlogs(data);
