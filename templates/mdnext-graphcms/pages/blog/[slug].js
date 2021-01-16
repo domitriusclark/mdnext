@@ -2,8 +2,8 @@ import { GraphQLClient } from 'graphql-request';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 
+import Layout from '@components/Layout';
 import Code from '@components/Code';
-import { Chakra } from '@components/Chakra';
 
 const components = { code: Code };
 
@@ -13,12 +13,12 @@ export default function BlogPost({ blog }) {
   const content = hydrate(blog.content, components);
 
   return (
-    <Chakra evaluateThemeLazily>
+    <Layout>
       <div>
         <h1>{blog.title}</h1>
         {content}
       </div>
-    </Chakra>
+    </Layout>
   );
 }
 

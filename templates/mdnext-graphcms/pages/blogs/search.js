@@ -1,19 +1,20 @@
-import { Box, Stack } from '@chakra-ui/core';
+import { Box, Stack } from '@chakra-ui/react';
+import { useState } from 'react';
 
 import ContentBox from '@components/ContentBox';
+import Layout from '@components/Layout';
 import Search from '@components/Search';
-import { Chakra } from '@components/Chakra';
 import { GraphQLClient } from 'graphql-request';
 
 export default function SearchPage({ blogs }) {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(blogs);
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
 
   const handleFilter = (data) => {
     setFilteredBlogs(data);
   };
 
   return (
-    <Chakra evaluateThemeLazily>
+    <Layout>
       <Box pb={3}>
         {/* Content Area + Input + Tag filter */}
         <Stack spacing={[4, 8, 12]} justify="center" alignItems="center">
@@ -25,7 +26,7 @@ export default function SearchPage({ blogs }) {
           </Stack>
         </Stack>
       </Box>
-    </Chakra>
+    </Layout>
   );
 }
 
@@ -48,4 +49,5 @@ export async function getStaticProps() {
     props: {
       blogs: [...blogPosts],
     },
-  };
+  }
+};
