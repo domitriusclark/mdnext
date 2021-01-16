@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/core';
+import { Container } from '@chakra-ui/react';
 
 export default function SceneContainer(props) {
   return (
