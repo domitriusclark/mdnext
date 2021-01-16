@@ -1,17 +1,12 @@
 name: Publish MDNEXT Templates
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   master:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
+      - uses: actions/checkout@master
       - uses: ./.github/actions/hub-create-repos
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -21,4 +16,4 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: templates domitriusclark
+          args: templates domitriusclark 
