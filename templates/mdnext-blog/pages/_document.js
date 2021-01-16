@@ -1,6 +1,7 @@
-import NextDocument, { Head, Main, NextScript } from 'next/document';
-import { ColorModeScript } from '@chakra-ui/core';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import { ColorModeScript } from '@chakra-ui/react';
 import React from 'react';
+import theme from '../src/theme/index';
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
@@ -9,14 +10,14 @@ class Document extends NextDocument {
   }
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head></Head>
         <body>
-          <ColorModeScript defaultMode="system" />
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

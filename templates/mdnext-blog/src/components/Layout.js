@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/core';
+import { Container } from '@chakra-ui/react';
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
 
