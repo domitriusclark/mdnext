@@ -105,7 +105,7 @@ Our currently maintained templates:
 - `mdnext-starter`
   This is the least opinionated template, that all templates are created from. It houses very minimal configuration and opinion outside of an example of sourcing `MDX` inside of `getStaticProps/Paths`
 - `mdnext-blog`
-  [Check this template out in action](https://codesandbox.io/s/mdnext-blog-m4kzq)! The blog templates adds features on top of our `mdnext-starter` . Specifically using `Chakra-UI`for styling. Configuration for blogs posts at the page and content level using our `MDX` files as routes. `FuseJS` for filtering our blogs posts. 
+  The blog templates adds features on top of our `mdnext-starter` . Specifically using `Chakra-UI`for styling. Configuration for blogs posts at the page and content level using our `MDX` files as routes. `FuseJS` for filtering our blogs posts. [Check this template out in action](https://codesandbox.io/s/mdnext-blog-m4kzq)!
 - `mdnext-overlays`
   When becoming a new streamer you are met with many challenges. Eventually you're going to want to setup your own Scenes, animations, and interactions for your stream and it's viewers. Why not use the tools you love to create them? With this configuration you're set up with a base layer for configuring each new scene as a route. Each route contains ways to interact with Twitch API's, your Twitch chat, and information surrounding your stream and it's events!
 
