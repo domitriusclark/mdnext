@@ -117,5 +117,7 @@ Our community submitted templates:
   This starter is configured with `twin.macro` as it's choice of styling. This allows you to utilize `Tailwind's` utility classes and `emotion's` `css` method for one off styles.
 - `mdnext-graphcms`
   Utilizing `GraphCMS` as our datasource, we setup the basics for a blog. It starts you off with a simple example of how you can pull Markdown from GraphCMS and feed it to our UI with our `MDX`
+- `mdnext-reflexjs`
+  Reflexjs is a styling library built for speed and excellent developer experience. You can style your components using style props and constraints based on the System UI specifications. 
 
 Want to submit a new template? Head over to our [Contributing section](https://github.com/domitriusclark/mdnext/blob/master/CONTRIBUTORS.md) and check out [mdnext-starter](https://github.com/domitriusclark/mdnext-starter)
