@@ -1,7 +1,7 @@
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
 
-export function Layout({ props, children }) {
+export default function Layout({ props, children }) {
   return (
     <>
       <SEO {...props} />

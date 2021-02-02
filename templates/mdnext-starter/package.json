@@ -20,13 +20,12 @@
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",
     "next": "^10.0.5",
-    "next-mdx-remote": "^1.0.0",
+    "next-mdx-remote": "^2.1.1",
     "next-seo": "^4.7.3",
     "prism-react-renderer": "^1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "rect": "^1.2.1",
     "use-cloudinary": "^4.0.2"
   },
   "devDependencies": {

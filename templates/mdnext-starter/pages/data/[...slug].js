@@ -5,6 +5,7 @@ import hydrate from 'next-mdx-remote/hydrate';
 import matter from 'gray-matter';
 import glob from 'fast-glob';
 
+
 import Code from '@components/Code';
 
 const components = { code: Code };

@@ -12478,11 +12478,6 @@ reading-time@^1.2.0:
   resolved "https://registry.yarnpkg.com/reading-time/-/reading-time-1.2.0.tgz#ced71c06715762f805506328dcc1fd45d8249ac4"
   integrity sha512-5b4XmKK4MEss63y0Lw0vn0Zn6G5kiHP88mUnD8UeEsyORj3sh1ghTH0/u6m1Ax9G2F4wUZrknlp6WlIsCvoXVA==
 
-rect@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/rect/-/rect-1.2.1.tgz#8d7c5192ca9c49ea6ad7b259abb77126d8ff36ca"
-  integrity sha1-jXxRksqcSepq17JZq7dxJtj/Nso=
-
 redeyed@~2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/redeyed/-/redeyed-2.1.1.tgz#8984b5815d99cb220469c99eeeffe38913e6cc0b"
