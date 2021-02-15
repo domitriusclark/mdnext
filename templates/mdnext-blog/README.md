@@ -15,11 +15,11 @@ The opinionated starter for your MDX + Next.js blogging projects!
 
 ---
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [MDX w/ `next-mdx-remote`](#mdx-w-next-mdx-remote)
 - [Built-in Search w/ Fuse.js](#built-in-search-w-fusejs)
 - [Chakra UI -- Light + Dark Mode & Themeing](#chakra-ui----light--dark-mode--themeing)
+- [og:image Generation](#ogimage-generation)
 - [Shoutouts](#shoutouts)
 - [Contributing](#contributing)
 
@@ -70,10 +70,11 @@ const components = { code: Code, Iframe };
 export default ({ mdxSource, frontMatter }) => {
   // statically render + hydrate content passed to us from our renderToString output
   const content = hydrate(mdxSource, components);
+  const { title } = frontMatter;
 
   return (
     <div>
-      <h1>{frontMatter.title}</h1>
+      <h1>{title}</h1>
       {content}
     </div>
   );
@@ -215,6 +216,22 @@ export default function Search({ blogs, handleFilter }) {
 ## Chakra UI -- Light + Dark Mode & Themeing
 
 Out of the box Light & Dark mode, combined with approachable & accessible components, direct theme config, and room to experiment for custom needs, gives this template the flexibility & cohesiveness to get you started on building your projects.
+
+## og:image Generation
+
+Uses Jason Lengstorf's [getShareImage](https://github.com/jlengstorf/get-share-image) library. You will need to plug your cloudinary account ID and image ID into the `socialImage` const in `pages/blog/[...slug]` to get share images up and running.
+
+```jsx
+const socialImage = getShareImage({
+  title,
+  tagline: author,
+  cloudName: 'YOUR_CLOUD_NAME_HERE', // This field
+  imagePublicID: 'YOUR_IMAGE_ID_HERE', // And this one!
+  titleFont: 'sans-serif', // Can be set to any Google font, or custom font you have uploaded to your Cloudinary account
+  taglineFont: 'sans-serif',
+  textColor: '#000000',
+});
+```
 
 ## Shoutouts
 

@@ -31,7 +31,7 @@ export default function TagList({ tags, value, onChange }) {
   });
 
   return (
-    <Stack spacing={4}>
+    <Stack direction="row" spacing={4}>
       {tags.map((value) => {
         const tag = getCheckboxProps({ value });
         return <TagButton key={value} {...tag} />;

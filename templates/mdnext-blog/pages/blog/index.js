@@ -1,6 +1,5 @@
 import { Box, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
-
 import { BLOG_CONTENT_PATH } from '@config/constants';
 import { getMdxContent } from '@utils/get-mdx-content';
 import ContentBox from '@components/ContentBox';

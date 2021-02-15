@@ -1,19 +1,50 @@
 import hydrate from 'next-mdx-remote/hydrate';
-
+import getShareImage from '@jlengstorf/get-share-image';
 import { BLOG_CONTENT_PATH } from '@config/constants';
 import { getMdxContent } from '@utils/get-mdx-content';
 import components from '@components/MDXComponents';
+import { Box, Heading } from '@chakra-ui/react';
 import { Layout } from '@components/Layout';
 
 export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { components });
+  const { title, description, author, tags } = frontMatter;
+  const socialImage = getShareImage({
+    title,
+    tagline: author,
+    cloudName: 'YOUR_CLOUD_NAME_HERE',
+    imagePublicID: 'YOUR_IMAGE_ID_HERE',
+    titleFont: 'sans-serif',
+    taglineFont: 'sans-serif',
+    textColor: '#000000',
+  });
 
   return (
-    <Layout>
-      <div>
-        <h1>{frontMatter.title}</h1>
+    <Layout
+      title={title}
+      description={description}
+      openGraph={{
+        title,
+        images: [
+          {
+            url: socialImage,
+            width: 800,
+            height: 418,
+            alt: title,
+          },
+        ],
+      }}
+      twitter={{
+        title,
+        cardType: 'summary_large_image',
+      }}
+    >
+      <Box>
+        <Heading as="h1" pb="1rem">
+          {title}
+        </Heading>
         {content}
-      </div>
+      </Box>
     </Layout>
   );
 }

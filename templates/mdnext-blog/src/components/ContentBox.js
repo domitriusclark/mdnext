@@ -1,7 +1,8 @@
 import { Link as NextLink } from 'next/link';
-import { Box, Link, Text, Stack } from '@chakra-ui/react';
+import { Box, Link, Heading, Text, Stack, Tag } from '@chakra-ui/react';
 
 export default function ContentBox({ blog }) {
+  const { title, author, description, tags } = blog;
   return (
     <Link
       as={NextLink}
@@ -18,13 +19,17 @@ export default function ContentBox({ blog }) {
       >
         <Stack>
           <Box>
-            <Text _groupHover={{ textDecor: 'underline' }}>{blog.title}</Text>
-            <Text> By: {blog.author}</Text>
-            <Text>{blog.description}</Text>
+            <Heading as="h2" size="lg" _groupHover={{ textDecor: 'underline' }}>
+              {title}
+            </Heading>
+            <Heading as="h3" size="md" pb="0.5rem">
+              By: {blog.author}
+            </Heading>
+            <Text pb="0.5rem">{description}</Text>
           </Box>
-          <Stack direction="row" spacing={8}>
-            {blog.tags.map((tag) => (
-              <Text key={tag}>#{tag}</Text>
+          <Stack direction="row" spacing={3}>
+            {tags.map((tag) => (
+              <Tag key={tag}>#{tag}</Tag>
             ))}
           </Stack>
         </Stack>
