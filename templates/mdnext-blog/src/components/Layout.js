@@ -1,4 +1,4 @@
-import { getShareImage } from '@jlengstorf/get-share-image';
+import getShareImage from '@jlengstorf/get-share-image';
 import { Container } from '@chakra-ui/react';
 import Navbar from '@components/Navbar';
 import SEO from '@components/SEO';
