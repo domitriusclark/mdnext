@@ -14,9 +14,9 @@ export default function BlogPost({ mdxSource, frontMatter }) {
     tagline: author,
     cloudName: process.env.CLOUDINARY_USER_ID,
     imagePublicID: process.env.CLOUDINARY_IMAGE_ID,
-    titleFont: 'sans-serif',
-    taglineFont: 'sans-serif',
-    textColor: '#000000',
+    titleFont: 'Montserrat',
+    taglineFont: 'Montserrat',
+    textColor: '000000',
   });
 
   return (
