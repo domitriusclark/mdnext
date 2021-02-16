@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import getShareImage from '@jlengstorf/get-share-image';
 
 const socialImage = getShareImage({
-  title,
+  title: 'Nextjs + MDX Starter pack',
   tagline: 'A test of sorts.',
   cloudName: process.env.CLOUDINARY_USER_ID,
   imagePublicID: process.env.CLOUDINARY_IMAGE_ID,
