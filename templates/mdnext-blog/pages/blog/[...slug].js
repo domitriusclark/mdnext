@@ -21,7 +21,7 @@ export default function BlogPost({ mdxSource, frontMatter }) {
 
   return (
     <Layout
-      title={title ? title : "MDNext Blog Starter"}
+      title={title}
       description={description}
       openGraph={{
         title,
