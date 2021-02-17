@@ -2,11 +2,11 @@ import { Chakra } from '@components/Chakra';
 import { DefaultSeo } from 'next-seo';
 import getShareImage from '@jlengstorf/get-share-image';
 
-const socialImage = getShareImage({
-  title: 'Nextjs + MDX Starter pack',
-  tagline: 'A test of sorts.',
-  cloudName: process.env.CLOUDINARY_USER_ID,
-  imagePublicID: process.env.CLOUDINARY_IMAGE_ID,
+const ogImage = getShareImage({
+  title: 'MDNext Blog Starter',
+  tagline: 'All the power of MDX + Next without the boilerplate 🚀',
+  cloudName: process.env.CLOUDNAME,
+  imagePublicID: process.env.OG_IMAGE_BASE,
   titleFont: 'Montserrat',
   taglineFont: 'Montserrat',
   textColor: '000000',
@@ -16,25 +16,25 @@ const App = ({ Component, pageProps, cookies }) => {
   return (
     <Chakra cookies={cookies}>
       <DefaultSeo
-        title="Nextjs + MDX Starter pack"
-        description="This is an opinionated way to handle MDX from multiple sources in a Next project with some help styling from ChakraUI"
-        url="www.whatever.com"
+        title="MDNext Blog Starter"
+        description="Build your blog with best in class tools from the NextJS ecosystem. "
+        url="https://mdnext.dev"
         openGraph={{
-          title: 'Nextjs + MDX Starter pack',
-          description: 'MDNext Title Card',
+          title: 'MDNext',
+          description: 'Base OG Image for MDNext',
           images: [
             {
-              url: socialImage,
+              url: ogImage,
               width: 800,
               height: 418,
-              alt: 'Nextjs + MDX Starter pack',
+              alt: 'MDNext Base ogImage',
             },
           ],
         }}
         twitter={{
           handle: '@domitriusclark',
           site: 'https://twitter.com/domitriusclark',
-          title: 'Nextjs + MDX Starter pack',
+          title: 'MDNext Blog Starter',
           cardType: 'summary_large_image',
         }}
       />

@@ -12,8 +12,8 @@ export default function BlogPost({ mdxSource, frontMatter }) {
   const socialImage = getShareImage({
     title,
     tagline: author,
-    cloudName: process.env.CLOUDINARY_USER_ID,
-    imagePublicID: process.env.CLOUDINARY_IMAGE_ID,
+    cloudName: process.env.CLOUD_NAME,
+    imagePublicID: process.env.OG_IMAGE_BASE,
     titleFont: 'Montserrat',
     taglineFont: 'Montserrat',
     textColor: '000000',
