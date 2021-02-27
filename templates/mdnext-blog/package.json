@@ -17,9 +17,12 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.1.4",
+    "@charlietango/use-native-lazy-loading": "^1.9.0",
+    "@cld-apis/utils": "^0.1.3",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@jlengstorf/get-share-image": "^0.8.0",
+    "cloudinary-build-url": "^0.2.1",
     "fast-glob": "^3.2.4",
     "framer-motion": "^3.2.1",
     "fuse.js": "^6.4.1",
@@ -31,7 +34,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "use-cloudinary": "^4.1.0"
+    "react-intersection-observer": "^8.31.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
