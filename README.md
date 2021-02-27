@@ -38,22 +38,11 @@ Just want to access components in your `MDX` based apps?
 
 ```bash
 
-# Even though we're a Next based ecosystem, our `MDX` components should be usable in most React based applications
-
-yarn add @mdnext/components
-
-or
-
-npm i @mdnext/components
-```
-
 # What is MDNEXT? 🤔
 
 `mdnext` is an ecosystem of tools to empower working with NextJS + MDX.
 
 The `mdnext` CLI surfaces a collection officially maintained and community submitted templates to choose from. Once chosen, the project is cloned locally with a clean commit history and you're ready to build your next project.
-
-`@mdnext/components` delivers accessible (thanks ChakraUI) and extendable components for working with `MDX`. These include things you've seen like `Code` components for styling code blocks or `Iframes` for embedding rich content to `MDX`
 
 The `mdnext` template collection are NextJS based projects with opinions around how to style, handle `MDX` (and other data sources), deliver media, and handle your most usual workflows (ecomm / blogs / product pages). While there is an officially maintained collection of templates, I was excited to see and share what the community has created. I know there's many different opinions and comfortabilities as a web developer and want our ecosystem to be accessible.
 
