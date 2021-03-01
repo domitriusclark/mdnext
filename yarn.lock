@@ -3276,6 +3276,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@jlengstorf/get-share-image@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@jlengstorf/get-share-image/-/get-share-image-0.8.0.tgz#6e87e085adf0c959fe7a02c1dfd143025ced9f38"
+  integrity sha512-1jal51rCdDtjO8abtvLAsrAqtBs0/dOxdvZW+KL1iZKGeCo/hNj/kHp4gVDWL60YV/Vj6unoS4AixVF/bBiqrQ==
+
 "@mdx-js/mdx@^1.6.16":
   version "1.6.16"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.16.tgz#f01af0140539c1ce043d246259d8becd2153b2bb"
@@ -10229,6 +10234,11 @@ next-seo@^4.17.0:
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.17.0.tgz#fb3dbe0ed7414aa9d83872ef5d8510980a6dae7e"
   integrity sha512-/hnb3oq7bhi8s7bup7+Lm6VzzgRucj+JrWtp+dJiYs/04H0N/NhmE9MpepixQ16fFj6G/39JLYxhzsO/QZG/Kw==
 
+next-seo@^4.19.0:
+  version "4.20.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.20.0.tgz#54b629abf93c7c051919802db011882f67004249"
+  integrity sha512-N3NIISxOV+6XatPdZWRt8L/PkdxX4qpl6s2uQVMYTkteo8hgpHDgs6XZkDzuHaPi10neSZoqQiytsxohTCyEvw==
+
 next-seo@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.7.3.tgz#8da82dca4f425c84392c4a8462f215dfcb4195b0"
@@ -14140,10 +14150,10 @@ theme-ui@^0.4.0-rc.5:
     "@theme-ui/mdx" "0.4.0-rc.12"
     "@theme-ui/theme-provider" "0.4.0-rc.12"
 
-three@^0.122.0:
-  version "0.122.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.122.0.tgz#bd9ed8a8820074856e8ba7b63fe0a65176e01aeb"
-  integrity sha512-bgYMo0WdaQhf7DhLE8OSNN/rVFO5J4K1A2VeeKqoV4MjjuHjfCP6xLpg8Xedhns7NlEnN3sZ6VJROq19Qyl6Sg==
+three@^0.125.0:
+  version "0.125.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.125.0.tgz#19e922b9dc51ad0b706893aeee888de68e99850a"
+  integrity sha512-qL36qUGsPQ/Ofo/RZdXwHwM7A8wzUSAIyawtjIebJSPvounUQeneSqxI0aBY2iwKpseGy+RUtj3C5f/z4poyXw==
 
 throat@^5.0.0:
   version "5.0.0"
