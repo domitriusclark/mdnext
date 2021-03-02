@@ -39,6 +39,7 @@
   },
   "workspaces": [
     "packages/*",
-    "templates/*"
+    "templates/*",
+    "site/"
   ]
 }

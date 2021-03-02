@@ -1,0 +1,67 @@
+{
+  "name": "site",
+  "starter-name": "mdnext-blog",
+  "description": "This example shows using [MDX](https://github.com/mdx-js/mdx) with NextJS utilizing next-mdx-remote",
+  "version": "1.0.1",
+  "repository": "https://github.com/domitriusclark/mdnext-base.git",
+  "author": "domitriusclark",
+  "main": "next.config.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.1.4",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@jlengstorf/get-share-image": "^0.8.0",
+    "fast-glob": "^3.2.4",
+    "framer-motion": "^3.2.1",
+    "fuse.js": "^6.4.1",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.5",
+    "next-mdx-remote": "^2.1.1",
+    "next-seo": "^4.19.0",
+    "prism-react-renderer": "^1.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "use-cloudinary": "^4.1.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx"
+  ],
+  "license": "ISC"
+}
