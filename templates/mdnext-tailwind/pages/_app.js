@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
           site: 'https://twitter.com/domitriusclark',
         }}
       />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
