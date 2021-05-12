@@ -1605,6 +1605,11 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.1.tgz#9daf5745156fd84b8e9889a2dc721f0c58e894aa"
   integrity sha512-CAEbWH7OIur6jEOzaai83jq3FmKmv4PmX1JYfs9IrYcGEVI/lyL1EXJGCj7eFVJ0bg5QR8LMxBlEtA+xKiLpFw==
 
+"@jlengstorf/get-share-image@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@jlengstorf/get-share-image/-/get-share-image-0.8.0.tgz#6e87e085adf0c959fe7a02c1dfd143025ced9f38"
+  integrity sha512-1jal51rCdDtjO8abtvLAsrAqtBs0/dOxdvZW+KL1iZKGeCo/hNj/kHp4gVDWL60YV/Vj6unoS4AixVF/bBiqrQ==
+
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.22.tgz#8a723157bf90e78f17dc0f27995398e6c731f1ba"
@@ -3558,9 +3563,9 @@ lodash.uniq@4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.13, lodash@^4.17.19:
-  version "4.17.20"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^4.0.0:
   version "4.0.0"
@@ -3742,10 +3747,10 @@ next-mdx-remote@^2.1.1:
     "@mdx-js/mdx" "^1.6.22"
     "@mdx-js/react" "^1.6.22"
 
-next-seo@^4.7.3:
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.18.0.tgz#c6cf30253088d64c2e552e10d89a831b59f661c4"
-  integrity sha512-Omv6r7hIRArsVpa3rzUmhjsuOm9eSFvG7BU3F/oEl7Z2OYjpOJvVjZsEgHMmsBvgmT1Svy0LDVo1/FKH3Zh4wQ==
+next-seo@^4.19.0:
+  version "4.24.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.24.0.tgz#7c0447da00b8574dcda5c6979771a7f6efd24f55"
+  integrity sha512-9VQXfXAelhE+hAWzJ4azigQaW3FPX0kU0eYKFQXKsQjgY7AWtukjRGXls0oSIk8khhDJwmCt46EwsO9n5DDW6Q==
 
 next@^10.0.5:
   version "10.0.6"
