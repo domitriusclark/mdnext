@@ -21,7 +21,7 @@
     "fast-glob": "^3.2.4",
     "fuse.js": "^6.4.1",
     "gray-matter": "^4.0.2",
-    "next": "^9.5.2",
+    "next": "^11.1.0",
     "next-mdx-remote": "^1.0.0",
     "next-seo": "^4.7.3",
     "next-transpile-modules": "^4.1.0",
