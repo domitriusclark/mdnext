@@ -1,3 +1,5 @@
 module.exports = {
-  env: {},
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };
