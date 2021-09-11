@@ -1,82 +1,74 @@
-import React from 'react';
-import { Image as ChakraImage } from '@chakra-ui/react';
+import NextImage from 'next/image';
 import { useImage } from 'use-cloudinary';
+import { chakra } from '@chakra-ui/react';
+
+const ChakraNextImage = chakra(NextImage, {
+  shouldForwardProp: (prop) =>
+    [
+      'width',
+      'height',
+      'src',
+      'alt',
+      'quality',
+      'placeholder',
+      'blurDataURL',
+      'loader ',
+    ].includes(prop),
+});
 
 export default function Image({
-  src,
-  cloudName,
+  // Cloudinary Props
   publicId,
-  transforms,
+  transformations,
+  cloudName,
+  storageType,
+
+  // Next Image props
+  src,
   width,
   height,
-  lazy,
-  ...props
+  alt,
+
+  // Everything else
+  ...rest
 }) {
-  const {
-    generateImageUrl,
-    blurredPlaceholderUrl,
-    ref,
-    supportsLazyLoading,
-    inView,
-  } = useImage(cloudName);
+  const { generateImageUrl } = useImage(cloudName);
 
-  // Not using Cloudinary
-  if (!publicId) {
-    // Try to lazy load all images when { lazy === true }
-    if (lazy) {
-      return (
-        <div
-          ref={!supportsLazyLoading ? ref : undefined}
-          style={{
-            width: `${width}px`,
-            height: `${height}px`,
-          }}
-        >
-          {inView ||
-            (supportsLazyLoading && (
-              <ChakraImage src={src} loading="lazy" width="100%" {...props} />
-            ))}
-        </div>
-      );
-    } else {
-      // Otherwise, just use the Chakra image component
-      return <ChakraImage src={src} {...props} />;
-    }
+  const cloudinaryUrl =
+    cloudName &&
+    generateImageUrl({
+      delivery: {
+        publicId: props.src,
+        storageType: 'fetch',
+      },
 
-    // Or if you are using Cloudinary, it will move to here
-  } else {
-    // lazy load w/ a blurred placeholder of the image that's loading
-    if (lazy) {
-      return (
-        <div
-          ref={!supportsLazyLoading ? ref : undefined}
-          style={{
-            width: `${width}px`,
-            height: `${height}px`,
-            background: `no-repeat url(${blurredPlaceholderUrl(
-              publicId,
-              width,
-              height,
-            )})`,
-          }}
-        >
-          {inView ||
-            (supportsLazyLoading && (
-              <ChakraImage
-                src={generateImageUrl({
-                  delivery: { publicId },
-                  transformation: { ...transforms },
-                })}
-                loading="lazy"
-                width="100%"
-                {...props}
-              />
-            ))}
-        </div>
-      );
-    } else {
-      // Just render the image
-      return <ChakraImage src={url} width="100%" {...props} />;
-    }
-  }
+      // Auto apply crop to size provided by width & height props
+      transformation: [
+        {
+          crop: 'scale',
+          width,
+          height,
+        },
+        // Auto apply best format and quality transformations -- tweak where needed
+        {
+          format: 'auto',
+          quality: 'auto',
+        },
+      ],
+    });
+
+  return (
+    <Box pos="relative" cursor="pointer" {...rest}>
+      <ChakraNextImage
+        w="auto"
+        h="auto"
+        width={width}
+        height={height}
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(60, 60))}`}
+        src={cloudinaryUrl !== undefined ? cloudinaryUrl : src}
+        alt={alt}
+      />
+    </Box>
+  );
 }

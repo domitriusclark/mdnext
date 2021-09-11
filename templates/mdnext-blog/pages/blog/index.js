@@ -1,7 +1,7 @@
 import { Box, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BLOG_CONTENT_PATH } from '@config/constants';
-import { getMdxContent } from '@utils/get-mdx-content';
+import getLocalMdx from '@utils/getLocalMdx';
 import ContentBox from '@components/ContentBox';
 import Search from '@components/Search';
 import { Layout } from '@components/Layout';
@@ -31,7 +31,7 @@ export default function BlogPage({ allMdx }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getMdxContent(BLOG_CONTENT_PATH);
+  const posts = await getLocalMdx(BLOG_CONTENT_PATH);
   const allMdx = posts.map((post) => ({
     slug: post.slug,
     ...post.data,
