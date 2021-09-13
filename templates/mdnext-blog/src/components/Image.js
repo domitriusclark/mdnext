@@ -1,6 +1,6 @@
 import NextImage from 'next/image';
 import { useImage } from 'use-cloudinary';
-import { chakra } from '@chakra-ui/react';
+import { Box, chakra } from '@chakra-ui/react';
 
 const ChakraNextImage = chakra(NextImage, {
   shouldForwardProp: (prop) =>
